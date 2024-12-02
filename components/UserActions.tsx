@@ -58,7 +58,7 @@ const UserActions = ({ allPoints, floors }: Props) => {
   };
 
   return (
-    <div className="flex gap-2">
+    <div className="flex gap-2 w-full md:flex-row flex-col justify-center items-center">
       <DropdownSearch
         id="start"
         lists={allPoints}

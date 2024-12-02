@@ -167,6 +167,7 @@ export default async function Home({ searchParams }: Props) {
           .map((item) => item.id)}
         floors={floors.map((item) => item.id)}
       />
+      <section className="h-[200px]" />
     </div>
   );
 }
