@@ -1,101 +1,172 @@
-import Image from "next/image";
+import FloorRenderer from "@/components/FloorRenderer";
+import UserActions from "@/components/UserActions";
+import { Edge, floors, Point } from "@/lib/floorData";
 
-export default function Home() {
+type PathProps = {
+  path: Point[];
+};
+
+const PathRenderer = ({ path }: PathProps) => {
+  // Convert path to SVG path
+  const pathD = path
+    .map((point, index) =>
+      index === 0
+        ? `M ${point.x + 250} ${250 - point.y}`
+        : `L ${point.x + 250} ${250 - point.y}`
+    )
+    .join(" ");
+
   return (
-    <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
-      <main className="flex flex-col gap-8 row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="list-inside list-decimal text-sm text-center sm:text-left font-[family-name:var(--font-geist-mono)]">
-          <li className="mb-2">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] px-1 py-0.5 rounded font-semibold">
-              app/page.tsx
-            </code>
-            .
-          </li>
-          <li>Save and see your changes instantly.</li>
-        </ol>
+    <svg
+      width="500"
+      height="500"
+      style={{ position: "absolute", top: 0, left: 0, zIndex: 2 }}
+    >
+      <path d={pathD} stroke="blue" fill="none" strokeWidth={2} />
+    </svg>
+  );
+};
 
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:min-w-44"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
-        </div>
-      </main>
-      <footer className="row-start-3 flex gap-6 flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
+type Props = {
+  searchParams: Promise<{ [key: string]: string | string[] | undefined }>;
+};
+
+export default async function Home({ searchParams }: Props) {
+  const interFloorEdges: Edge[] = [{ from: "Lift1", to: "Lift2" }];
+
+  const allPoints = floors.flatMap((floor) => floor.points);
+  const allEdges = floors
+    .flatMap((floor) => floor.edges)
+    .concat(interFloorEdges);
+
+  const makeBidirectional = (edges: Edge[]): Edge[] => {
+    const uniqueEdges = new Set<string>();
+    const bidirectionalEdges: Edge[] = [];
+
+    edges.forEach((edge) => {
+      const forwardKey = `${edge.from}->${edge.to}`;
+      const reverseKey = `${edge.to}->${edge.from}`;
+
+      if (!uniqueEdges.has(forwardKey)) {
+        uniqueEdges.add(forwardKey);
+        bidirectionalEdges.push(edge);
+      }
+
+      if (!uniqueEdges.has(reverseKey)) {
+        uniqueEdges.add(reverseKey);
+        bidirectionalEdges.push({ from: edge.to, to: edge.from });
+      }
+    });
+
+    return bidirectionalEdges;
+  };
+
+  const paths: Edge[] = makeBidirectional(allEdges);
+
+  const findPredefinedPath = (
+    startId: string,
+    endId: string
+  ): Point[] | null => {
+    const visited: Set<string> = new Set();
+    const stack: { current: string; route: string[] }[] = [
+      { current: startId, route: [startId] },
+    ];
+
+    while (stack.length > 0) {
+      const { current, route } = stack.pop()!;
+      if (current === endId) {
+        return route.map((id) => allPoints.find((point) => point.id === id)!);
+      }
+
+      visited.add(current);
+
+      // Add connected paths to the stack
+      paths
+        .filter((edge) => edge.from === current && !visited.has(edge.to))
+        .forEach((edge) =>
+          stack.push({ current: edge.to, route: [...route, edge.to] })
+        );
+    }
+
+    return null; // No path found
+  };
+
+  const generateFullPath = (pointPath: Point[]): Point[] => {
+    const fullPath: Point[] = [];
+
+    for (let i = 0; i < pointPath.length - 1; i++) {
+      const segment = calculateSegment(pointPath[i], pointPath[i + 1]);
+      fullPath.push(...segment);
+    }
+
+    return fullPath;
+  };
+
+  const calculateSegment = (start: Point, end: Point): Point[] => {
+    const path: Point[] = [];
+    const steps = Math.abs(end.x - start.x) + Math.abs(end.y - start.y);
+
+    for (let i = 0; i <= steps; i++) {
+      const x =
+        i <= Math.abs(end.x - start.x)
+          ? start.x + Math.sign(end.x - start.x) * i
+          : end.x;
+      const y =
+        i > Math.abs(end.x - start.x)
+          ? start.y +
+            Math.sign(end.y - start.y) * (i - Math.abs(end.x - start.x))
+          : start.y;
+      path.push({ type: start.type, id: start.id, x, y });
+    }
+
+    return path;
+  };
+
+  const resultParams = await searchParams;
+
+  const searchStart = Array.isArray(resultParams.start)
+    ? resultParams.start[0]
+    : resultParams.start;
+  const searchEnd = Array.isArray(resultParams.end)
+    ? resultParams.end[0]
+    : resultParams.end;
+  const searchFloor = Array.isArray(resultParams.floor)
+    ? resultParams.floor[0]
+    : resultParams.floor;
+
+  const startId = searchStart || "A1";
+  const endId = searchEnd || "A1";
+
+  const floorId = searchFloor || "Floor 1";
+
+  const renderPoints = floors.find((item) => item.id === floorId)?.points || [];
+
+  const pointPath = findPredefinedPath(startId, endId);
+  const fullPath = pointPath ? generateFullPath(pointPath) : [];
+
+  const renderFullPaths = fullPath.filter((point) =>
+    renderPoints.some((p) => p.id === point.id)
+  );
+
+  // console.log(renderPoints);
+
+  return (
+    <div className="flex flex-col gap-2 w-full items-center">
+      <div style={{ position: "relative", width: "500px", height: "500px" }}>
+        {floors.map(
+          (floor) =>
+            floor.id === floorId && (
+              <FloorRenderer key={floor.id} floorId={floor.id} />
+            )
+        )}
+        <PathRenderer path={renderFullPaths} />
+      </div>
+      <UserActions
+        allPoints={allPoints
+          .filter((item) => item.type === "point")
+          .map((item) => item.id)}
+        floors={floors.map((item) => item.id)}
+      />
     </div>
   );
 }
