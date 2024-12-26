@@ -1,12 +1,14 @@
-import { floors } from "@/lib/floorData";
+import { FloorType } from "@/lib/floorData";
 import React from "react";
 
 type Props = {
-  floorId: string;
+  floor: FloorType;
+  width?: number;
+  height?: number;
 };
 
-const FloorRenderer = ({ floorId }: Props) => {
-  const floor = floors.find((f) => f.id === floorId);
+const FloorRenderer = ({ floor, width = 500, height = 500 }: Props) => {
+  // const floor = floors.find((f) => f.id === floorId);
   if (!floor) return null;
 
   const edgePaths = floor.edges.map((edge, index) => {
@@ -15,10 +17,10 @@ const FloorRenderer = ({ floorId }: Props) => {
     return (
       <line
         key={index}
-        x1={fromPoint.x + 250}
-        y1={250 - fromPoint.y}
-        x2={toPoint.x + 250}
-        y2={250 - toPoint.y}
+        x1={fromPoint.x}
+        y1={fromPoint.y}
+        x2={toPoint.x}
+        y2={toPoint.y}
         stroke="gray"
         strokeWidth={1}
       />
@@ -27,18 +29,18 @@ const FloorRenderer = ({ floorId }: Props) => {
 
   return (
     <svg
-      width="500"
-      height="500"
+      width={width}
+      height={height}
       style={{ position: "absolute", top: 0, left: 0, zIndex: 1 }}
     >
       {floor.svg}
       {edgePaths}
       {floor.points.map((point) => (
         <React.Fragment key={point.id}>
-          <circle cx={point.x + 250} cy={250 - point.y} r={3} fill="red" />
-          <text x={point.x + 255} y={250 - point.y} fontSize="10" fill="white">
+          <circle cx={point.x} cy={point.y} r={1.5} fill="red" />
+          {/* <text x={point.x + 5} y={point.y} fontSize="10" fill="white">
             {point.id}
-          </text>
+          </text> */}
         </React.Fragment>
       ))}
     </svg>

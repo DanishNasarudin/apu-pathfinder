@@ -1,38 +1,36 @@
+import FloorCoordinates from "@/components/FloorCoordinates";
 import FloorRenderer from "@/components/FloorRenderer";
+import PathRenderer from "@/components/PathRenderer";
 import UserActions from "@/components/UserActions";
 import { Edge, floors, Point } from "@/lib/floorData";
-
-type PathProps = {
-  path: Point[];
-};
-
-const PathRenderer = ({ path }: PathProps) => {
-  // Convert path to SVG path
-  const pathD = path
-    .map((point, index) =>
-      index === 0
-        ? `M ${point.x + 250} ${250 - point.y}`
-        : `L ${point.x + 250} ${250 - point.y}`
-    )
-    .join(" ");
-
-  return (
-    <svg
-      width="500"
-      height="500"
-      style={{ position: "absolute", top: 0, left: 0, zIndex: 2 }}
-    >
-      <path d={pathD} stroke="blue" fill="none" strokeWidth={2} />
-    </svg>
-  );
-};
+import React from "react";
 
 type Props = {
   searchParams: Promise<{ [key: string]: string | string[] | undefined }>;
 };
 
 export default async function Home({ searchParams }: Props) {
-  const interFloorEdges: Edge[] = [{ from: "Lift1", to: "Lift2" }];
+  const interFloorEdges: Edge[] = [{ from: "Lift5", to: "Lift6" }];
+
+  const resultParams = await searchParams;
+
+  const searchStart = Array.isArray(resultParams.start)
+    ? resultParams.start[0]
+    : resultParams.start;
+  const searchEnd = Array.isArray(resultParams.end)
+    ? resultParams.end[0]
+    : resultParams.end;
+  const searchFloor = Array.isArray(resultParams.floor)
+    ? resultParams.floor[0]
+    : resultParams.floor;
+
+  const startId = searchStart || "B-05-01";
+  const endId = searchEnd || "B-05-01";
+
+  const floorId = searchFloor || "Floor 1";
+
+  const width = 700;
+  const height = 500;
 
   const allPoints = floors.flatMap((floor) => floor.points);
   const allEdges = floors
@@ -44,8 +42,8 @@ export default async function Home({ searchParams }: Props) {
     const bidirectionalEdges: Edge[] = [];
 
     edges.forEach((edge) => {
-      const forwardKey = `${edge.from}->${edge.to}`;
-      const reverseKey = `${edge.to}->${edge.from}`;
+      const forwardKey = `${edge.from}>${edge.to}`;
+      const reverseKey = `${edge.to}>${edge.from}`;
 
       if (!uniqueEdges.has(forwardKey)) {
         uniqueEdges.add(forwardKey);
@@ -80,7 +78,6 @@ export default async function Home({ searchParams }: Props) {
 
       visited.add(current);
 
-      // Add connected paths to the stack
       paths
         .filter((edge) => edge.from === current && !visited.has(edge.to))
         .forEach((edge) =>
@@ -88,7 +85,7 @@ export default async function Home({ searchParams }: Props) {
         );
     }
 
-    return null; // No path found
+    return null;
   };
 
   const generateFullPath = (pointPath: Point[]): Point[] => {
@@ -104,40 +101,28 @@ export default async function Home({ searchParams }: Props) {
 
   const calculateSegment = (start: Point, end: Point): Point[] => {
     const path: Point[] = [];
-    const steps = Math.abs(end.x - start.x) + Math.abs(end.y - start.y);
+    const deltaX = end.x - start.x;
+    const deltaY = end.y - start.y;
+
+    const steps = Math.max(Math.abs(deltaX), Math.abs(deltaY));
+
+    const stepX = deltaX / steps;
+    const stepY = deltaY / steps;
 
     for (let i = 0; i <= steps; i++) {
-      const x =
-        i <= Math.abs(end.x - start.x)
-          ? start.x + Math.sign(end.x - start.x) * i
-          : end.x;
-      const y =
-        i > Math.abs(end.x - start.x)
-          ? start.y +
-            Math.sign(end.y - start.y) * (i - Math.abs(end.x - start.x))
-          : start.y;
-      path.push({ type: start.type, id: start.id, x, y });
+      const x = start.x + stepX * i;
+      const y = start.y + stepY * i;
+
+      path.push({
+        type: start.type,
+        id: start.id,
+        x,
+        y,
+      });
     }
 
     return path;
   };
-
-  const resultParams = await searchParams;
-
-  const searchStart = Array.isArray(resultParams.start)
-    ? resultParams.start[0]
-    : resultParams.start;
-  const searchEnd = Array.isArray(resultParams.end)
-    ? resultParams.end[0]
-    : resultParams.end;
-  const searchFloor = Array.isArray(resultParams.floor)
-    ? resultParams.floor[0]
-    : resultParams.floor;
-
-  const startId = searchStart || "A1";
-  const endId = searchEnd || "A1";
-
-  const floorId = searchFloor || "Floor 1";
 
   const renderPoints = floors.find((item) => item.id === floorId)?.points || [];
 
@@ -148,18 +133,27 @@ export default async function Home({ searchParams }: Props) {
     renderPoints.some((p) => p.id === point.id)
   );
 
-  // console.log(renderPoints);
+  // createData(floors[1]);
+
+  // console.log(renderFullPaths);
 
   return (
     <div className="flex flex-col gap-2 w-full items-center">
-      <div style={{ position: "relative", width: "500px", height: "500px" }}>
+      <div style={{ position: "relative", width, height }}>
         {floors.map(
           (floor) =>
             floor.id === floorId && (
-              <FloorRenderer key={floor.id} floorId={floor.id} />
+              <React.Fragment key={floor.id}>
+                <FloorRenderer floor={floor} width={width} height={height} />
+                <FloorCoordinates
+                  svg={floor.svg}
+                  width={width}
+                  height={height}
+                />
+              </React.Fragment>
             )
         )}
-        <PathRenderer path={renderFullPaths} />
+        <PathRenderer path={renderFullPaths} width={width} height={height} />
       </div>
       <UserActions
         allPoints={allPoints
