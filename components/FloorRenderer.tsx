@@ -31,7 +31,7 @@ const FloorRenderer = ({ floor, width = 500, height = 500 }: Props) => {
     <svg
       width={width}
       height={height}
-      style={{ position: "absolute", top: 0, left: 0, zIndex: 1 }}
+      style={{ position: "absolute", top: 0, left: 0, zIndex: 2 }}
     >
       {floor.svg}
       {edgePaths}

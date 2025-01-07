@@ -1,5 +1,7 @@
 "use client";
+import { round } from "@/lib/utils";
 import React, { useState } from "react";
+import { useTransformContext } from "react-zoom-pan-pinch";
 
 type Props = {
   svg: JSX.Element;
@@ -8,6 +10,8 @@ type Props = {
 };
 
 const FloorCoordinates = ({ svg, width = 500, height = 500 }: Props) => {
+  const transformState = useTransformContext();
+
   const [coordinates, setCoordinates] = useState<{
     x: number;
     y: number;
@@ -24,12 +28,16 @@ const FloorCoordinates = ({ svg, width = 500, height = 500 }: Props) => {
     const svgCoords = point.matrixTransform(
       svgElement.getScreenCTM()?.inverse()
     );
-    setCoordinates({ x: svgCoords.x, y: svgCoords.y });
+
+    const { scale } = transformState.getContext().state;
+
+    const unscaledSvgX = round(svgCoords.x / scale, 1);
+    const unscaledSvgY = round(svgCoords.y / scale, 1);
+
+    setCoordinates({ x: unscaledSvgX, y: unscaledSvgY });
 
     console.log(
-      `Coordinates: (x: ${Math.floor(svgCoords.x)}, y: ${Math.floor(
-        svgCoords.y
-      )})`
+      `Unscaled SVG Coordinates: x - ${unscaledSvgX}, y - ${unscaledSvgY}`
     );
   };
 

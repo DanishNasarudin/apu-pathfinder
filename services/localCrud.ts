@@ -69,7 +69,6 @@ export const getData = async () => {
 
 // UPDATE
 export const updateData = async (input: FloorType) => {
-  //   const body: FloorType = await req.json();
   const data = await readData();
   const index = data.findIndex((floor) => floor.id === input.id);
   if (index === -1) {
@@ -81,7 +80,6 @@ export const updateData = async (input: FloorType) => {
 
 // DELETE
 export const deleteData = async ({ id }: { id: string }) => {
-  //   const { id }: { id: string } = await req.json();
   const data = await readData();
   const filteredData = data.filter((floor) => floor.id !== id);
   if (data.length === filteredData.length) {

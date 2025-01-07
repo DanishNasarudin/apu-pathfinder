@@ -1,6 +1,7 @@
 import FloorCoordinates from "@/components/FloorCoordinates";
 import FloorRenderer from "@/components/FloorRenderer";
 import PathRenderer from "@/components/PathRenderer";
+import TransformWrapper from "@/components/TransformWrapper";
 import UserActions from "@/components/UserActions";
 import { Edge, floors, Point } from "@/lib/floorData";
 import React from "react";
@@ -23,6 +24,9 @@ export default async function Home({ searchParams }: Props) {
   const searchFloor = Array.isArray(resultParams.floor)
     ? resultParams.floor[0]
     : resultParams.floor;
+  const searchEdit = Array.isArray(resultParams.edit)
+    ? resultParams.edit[0]
+    : resultParams.edit;
 
   const startId = searchStart || "B-05-01";
   const endId = searchEnd || "B-05-01";
@@ -31,6 +35,8 @@ export default async function Home({ searchParams }: Props) {
 
   const width = 700;
   const height = 500;
+
+  const isEditing = Boolean(searchEdit) || false;
 
   const allPoints = floors.flatMap((floor) => floor.points);
   const allEdges = floors
@@ -113,6 +119,8 @@ export default async function Home({ searchParams }: Props) {
       const x = start.x + stepX * i;
       const y = start.y + stepY * i;
 
+      if (isNaN(x) || isNaN(y)) break;
+
       path.push({
         type: start.type,
         id: start.id,
@@ -137,14 +145,21 @@ export default async function Home({ searchParams }: Props) {
 
   // console.log(renderFullPaths);
 
-  return (
-    <div className="flex flex-col gap-2 w-full items-center">
+  const FloorComponent = () => {
+    return (
       <div style={{ position: "relative", width, height }}>
         {floors.map(
           (floor) =>
             floor.id === floorId && (
               <React.Fragment key={floor.id}>
                 <FloorRenderer floor={floor} width={width} height={height} />
+                {/* {isEditing && (
+                  <FloorCoordinates
+                    svg={floor.svg}
+                    width={width}
+                    height={height}
+                  />
+                )} */}
                 <FloorCoordinates
                   svg={floor.svg}
                   width={width}
@@ -155,6 +170,22 @@ export default async function Home({ searchParams }: Props) {
         )}
         <PathRenderer path={renderFullPaths} width={width} height={height} />
       </div>
+    );
+  };
+
+  return (
+    <div className="flex flex-col gap-2 w-full items-center">
+      {/* {!isEditing ? (
+        <TransformWrapper>
+          <FloorComponent />
+        </TransformWrapper>
+      ) : (
+        <FloorComponent />
+      )} */}
+      <TransformWrapper>
+        <FloorComponent />
+      </TransformWrapper>
+
       <UserActions
         allPoints={allPoints
           .filter((item) => item.type === "point")
