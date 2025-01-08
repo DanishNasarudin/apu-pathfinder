@@ -1,16 +1,19 @@
+"use server";
 import fs from "fs/promises";
 import path from "path";
 
 const DATA_FILE_PATH = path.join(process.cwd(), "data", "floors.json");
 
 export type Point = {
+  id: number;
   type: "point" | "junction";
-  id: string;
+  name: string;
   x: number;
   y: number;
 };
 
 export type Edge = {
+  id: number;
   from: string;
   to: string;
 };
@@ -19,7 +22,7 @@ export type FloorType = {
   id: string;
   points: Point[];
   edges: Edge[];
-  svg: JSX.Element;
+  // svg: JSX.Element;
 };
 
 // Helper to read and write data

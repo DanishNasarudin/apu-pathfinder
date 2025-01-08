@@ -1,7 +1,8 @@
-import FloorCoordinates from "@/components/FloorCoordinates";
-import FloorRenderer from "@/components/FloorRenderer";
-import PathRenderer from "@/components/PathRenderer";
-import TransformWrapper from "@/components/TransformWrapper";
+import EditPanel from "@/components/EditPanel/EditPanel";
+import FloorCoordinates from "@/components/FloorRendering/FloorCoordinates";
+import FloorRenderer from "@/components/FloorRendering/FloorRenderer";
+import PathRenderer from "@/components/FloorRendering/PathRenderer";
+import TransformWrapper from "@/components/FloorRendering/TransformWrapper";
 import UserActions from "@/components/UserActions";
 import { Edge, floors, Point } from "@/lib/floorData";
 import React from "react";
@@ -164,6 +165,7 @@ export default async function Home({ searchParams }: Props) {
                   svg={floor.svg}
                   width={width}
                   height={height}
+                  floorId={floor.id}
                 />
               </React.Fragment>
             )
@@ -174,7 +176,7 @@ export default async function Home({ searchParams }: Props) {
   };
 
   return (
-    <div className="flex flex-col gap-2 w-full items-center">
+    <div className="relative flex flex-col gap-2 w-full items-center">
       {/* {!isEditing ? (
         <TransformWrapper>
           <FloorComponent />
@@ -182,6 +184,7 @@ export default async function Home({ searchParams }: Props) {
       ) : (
         <FloorComponent />
       )} */}
+      <EditPanel />
       <TransformWrapper>
         <FloorComponent />
       </TransformWrapper>

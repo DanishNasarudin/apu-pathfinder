@@ -1,7 +1,7 @@
 "use client";
 import { cn } from "@/lib/utils";
 import { Check, ChevronsUpDown } from "lucide-react";
-import React, { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { Button } from "./ui/button";
 import {
   Command,
@@ -17,15 +17,17 @@ type Props = {
   id?: string;
   lists?: string[];
   onValueChange?: (newValue: string, id: string) => void;
+  width?: string;
 };
 
 const DropdownSearch = ({
   id = "default",
   lists = ["A1", "B2"],
   onValueChange = () => {},
+  width = "none",
 }: Props) => {
-  const [open, setOpen] = React.useState(false);
-  const [value, setValue] = React.useState(lists[0] || "");
+  const [open, setOpen] = useState(false);
+  const [value, setValue] = useState(lists[0] || "");
 
   useEffect(() => {
     if (value === "") return;
@@ -40,13 +42,18 @@ const DropdownSearch = ({
           variant="outline"
           role="combobox"
           aria-expanded={open}
-          className="w-[200px] justify-between"
+          className={cn(
+            width === "none" ? "w-[200px]" : width,
+            "justify-between"
+          )}
         >
           {value ? lists.find((list) => list === value) : "Select list..."}
           <ChevronsUpDown className="ml-2 h-4 w-4 shrink-0 opacity-50" />
         </Button>
       </PopoverTrigger>
-      <PopoverContent className="w-[200px] p-0">
+      <PopoverContent
+        className={cn(width === "none" ? "w-[200px]" : width, "p-0")}
+      >
         <Command>
           <CommandInput placeholder="Search list..." />
           <CommandList>
