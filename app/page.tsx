@@ -1,10 +1,12 @@
 import EditPanel from "@/components/EditPanel/EditPanel";
 import FloorCoordinates from "@/components/FloorRendering/FloorCoordinates";
 import FloorRenderer from "@/components/FloorRendering/FloorRenderer";
+import FloorRendererEdit from "@/components/FloorRendering/FloorRendererEdit";
 import PathRenderer from "@/components/FloorRendering/PathRenderer";
 import TransformWrapper from "@/components/FloorRendering/TransformWrapper";
 import UserActions from "@/components/UserActions";
-import { Edge, floors, Point } from "@/lib/floorData";
+import { floorsSvg } from "@/lib/floorData";
+import { Edge, getData, Point } from "@/services/localCrud";
 import React from "react";
 
 type Props = {
@@ -12,7 +14,9 @@ type Props = {
 };
 
 export default async function Home({ searchParams }: Props) {
-  const interFloorEdges: Edge[] = [{ from: "Lift5", to: "Lift6" }];
+  const interFloorEdges: Edge[] = [
+    { id: 99, from: "Lift5", to: "Lift6", fromId: 16, toId: 16 },
+  ];
 
   const resultParams = await searchParams;
 
@@ -39,10 +43,17 @@ export default async function Home({ searchParams }: Props) {
 
   const isEditing = Boolean(searchEdit) || false;
 
+  const floors = await getData();
+
   const allPoints = floors.flatMap((floor) => floor.points);
-  const allEdges = floors
-    .flatMap((floor) => floor.edges)
-    .concat(interFloorEdges);
+  const allEdges = [
+    ...floors.flatMap((floor) => floor.edges),
+    ...interFloorEdges,
+  ];
+
+  // console.log(allEdges, "te");
+
+  const svg = floorsSvg.find((item) => item.id === floorId)?.svg || <></>;
 
   const makeBidirectional = (edges: Edge[]): Edge[] => {
     const uniqueEdges = new Set<string>();
@@ -59,7 +70,13 @@ export default async function Home({ searchParams }: Props) {
 
       if (!uniqueEdges.has(reverseKey)) {
         uniqueEdges.add(reverseKey);
-        bidirectionalEdges.push({ from: edge.to, to: edge.from });
+        bidirectionalEdges.push({
+          id: 99,
+          from: edge.to,
+          to: edge.from,
+          fromId: edge.toId,
+          toId: edge.fromId,
+        });
       }
     });
 
@@ -80,7 +97,7 @@ export default async function Home({ searchParams }: Props) {
     while (stack.length > 0) {
       const { current, route } = stack.pop()!;
       if (current === endId) {
-        return route.map((id) => allPoints.find((point) => point.id === id)!);
+        return route.map((id) => allPoints.find((point) => point.name === id)!);
       }
 
       visited.add(current);
@@ -123,8 +140,9 @@ export default async function Home({ searchParams }: Props) {
       if (isNaN(x) || isNaN(y)) break;
 
       path.push({
+        id: -1,
         type: start.type,
-        id: start.id,
+        name: start.name,
         x,
         y,
       });
@@ -139,12 +157,12 @@ export default async function Home({ searchParams }: Props) {
   const fullPath = pointPath ? generateFullPath(pointPath) : [];
 
   const renderFullPaths = fullPath.filter((point) =>
-    renderPoints.some((p) => p.id === point.id)
+    renderPoints.some((p) => p.name === point.name)
   );
 
   // createData(floors[1]);
 
-  // console.log(renderFullPaths);
+  // console.log(renderFullPaths, "tes");
 
   const FloorComponent = () => {
     return (
@@ -153,24 +171,39 @@ export default async function Home({ searchParams }: Props) {
           (floor) =>
             floor.id === floorId && (
               <React.Fragment key={floor.id}>
-                <FloorRenderer floor={floor} width={width} height={height} />
-                {/* {isEditing && (
-                  <FloorCoordinates
-                    svg={floor.svg}
+                {isEditing ? (
+                  <>
+                    <FloorRendererEdit
+                      width={width}
+                      height={height}
+                      svg={svg}
+                    />
+                    <FloorCoordinates
+                      width={width}
+                      height={height}
+                      floorId={floor.id}
+                    />
+                  </>
+                ) : (
+                  <FloorRenderer
+                    floor={floor}
                     width={width}
                     height={height}
+                    svg={svg}
                   />
-                )} */}
-                <FloorCoordinates
+                )}
+                {/* <FloorCoordinates
                   svg={floor.svg}
                   width={width}
                   height={height}
                   floorId={floor.id}
-                />
+                /> */}
               </React.Fragment>
             )
         )}
-        <PathRenderer path={renderFullPaths} width={width} height={height} />
+        {renderFullPaths.length > 0 && (
+          <PathRenderer path={renderFullPaths} width={width} height={height} />
+        )}
       </div>
     );
   };
@@ -184,7 +217,8 @@ export default async function Home({ searchParams }: Props) {
       ) : (
         <FloorComponent />
       )} */}
-      <EditPanel />
+
+      {isEditing && <EditPanel />}
       <TransformWrapper>
         <FloorComponent />
       </TransformWrapper>
@@ -192,7 +226,7 @@ export default async function Home({ searchParams }: Props) {
       <UserActions
         allPoints={allPoints
           .filter((item) => item.type === "point")
-          .map((item) => item.id)}
+          .map((item) => item.name)}
         floors={floors.map((item) => item.id)}
       />
       <section className="h-[200px]" />

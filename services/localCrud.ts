@@ -16,6 +16,8 @@ export type Edge = {
   id: number;
   from: string;
   to: string;
+  fromId: number;
+  toId: number;
 };
 
 export type FloorType = {

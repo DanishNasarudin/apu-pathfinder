@@ -1,6 +1,8 @@
 "use client";
 
 import { createURL } from "@/lib/utils";
+import { useFloorStore } from "@/lib/zus-store";
+import { updateData } from "@/services/localCrud";
 import { usePathname, useRouter, useSearchParams } from "next/navigation";
 import { useEffect, useState } from "react";
 import DropdownSearch from "./DropdownSearch";
@@ -47,6 +49,17 @@ const UserActions = ({ allPoints, floors }: Props) => {
     const setURL = createURL(`${pathname}/`, setSearchParams);
     router.push(setURL);
   }, [pathname, searchParams, start, end, floor, edit]);
+
+  const { id, points, edges, reset } = useFloorStore();
+
+  useEffect(() => {
+    // console.log("PASS edit", edit, id, points, edges);
+    if (!edit && id !== "default") {
+      // console.log("PASS update");
+      updateData({ id, points, edges });
+      reset();
+    }
+  }, [edit]);
 
   const handleChangeValue = (newValue: string, id: string) => {
     switch (id) {

@@ -4,16 +4,17 @@ import { useFloorStore } from "@/lib/zus-store";
 import { getData } from "@/services/localCrud";
 import React, { useEffect, useState } from "react";
 import { useTransformContext } from "react-zoom-pan-pinch";
+import { useShallow } from "zustand/shallow";
 
 type Props = {
-  svg: JSX.Element;
+  // svg: JSX.Element;
   width?: number;
   height?: number;
   floorId?: string;
 };
 
 const FloorCoordinates = ({
-  svg,
+  // svg,
   width = 500,
   height = 500,
   floorId = "default",
@@ -25,7 +26,9 @@ const FloorCoordinates = ({
     y: number;
   } | null>(null);
 
-  const { initData, points } = useFloorStore();
+  const { initData, points, pendingAdd } = useFloorStore();
+
+  const addPoints = useFloorStore(useShallow((state) => state.addPoint));
 
   useEffect(() => {
     const initializeData = async () => {
@@ -39,11 +42,9 @@ const FloorCoordinates = ({
 
         initData(currentFloor);
 
-        // Use zustand to pass the variable across all client components
-        // Need a new component that list down the points, and junctions
-        // Need button when click 'add' then only will register user's click to add point
-        // The list should be the points, then accordion the junctions or which other point its connected to
-        // The accordion row should consist of only the delete button, to add connection, it should be from the main row
+        // Use zustand to pass the variable across all client components /
+        // Need a new component that list down the points, and junctions /
+        // Need button when click 'add' then only will register user's click to add point /
 
         console.log(points);
       }
@@ -68,8 +69,8 @@ const FloorCoordinates = ({
 
     const { scale } = transformState.getContext().state;
 
-    const unscaledSvgX = round(svgCoords.x / scale, 1);
-    const unscaledSvgY = round(svgCoords.y / scale, 1);
+    const unscaledSvgX = round(svgCoords.x / scale, 0);
+    const unscaledSvgY = round(svgCoords.y / scale, 0);
 
     setCoordinates({ x: unscaledSvgX, y: unscaledSvgY });
 
@@ -78,6 +79,15 @@ const FloorCoordinates = ({
     );
 
     console.log(points);
+
+    if (pendingAdd)
+      addPoints({
+        id: -1,
+        type: "point",
+        name: "",
+        x: unscaledSvgX,
+        y: unscaledSvgY,
+      });
   };
 
   return (

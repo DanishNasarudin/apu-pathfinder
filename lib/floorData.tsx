@@ -17,7 +17,7 @@ export type FloorType = {
   svg: JSX.Element;
 };
 
-export const floors: FloorType[] = [
+export const floorsSvg: FloorType[] = [
   {
     id: "Floor 1",
     points: [

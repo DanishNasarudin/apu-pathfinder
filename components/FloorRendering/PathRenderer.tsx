@@ -1,4 +1,4 @@
-import { Point } from "@/lib/floorData";
+import { Point } from "@/services/localCrud";
 
 type PathProps = {
   path: Point[];
@@ -14,13 +14,13 @@ const PathRenderer = ({ path, width = 500, height = 500 }: PathProps) => {
     )
     .join(" ");
 
-  // console.log(pathD);
+  console.log(pathD, "check");
 
   return (
     <svg
       width={width}
       height={height}
-      style={{ position: "absolute", top: 0, left: 0, zIndex: 2 }}
+      style={{ position: "absolute", top: 0, left: 0, zIndex: 99 }}
     >
       <path d={pathD} stroke="blue" fill="none" strokeWidth={1} />
     </svg>

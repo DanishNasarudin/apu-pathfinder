@@ -1,62 +1,96 @@
 import { Edge, FloorType, Point } from "@/services/localCrud";
 import { create } from "zustand";
+import { handleError } from "./utils";
 
 type FloorStore = {
   id: string;
   points: Point[];
   edges: Edge[];
+  pendingAdd: boolean;
+  reset: () => void;
   initData: (newValue: FloorType) => void;
+  triggerAddPoint: () => void;
   addPoint: (newPoint: Point) => void;
   updatePoint: (newPoint: Point) => void;
   deletePoint: (id: number) => void;
   addEdge: (newEdge: Edge) => void;
-  deleteEdge: (delEdge: Edge) => void;
+  updateEdge: (newEdge: Edge) => void;
+  deleteEdge: (id: number) => void;
 };
 
 export const useFloorStore = create<FloorStore>()((set) => ({
   id: "default",
   points: [],
   edges: [],
+  pendingAdd: false,
+  reset: () =>
+    set(() => ({ id: "default", points: [], edges: [], pendingAdd: false })),
   initData: (newValue) =>
     set({ id: newValue.id, points: newValue.points, edges: newValue.edges }),
+  triggerAddPoint: () => set(() => ({ pendingAdd: true })),
   addPoint: (newPoint) =>
     set((state) => {
-      const currentPoints = state.points;
-      currentPoints.push(newPoint);
+      const lastId = state.points.findLast((item) => item.id);
 
-      return { points: currentPoints };
+      if (lastId === undefined)
+        handleError("Adding Point failed. Last id not found.");
+
+      const newId = lastId !== undefined ? lastId?.id + 1 : -1;
+
+      const initType: "point" | "junction" = "point";
+
+      const toAddPoint = {
+        ...newPoint,
+        id: newId,
+        name: "enter a name",
+        type: initType,
+      };
+
+      if (toAddPoint.id === -1) handleError("Adding Point failed. Id invalid");
+
+      return { points: [...state.points, toAddPoint], pendingAdd: false };
     }),
   updatePoint: (newPoint) =>
     set((state) => {
-      const updatedPoint = state.points.map((item) => {
-        if (item.id === newPoint.id) {
-          return newPoint;
-        } else {
-          return item;
-        }
-      });
+      const updatedPoint = state.points.map((item) =>
+        item.id === newPoint.id ? newPoint : item
+      );
 
-      return { points: updatedPoint };
+      return { points: [...updatedPoint] };
     }),
   deletePoint: (id) =>
     set((state) => {
       const filteredPoints = state.points.filter((item) => item.id !== id);
 
-      return { points: filteredPoints };
+      return { points: [...filteredPoints] };
     }),
   addEdge: (newEdge) =>
     set((state) => {
-      const currentEdges = state.edges;
-      currentEdges.push(newEdge);
+      const lastId = state.edges.findLast((item) => item.id);
 
-      return { edges: currentEdges };
+      if (lastId === undefined)
+        handleError("Adding Edge failed. Last id not found.");
+
+      const newId = lastId !== undefined ? lastId?.id + 1 : -1;
+
+      const toAddEdge = { ...newEdge, id: newId };
+
+      if (toAddEdge.id === -1) handleError("Adding Edge failed. Id invalid");
+
+      return { edges: [...state.edges, toAddEdge] };
     }),
-  deleteEdge: (delEdge) =>
+  updateEdge: (newEdge) =>
     set((state) => {
-      const filteredEdges = state.edges.filter(
-        (item) => !(item.from === delEdge.from && item.to === delEdge.to)
+      const updatedEdge = state.edges.map((item) =>
+        item.id === newEdge.id ? newEdge : item
       );
 
-      return { edges: filteredEdges };
+      return { edges: [...updatedEdge] };
+    }),
+  deleteEdge: (id) =>
+    set((state) => {
+      const filteredEdges = state.edges.filter((item) => item.id !== id);
+
+      return { edges: [...filteredEdges] };
     }),
 }));
