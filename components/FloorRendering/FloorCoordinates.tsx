@@ -26,7 +26,7 @@ const FloorCoordinates = ({
     y: number;
   } | null>(null);
 
-  const { initData, points, pendingAdd } = useFloorStore();
+  const { initData, points, pendingAdd, junctionAdd } = useFloorStore();
 
   const addPoints = useFloorStore(useShallow((state) => state.addPoint));
 
@@ -46,7 +46,7 @@ const FloorCoordinates = ({
         // Need a new component that list down the points, and junctions /
         // Need button when click 'add' then only will register user's click to add point /
 
-        console.log(points);
+        // console.log(points);
       }
     };
 
@@ -81,13 +81,23 @@ const FloorCoordinates = ({
     console.log(points);
 
     if (pendingAdd)
-      addPoints({
-        id: -1,
-        type: "point",
-        name: "",
-        x: unscaledSvgX,
-        y: unscaledSvgY,
-      });
+      if (junctionAdd) {
+        addPoints({
+          id: -1,
+          type: "junction",
+          name: "0-J",
+          x: unscaledSvgX,
+          y: unscaledSvgY,
+        });
+      } else {
+        addPoints({
+          id: -1,
+          type: "point",
+          name: "",
+          x: unscaledSvgX,
+          y: unscaledSvgY,
+        });
+      }
   };
 
   return (

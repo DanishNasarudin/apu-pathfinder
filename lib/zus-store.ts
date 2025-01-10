@@ -7,9 +7,11 @@ type FloorStore = {
   points: Point[];
   edges: Edge[];
   pendingAdd: boolean;
+  junctionAdd: boolean;
   reset: () => void;
   initData: (newValue: FloorType) => void;
   triggerAddPoint: () => void;
+  triggerAddJunction: () => void;
   addPoint: (newPoint: Point) => void;
   updatePoint: (newPoint: Point) => void;
   deletePoint: (id: number) => void;
@@ -23,11 +25,14 @@ export const useFloorStore = create<FloorStore>()((set) => ({
   points: [],
   edges: [],
   pendingAdd: false,
+  junctionAdd: false,
   reset: () =>
     set(() => ({ id: "default", points: [], edges: [], pendingAdd: false })),
   initData: (newValue) =>
     set({ id: newValue.id, points: newValue.points, edges: newValue.edges }),
   triggerAddPoint: () => set(() => ({ pendingAdd: true })),
+  triggerAddJunction: () =>
+    set((state) => ({ junctionAdd: !state.junctionAdd })),
   addPoint: (newPoint) =>
     set((state) => {
       const lastId = state.points.findLast((item) => item.id);
@@ -37,13 +42,10 @@ export const useFloorStore = create<FloorStore>()((set) => ({
 
       const newId = lastId !== undefined ? lastId?.id + 1 : -1;
 
-      const initType: "point" | "junction" = "point";
-
       const toAddPoint = {
         ...newPoint,
         id: newId,
-        name: "enter a name",
-        type: initType,
+        name: newPoint.name === "" ? "enter a name" : newPoint.name,
       };
 
       if (toAddPoint.id === -1) handleError("Adding Point failed. Id invalid");
@@ -61,8 +63,11 @@ export const useFloorStore = create<FloorStore>()((set) => ({
   deletePoint: (id) =>
     set((state) => {
       const filteredPoints = state.points.filter((item) => item.id !== id);
+      const filteredEdges = state.edges.filter(
+        (item) => !(item.fromId === id || item.toId === id)
+      );
 
-      return { points: [...filteredPoints] };
+      return { points: [...filteredPoints], edges: [...filteredEdges] };
     }),
   addEdge: (newEdge) =>
     set((state) => {

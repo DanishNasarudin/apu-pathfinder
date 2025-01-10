@@ -14,7 +14,7 @@ const PathRenderer = ({ path, width = 500, height = 500 }: PathProps) => {
     )
     .join(" ");
 
-  console.log(pathD, "check");
+  // console.log(pathD, "check");
 
   return (
     <svg

@@ -1,60 +1,11 @@
-export type Point = {
-  type: "point" | "junction";
-  id: string;
-  x: number;
-  y: number;
-};
-
-export type Edge = {
-  from: string;
-  to: string;
-};
-
 export type FloorType = {
   id: string;
-  points: Point[];
-  edges: Edge[];
   svg: JSX.Element;
 };
 
 export const floorsSvg: FloorType[] = [
   {
     id: "Floor 1",
-    points: [
-      { type: "point", id: "B-05-06", x: 417, y: 333 },
-      { type: "point", id: "B-05-04", x: 422, y: 339 },
-      { type: "point", id: "B-05-03", x: 422, y: 313 },
-      { type: "point", id: "B-05-07", x: 417, y: 315 },
-      { type: "point", id: "B-05-02", x: 412, y: 283 },
-      { type: "point", id: "B-05-01", x: 412, y: 260 },
-      { type: "junction", id: "B-05-J1", x: 419, y: 339 },
-      { type: "junction", id: "B-05-J2", x: 419, y: 333 },
-      { type: "junction", id: "B-05-J3", x: 419, y: 315 },
-      { type: "junction", id: "B-05-J4", x: 419, y: 313 },
-      { type: "junction", id: "B-05-J5", x: 419, y: 305 },
-      { type: "junction", id: "B-05-J6", x: 405, y: 294 },
-      { type: "junction", id: "B-05-J7", x: 405, y: 283 },
-      { type: "junction", id: "B-05-J8", x: 405, y: 260 },
-      { type: "junction", id: "B-05-J9", x: 405, y: 253 },
-      { type: "point", id: "Lift5", x: 390, y: 253 },
-    ],
-    edges: [
-      { from: "B-05-04", to: "B-05-J1" },
-      { from: "B-05-06", to: "B-05-J2" },
-      { from: "B-05-07", to: "B-05-J3" },
-      { from: "B-05-03", to: "B-05-J4" },
-      { from: "B-05-02", to: "B-05-J7" },
-      { from: "B-05-01", to: "B-05-J8" },
-      { from: "Lift5", to: "B-05-J9" },
-      { from: "B-05-J1", to: "B-05-J2" },
-      { from: "B-05-J2", to: "B-05-J3" },
-      { from: "B-05-J3", to: "B-05-J4" },
-      { from: "B-05-J4", to: "B-05-J5" },
-      { from: "B-05-J5", to: "B-05-J6" },
-      { from: "B-05-J6", to: "B-05-J7" },
-      { from: "B-05-J7", to: "B-05-J8" },
-      { from: "B-05-J8", to: "B-05-J9" },
-    ],
     svg: (
       <>
         <g id="Layer_1">
@@ -347,41 +298,6 @@ export const floorsSvg: FloorType[] = [
   },
   {
     id: "Floor 2",
-    points: [
-      { type: "point", id: "B-06-06", x: 417, y: 333 },
-      { type: "point", id: "B-06-04", x: 422, y: 339 },
-      { type: "point", id: "B-06-03", x: 422, y: 313 },
-      { type: "point", id: "B-06-07", x: 417, y: 315 },
-      { type: "point", id: "B-06-02", x: 412, y: 283 },
-      { type: "point", id: "B-06-01", x: 412, y: 260 },
-      { type: "junction", id: "B-06-J1", x: 419, y: 339 },
-      { type: "junction", id: "B-06-J2", x: 419, y: 333 },
-      { type: "junction", id: "B-06-J3", x: 419, y: 313 },
-      { type: "junction", id: "B-06-J4", x: 419, y: 315 },
-      { type: "junction", id: "B-06-J5", x: 419, y: 305 },
-      { type: "junction", id: "B-06-J6", x: 405, y: 294 },
-      { type: "junction", id: "B-06-J7", x: 405, y: 283 },
-      { type: "junction", id: "B-06-J8", x: 405, y: 260 },
-      { type: "junction", id: "B-06-J9", x: 405, y: 253 },
-      { type: "point", id: "Lift6", x: 390, y: 253 },
-    ],
-    edges: [
-      { from: "B-06-04", to: "B-06-J1" },
-      { from: "B-06-06", to: "B-06-J2" },
-      { from: "B-06-03", to: "B-06-J3" },
-      { from: "B-06-07", to: "B-06-J4" },
-      { from: "B-06-02", to: "B-06-J7" },
-      { from: "B-06-01", to: "B-06-J8" },
-      { from: "Lift6", to: "B-06-J9" },
-      { from: "B-06-J1", to: "B-06-J2" },
-      { from: "B-06-J2", to: "B-06-J3" },
-      { from: "B-06-J3", to: "B-06-J4" },
-      { from: "B-06-J4", to: "B-06-J5" },
-      { from: "B-06-J5", to: "B-06-J6" },
-      { from: "B-06-J6", to: "B-06-J7" },
-      { from: "B-06-J7", to: "B-06-J8" },
-      { from: "B-06-J8", to: "B-06-J9" },
-    ],
     svg: (
       <>
         <g id="Layer_1">

@@ -1,5 +1,4 @@
 import { FloorType } from "@/services/localCrud";
-import React from "react";
 
 type Props = {
   floor: FloorType;
@@ -35,15 +34,15 @@ const FloorRenderer = ({ floor, width = 500, height = 500, svg }: Props) => {
       style={{ position: "absolute", top: 0, left: 0, zIndex: 2 }}
     >
       {svg}
-      {edgePaths}
-      {floor.points.map((point) => (
+      {/* {edgePaths} */}
+      {/* {floor.points.map((point) => (
         <React.Fragment key={point.id}>
           <circle cx={point.x} cy={point.y} r={1.5} fill="red" />
           <text x={point.x - 3} y={point.y - 3} fontSize="3" fill="white">
             {point.name}
           </text>
         </React.Fragment>
-      ))}
+      ))} */}
     </svg>
   );
 };
