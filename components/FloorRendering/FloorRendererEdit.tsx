@@ -2,6 +2,7 @@
 import { useFloorStore } from "@/lib/zus-store";
 import { FloorType } from "@/services/localCrud";
 import React from "react";
+import PointCircle from "./PointCircle";
 
 type Props = {
   // floor: FloorType;
@@ -43,15 +44,16 @@ const FloorRendererEdit = ({
 
   return (
     <svg
-      width={width}
-      height={height}
+      width={"100%"}
+      viewBox={`0 0 ${width} ${height}`}
       style={{ position: "absolute", top: 0, left: 0, zIndex: 2 }}
+      className=" [&>path]:dark:stroke-white [&>g]:dark:stroke-white [&>text]:dark:fill-white"
     >
       {svg}
       {edgePaths}
       {floor.points.map((point) => (
         <React.Fragment key={point.id}>
-          <circle cx={point.x} cy={point.y} r={1.5} fill="red" />
+          <PointCircle x={point.x} y={point.y} name={point.name} />
           <text x={point.x - 3} y={point.y - 3} fontSize="3" fill="white">
             {point.name}
           </text>

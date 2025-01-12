@@ -41,12 +41,6 @@ const FloorCoordinates = ({
         if (currentFloor === undefined) throw new Error("Floor ID Not Found.");
 
         initData(currentFloor);
-
-        // Use zustand to pass the variable across all client components /
-        // Need a new component that list down the points, and junctions /
-        // Need button when click 'add' then only will register user's click to add point /
-
-        // console.log(points);
       }
     };
 
@@ -74,11 +68,11 @@ const FloorCoordinates = ({
 
     setCoordinates({ x: unscaledSvgX, y: unscaledSvgY });
 
-    console.log(
-      `Unscaled SVG Coordinates: x - ${unscaledSvgX}, y - ${unscaledSvgY}`
-    );
+    // console.log(
+    //   `Unscaled SVG Coordinates: x - ${unscaledSvgX}, y - ${unscaledSvgY}`
+    // );
 
-    console.log(points);
+    // console.log(points);
 
     if (pendingAdd)
       if (junctionAdd) {
@@ -102,9 +96,14 @@ const FloorCoordinates = ({
 
   return (
     <svg
-      width={width}
-      height={height}
-      style={{ position: "absolute", top: 0, left: 0, zIndex: 5 }}
+      width={"100%"}
+      viewBox={`0 0 ${width} ${height}`}
+      style={{
+        position: "absolute",
+        top: 0,
+        left: 0,
+        zIndex: pendingAdd ? 5 : 1,
+      }}
       onClick={handleClick}
     >
       {/* {svg} */}

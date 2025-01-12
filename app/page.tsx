@@ -38,8 +38,8 @@ export default async function Home({ searchParams }: Props) {
 
   const floorId = searchFloor || "Floor 1";
 
-  const width = 700;
-  const height = 500;
+  const width = 1400; // 700
+  const height = 1000; // 500
 
   const isEditing = Boolean(searchEdit) || false;
 
@@ -166,7 +166,7 @@ export default async function Home({ searchParams }: Props) {
 
   const FloorComponent = () => {
     return (
-      <div style={{ position: "relative", width, height }}>
+      <div style={{ position: "relative", width: 700, height: 500 }}>
         {floors.map(
           (floor) =>
             floor.id === floorId && (

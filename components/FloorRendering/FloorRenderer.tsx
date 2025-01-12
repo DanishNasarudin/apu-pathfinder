@@ -29,9 +29,10 @@ const FloorRenderer = ({ floor, width = 500, height = 500, svg }: Props) => {
 
   return (
     <svg
-      width={width}
-      height={height}
+      width={"100%"}
+      viewBox={`0 0 ${width} ${height}`}
       style={{ position: "absolute", top: 0, left: 0, zIndex: 2 }}
+      className=" [&>path]:dark:stroke-white [&>g]:dark:stroke-white [&>text]:dark:fill-white"
     >
       {svg}
       {/* {edgePaths} */}
