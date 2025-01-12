@@ -5,6 +5,7 @@ import FloorRendererEdit from "@/components/FloorRendering/FloorRendererEdit";
 import PathRenderer from "@/components/FloorRendering/PathRenderer";
 import TransformWrapper from "@/components/FloorRendering/TransformWrapper";
 import UserActions from "@/components/UserActions";
+import { findShortestPathDijkstraDynamic } from "@/lib/algorithms";
 import { floorsSvg } from "@/lib/floorData";
 import { Edge, getData, Point } from "@/services/localCrud";
 import React from "react";
@@ -15,7 +16,27 @@ type Props = {
 
 export default async function Home({ searchParams }: Props) {
   const interFloorEdges: Edge[] = [
-    { id: 99, from: "Lift5", to: "Lift6", fromId: 16, toId: 16 },
+    { id: 99, from: "E-06-Lift", to: "E-07-Lift", fromId: 66, toId: 66 },
+    { id: 99, from: "B-06-Lift", to: "B-07-Lift", fromId: 11, toId: 11 },
+    { id: 99, from: "A-06-Lift", to: "A-07-Lift", fromId: 70, toId: 70 },
+    { id: 99, from: "A-06-Stairs", to: "A-07-Stairs", fromId: 71, toId: 71 },
+    { id: 99, from: "B-06-Stairs", to: "B-07-Stairs", fromId: 64, toId: 64 },
+    { id: 99, from: "D-06-Stairs", to: "D-07-Stairs", fromId: 65, toId: 65 },
+    { id: 99, from: "E-06-Stairs", to: "E-07-Stairs", fromId: 67, toId: 67 },
+    {
+      id: 99,
+      from: "S-06-Stairs-01",
+      to: "S-07-Stairs-01",
+      fromId: 68,
+      toId: 68,
+    },
+    {
+      id: 99,
+      from: "S-06-Stairs-02",
+      to: "S-07-Stairs-02",
+      fromId: 69,
+      toId: 69,
+    },
   ];
 
   const resultParams = await searchParams;
@@ -71,7 +92,7 @@ export default async function Home({ searchParams }: Props) {
       if (!uniqueEdges.has(reverseKey)) {
         uniqueEdges.add(reverseKey);
         bidirectionalEdges.push({
-          id: 99,
+          id: edge.id + 1000,
           from: edge.to,
           to: edge.from,
           fromId: edge.toId,
@@ -84,33 +105,6 @@ export default async function Home({ searchParams }: Props) {
   };
 
   const paths: Edge[] = makeBidirectional(allEdges);
-
-  const findPredefinedPath = (
-    startId: string,
-    endId: string
-  ): Point[] | null => {
-    const visited: Set<string> = new Set();
-    const stack: { current: string; route: string[] }[] = [
-      { current: startId, route: [startId] },
-    ];
-
-    while (stack.length > 0) {
-      const { current, route } = stack.pop()!;
-      if (current === endId) {
-        return route.map((id) => allPoints.find((point) => point.name === id)!);
-      }
-
-      visited.add(current);
-
-      paths
-        .filter((edge) => edge.from === current && !visited.has(edge.to))
-        .forEach((edge) =>
-          stack.push({ current: edge.to, route: [...route, edge.to] })
-        );
-    }
-
-    return null;
-  };
 
   const generateFullPath = (pointPath: Point[]): Point[] => {
     const fullPath: Point[] = [];
@@ -153,7 +147,12 @@ export default async function Home({ searchParams }: Props) {
 
   const renderPoints = floors.find((item) => item.id === floorId)?.points || [];
 
-  const pointPath = findPredefinedPath(startId, endId);
+  const pointPath = findShortestPathDijkstraDynamic(
+    startId,
+    endId,
+    paths,
+    allPoints
+  );
   const fullPath = pointPath ? generateFullPath(pointPath) : [];
 
   const renderFullPaths = fullPath.filter((point) =>
@@ -162,7 +161,7 @@ export default async function Home({ searchParams }: Props) {
 
   // createData(floors[1]);
 
-  // console.log(renderFullPaths, "tes");
+  // console.log(pointPath, "tes");
 
   const FloorComponent = () => {
     return (

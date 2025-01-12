@@ -44,7 +44,7 @@ const DropdownSearch = ({
           aria-expanded={open}
           className={cn(
             width === "none" ? "w-[200px]" : width,
-            "justify-between"
+            "justify-between text-ellipsis overflow-hidden"
           )}
         >
           {value ? lists.find((list) => list === value) : "Select list..."}

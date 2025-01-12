@@ -54,9 +54,6 @@ const FloorRendererEdit = ({
       {floor.points.map((point) => (
         <React.Fragment key={point.id}>
           <PointCircle x={point.x} y={point.y} name={point.name} />
-          <text x={point.x - 3} y={point.y - 3} fontSize="3" fill="white">
-            {point.name}
-          </text>
         </React.Fragment>
       ))}
     </svg>

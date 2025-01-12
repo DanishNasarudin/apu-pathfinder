@@ -75,7 +75,7 @@
       {
         "id": 11,
         "type": "point",
-        "name": "Lift-06",
+        "name": "B-06-Lift",
         "x": 780,
         "y": 547
       },
@@ -162,6 +162,846 @@
         "name": "06-J12",
         "x": 806,
         "y": 734
+      },
+      {
+        "id": 24,
+        "type": "point",
+        "name": "D-06-01",
+        "x": 599,
+        "y": 546
+      },
+      {
+        "id": 25,
+        "type": "point",
+        "name": "D-06-02",
+        "x": 599,
+        "y": 586
+      },
+      {
+        "id": 26,
+        "type": "point",
+        "name": "D-06-03",
+        "x": 599,
+        "y": 626
+      },
+      {
+        "id": 27,
+        "type": "point",
+        "name": "D-06-04",
+        "x": 599,
+        "y": 659
+      },
+      {
+        "id": 28,
+        "type": "point",
+        "name": "D-06-05",
+        "x": 599,
+        "y": 690
+      },
+      {
+        "id": 29,
+        "type": "point",
+        "name": "D-06-06",
+        "x": 599,
+        "y": 723
+      },
+      {
+        "id": 30,
+        "type": "point",
+        "name": "D-06-07",
+        "x": 599,
+        "y": 768
+      },
+      {
+        "id": 31,
+        "type": "point",
+        "name": "D-06-08",
+        "x": 599,
+        "y": 825
+      },
+      {
+        "id": 32,
+        "type": "point",
+        "name": "D-06-09",
+        "x": 607,
+        "y": 874
+      },
+      {
+        "id": 33,
+        "type": "point",
+        "name": "D-06-10",
+        "x": 589,
+        "y": 874
+      },
+      {
+        "id": 34,
+        "type": "point",
+        "name": "D-06-11",
+        "x": 581,
+        "y": 825
+      },
+      {
+        "id": 35,
+        "type": "point",
+        "name": "D-06-12",
+        "x": 580,
+        "y": 768
+      },
+      {
+        "id": 36,
+        "type": "point",
+        "name": "D-06-13",
+        "x": 572,
+        "y": 571
+      },
+      {
+        "id": 37,
+        "type": "point",
+        "name": "E-06-01",
+        "x": 360,
+        "y": 558
+      },
+      {
+        "id": 38,
+        "type": "point",
+        "name": "E-06-02",
+        "x": 463,
+        "y": 843
+      },
+      {
+        "id": 39,
+        "type": "point",
+        "name": "E-06-03",
+        "x": 510,
+        "y": 860
+      },
+      {
+        "id": 40,
+        "type": "point",
+        "name": "E-06-04",
+        "x": 506,
+        "y": 888
+      },
+      {
+        "id": 41,
+        "type": "point",
+        "name": "Tech Lab 06-01",
+        "x": 304,
+        "y": 403
+      },
+      {
+        "id": 42,
+        "type": "point",
+        "name": "Tech Lab 06-02",
+        "x": 252,
+        "y": 423
+      },
+      {
+        "id": 43,
+        "type": "point",
+        "name": "Tech Lab 06-03",
+        "x": 200,
+        "y": 443
+      },
+      {
+        "id": 44,
+        "type": "point",
+        "name": "Tech Lab 06-04",
+        "x": 180,
+        "y": 462
+      },
+      {
+        "id": 45,
+        "type": "point",
+        "name": "Tech Lab 06-05",
+        "x": 185,
+        "y": 476
+      },
+      {
+        "id": 46,
+        "type": "point",
+        "name": "Tech Lab 06-06",
+        "x": 212,
+        "y": 475
+      },
+      {
+        "id": 47,
+        "type": "point",
+        "name": "Tech Lab 06-07",
+        "x": 265,
+        "y": 455
+      },
+      {
+        "id": 48,
+        "type": "point",
+        "name": "Tech Lab 06-08",
+        "x": 316,
+        "y": 434
+      },
+      {
+        "id": 49,
+        "type": "point",
+        "name": "Tech Lab 06-09",
+        "x": 527,
+        "y": 352
+      },
+      {
+        "id": 50,
+        "type": "point",
+        "name": "Tech Lab 06-10",
+        "x": 562,
+        "y": 421
+      },
+      {
+        "id": 51,
+        "type": "point",
+        "name": "Tech Lab 06-11",
+        "x": 618,
+        "y": 421
+      },
+      {
+        "id": 52,
+        "type": "point",
+        "name": "Tech Lab 06-12",
+        "x": 673,
+        "y": 421
+      },
+      {
+        "id": 53,
+        "type": "point",
+        "name": "Tech Lab 06-13",
+        "x": 674,
+        "y": 287
+      },
+      {
+        "id": 54,
+        "type": "point",
+        "name": "Tech Lab 06-14",
+        "x": 619,
+        "y": 287
+      },
+      {
+        "id": 55,
+        "type": "point",
+        "name": "Tech Lab 06-15",
+        "x": 527,
+        "y": 310
+      },
+      {
+        "id": 56,
+        "type": "point",
+        "name": "Tech Lab 06-16 CGI Suite",
+        "x": 1113,
+        "y": 289
+      },
+      {
+        "id": 57,
+        "type": "point",
+        "name": "Tech Lab 06-17 Animation Suite",
+        "x": 1152,
+        "y": 397
+      },
+      {
+        "id": 58,
+        "type": "point",
+        "name": "S-06-01 Printer Room",
+        "x": 520,
+        "y": 223
+      },
+      {
+        "id": 59,
+        "type": "point",
+        "name": "S-06-02",
+        "x": 304,
+        "y": 261
+      },
+      {
+        "id": 60,
+        "type": "point",
+        "name": "A-06-01",
+        "x": 1045,
+        "y": 176
+      },
+      {
+        "id": 61,
+        "type": "point",
+        "name": "A-06-04",
+        "x": 1078,
+        "y": 175
+      },
+      {
+        "id": 62,
+        "type": "point",
+        "name": "A-06-03",
+        "x": 1046,
+        "y": 67
+      },
+      {
+        "id": 63,
+        "type": "point",
+        "name": "Auditorium 2",
+        "x": 888,
+        "y": 407
+      },
+      {
+        "id": 64,
+        "type": "point",
+        "name": "B-06-Stairs",
+        "x": 793,
+        "y": 517
+      },
+      {
+        "id": 65,
+        "type": "point",
+        "name": "D-06-Stairs",
+        "x": 599,
+        "y": 518
+      },
+      {
+        "id": 66,
+        "type": "point",
+        "name": "E-06-Lift",
+        "x": 324,
+        "y": 609
+      },
+      {
+        "id": 67,
+        "type": "point",
+        "name": "E-06-Stairs",
+        "x": 340,
+        "y": 571
+      },
+      {
+        "id": 68,
+        "type": "point",
+        "name": "S-06-Stairs-01",
+        "x": 276,
+        "y": 262
+      },
+      {
+        "id": 69,
+        "type": "point",
+        "name": "S-06-Stairs-02",
+        "x": 550,
+        "y": 213
+      },
+      {
+        "id": 70,
+        "type": "point",
+        "name": "A-06-Lift",
+        "x": 993,
+        "y": 325
+      },
+      {
+        "id": 71,
+        "type": "point",
+        "name": "A-06-Stairs",
+        "x": 992,
+        "y": 393
+      },
+      {
+        "id": 72,
+        "type": "junction",
+        "name": "06-J13",
+        "x": 824,
+        "y": 517
+      },
+      {
+        "id": 73,
+        "type": "junction",
+        "name": "06-J14",
+        "x": 824,
+        "y": 441
+      },
+      {
+        "id": 74,
+        "type": "junction",
+        "name": "06-J15",
+        "x": 673,
+        "y": 441
+      },
+      {
+        "id": 75,
+        "type": "junction",
+        "name": "06-J16",
+        "x": 618,
+        "y": 441
+      },
+      {
+        "id": 76,
+        "type": "junction",
+        "name": "06-J17",
+        "x": 589,
+        "y": 441
+      },
+      {
+        "id": 77,
+        "type": "junction",
+        "name": "06-J18",
+        "x": 562,
+        "y": 441
+      },
+      {
+        "id": 78,
+        "type": "junction",
+        "name": "06-J19",
+        "x": 589,
+        "y": 518
+      },
+      {
+        "id": 79,
+        "type": "junction",
+        "name": "06-J20",
+        "x": 589,
+        "y": 546
+      },
+      {
+        "id": 80,
+        "type": "junction",
+        "name": "06-J21",
+        "x": 589,
+        "y": 586
+      },
+      {
+        "id": 81,
+        "type": "junction",
+        "name": "06-J22",
+        "x": 589,
+        "y": 626
+      },
+      {
+        "id": 82,
+        "type": "junction",
+        "name": "06-J23",
+        "x": 589,
+        "y": 659
+      },
+      {
+        "id": 83,
+        "type": "junction",
+        "name": "06-J24",
+        "x": 589,
+        "y": 690
+      },
+      {
+        "id": 84,
+        "type": "junction",
+        "name": "06-J25",
+        "x": 589,
+        "y": 723
+      },
+      {
+        "id": 85,
+        "type": "junction",
+        "name": "06-J26",
+        "x": 589,
+        "y": 768
+      },
+      {
+        "id": 86,
+        "type": "junction",
+        "name": "06-J27",
+        "x": 589,
+        "y": 825
+      },
+      {
+        "id": 87,
+        "type": "junction",
+        "name": "06-J28",
+        "x": 589,
+        "y": 863
+      },
+      {
+        "id": 88,
+        "type": "junction",
+        "name": "06-J29",
+        "x": 607,
+        "y": 863
+      },
+      {
+        "id": 89,
+        "type": "junction",
+        "name": "06-J30",
+        "x": 550,
+        "y": 864
+      },
+      {
+        "id": 90,
+        "type": "junction",
+        "name": "06-J31",
+        "x": 512,
+        "y": 869
+      },
+      {
+        "id": 91,
+        "type": "junction",
+        "name": "06-J32",
+        "x": 515,
+        "y": 885
+      },
+      {
+        "id": 92,
+        "type": "junction",
+        "name": "06-J33",
+        "x": 492,
+        "y": 875
+      },
+      {
+        "id": 93,
+        "type": "junction",
+        "name": "06-J34",
+        "x": 477,
+        "y": 839
+      },
+      {
+        "id": 94,
+        "type": "junction",
+        "name": "06-J35",
+        "x": 462,
+        "y": 804
+      },
+      {
+        "id": 95,
+        "type": "junction",
+        "name": "06-J36",
+        "x": 409,
+        "y": 782
+      },
+      {
+        "id": 96,
+        "type": "junction",
+        "name": "06-J37",
+        "x": 387,
+        "y": 727
+      },
+      {
+        "id": 97,
+        "type": "junction",
+        "name": "06-J38",
+        "x": 398,
+        "y": 699
+      },
+      {
+        "id": 98,
+        "type": "junction",
+        "name": "06-J39",
+        "x": 357,
+        "y": 587
+      },
+      {
+        "id": 99,
+        "type": "junction",
+        "name": "06-J40",
+        "x": 321,
+        "y": 599
+      },
+      {
+        "id": 100,
+        "type": "junction",
+        "name": "06-J41",
+        "x": 350,
+        "y": 568
+      },
+      {
+        "id": 101,
+        "type": "junction",
+        "name": "06-J42",
+        "x": 346,
+        "y": 558
+      },
+      {
+        "id": 102,
+        "type": "junction",
+        "name": "06-J43",
+        "x": 341,
+        "y": 544
+      },
+      {
+        "id": 103,
+        "type": "junction",
+        "name": "06-J44",
+        "x": 378,
+        "y": 487
+      },
+      {
+        "id": 104,
+        "type": "junction",
+        "name": "06-J45",
+        "x": 430,
+        "y": 451
+      },
+      {
+        "id": 105,
+        "type": "junction",
+        "name": "06-J46",
+        "x": 509,
+        "y": 441
+      },
+      {
+        "id": 106,
+        "type": "junction",
+        "name": "06-J47",
+        "x": 361,
+        "y": 401
+      },
+      {
+        "id": 107,
+        "type": "junction",
+        "name": "06-J48",
+        "x": 310,
+        "y": 419
+      },
+      {
+        "id": 108,
+        "type": "junction",
+        "name": "06-J49",
+        "x": 259,
+        "y": 438
+      },
+      {
+        "id": 109,
+        "type": "junction",
+        "name": "06-J50",
+        "x": 205,
+        "y": 459
+      },
+      {
+        "id": 110,
+        "type": "junction",
+        "name": "06-J51",
+        "x": 508,
+        "y": 353
+      },
+      {
+        "id": 111,
+        "type": "junction",
+        "name": "06-J52",
+        "x": 507,
+        "y": 310
+      },
+      {
+        "id": 112,
+        "type": "junction",
+        "name": "06-J53",
+        "x": 525,
+        "y": 273
+      },
+      {
+        "id": 113,
+        "type": "junction",
+        "name": "06-J54",
+        "x": 539,
+        "y": 237
+      },
+      {
+        "id": 114,
+        "type": "junction",
+        "name": "06-J55",
+        "x": 522,
+        "y": 239
+      },
+      {
+        "id": 115,
+        "type": "junction",
+        "name": "06-J56",
+        "x": 539,
+        "y": 214
+      },
+      {
+        "id": 116,
+        "type": "junction",
+        "name": "06-J57",
+        "x": 619,
+        "y": 272
+      },
+      {
+        "id": 117,
+        "type": "junction",
+        "name": "06-J58",
+        "x": 673,
+        "y": 272
+      },
+      {
+        "id": 118,
+        "type": "junction",
+        "name": "06-J59",
+        "x": 724,
+        "y": 271
+      },
+      {
+        "id": 119,
+        "type": "junction",
+        "name": "06-J60",
+        "x": 724,
+        "y": 441
+      },
+      {
+        "id": 120,
+        "type": "junction",
+        "name": "06-J61",
+        "x": 913,
+        "y": 287
+      },
+      {
+        "id": 122,
+        "type": "junction",
+        "name": "06-J63",
+        "x": 910,
+        "y": 434
+      },
+      {
+        "id": 123,
+        "type": "junction",
+        "name": "06-J64",
+        "x": 890,
+        "y": 434
+      },
+      {
+        "id": 125,
+        "type": "junction",
+        "name": "06-J66",
+        "x": 1062,
+        "y": 301
+      },
+      {
+        "id": 126,
+        "type": "junction",
+        "name": "06-J67",
+        "x": 1062,
+        "y": 176
+      },
+      {
+        "id": 127,
+        "type": "junction",
+        "name": "06-J68",
+        "x": 1060,
+        "y": 68
+      },
+      {
+        "id": 128,
+        "type": "junction",
+        "name": "06-J69",
+        "x": 1113,
+        "y": 300
+      },
+      {
+        "id": 129,
+        "type": "junction",
+        "name": "06-J70",
+        "x": 1154,
+        "y": 300
+      },
+      {
+        "id": 130,
+        "type": "junction",
+        "name": "06-J71",
+        "x": 1160,
+        "y": 384
+      },
+      {
+        "id": 131,
+        "type": "junction",
+        "name": "06-J72",
+        "x": 1150,
+        "y": 387
+      },
+      {
+        "id": 132,
+        "type": "junction",
+        "name": "06-J73",
+        "x": 1089,
+        "y": 397
+      },
+      {
+        "id": 133,
+        "type": "junction",
+        "name": "06-J74",
+        "x": 1065,
+        "y": 382
+      },
+      {
+        "id": 134,
+        "type": "junction",
+        "name": "06-J75",
+        "x": 359,
+        "y": 329
+      },
+      {
+        "id": 135,
+        "type": "junction",
+        "name": "06-J76",
+        "x": 311,
+        "y": 280
+      },
+      {
+        "id": 136,
+        "type": "junction",
+        "name": "06-J77",
+        "x": 294,
+        "y": 285
+      },
+      {
+        "id": 137,
+        "type": "junction",
+        "name": "06-J78",
+        "x": 284,
+        "y": 259
+      },
+      {
+        "id": 138,
+        "type": "junction",
+        "name": "06-J79",
+        "x": 437,
+        "y": 303
+      },
+      {
+        "id": 139,
+        "type": "junction",
+        "name": "06-J62",
+        "x": 992,
+        "y": 380
+      },
+      {
+        "id": 140,
+        "type": "junction",
+        "name": "06-J80",
+        "x": 954,
+        "y": 383
+      },
+      {
+        "id": 141,
+        "type": "junction",
+        "name": "06-J81",
+        "x": 951,
+        "y": 335
+      },
+      {
+        "id": 142,
+        "type": "junction",
+        "name": "06-J82",
+        "x": 993,
+        "y": 337
+      },
+      {
+        "id": 143,
+        "type": "junction",
+        "name": "06-J83",
+        "x": 1037,
+        "y": 374
+      },
+      {
+        "id": 144,
+        "type": "junction",
+        "name": "06-J84",
+        "x": 1032,
+        "y": 337
+      },
+      {
+        "id": 145,
+        "type": "junction",
+        "name": "06-J85",
+        "x": 1062,
+        "y": 345
       }
     ],
     "edges": [
@@ -237,7 +1077,7 @@
       },
       {
         "id": 11,
-        "from": "Lift-06",
+        "from": "B-06-Lift",
         "to": "06-J1",
         "fromId": 11,
         "toId": 12
@@ -318,13 +1158,2591 @@
         "to": "06-J12",
         "fromId": 22,
         "toId": 23
+      },
+      {
+        "id": 23,
+        "from": "06-J2",
+        "to": "06-J13",
+        "fromId": 13,
+        "toId": 72
+      },
+      {
+        "id": 24,
+        "from": "B-06-Stairs",
+        "to": "06-J13",
+        "fromId": 64,
+        "toId": 72
+      },
+      {
+        "id": 25,
+        "from": "06-J13",
+        "to": "06-J14",
+        "fromId": 72,
+        "toId": 73
+      },
+      {
+        "id": 27,
+        "from": "Tech Lab 06-12",
+        "to": "06-J15",
+        "fromId": 52,
+        "toId": 74
+      },
+      {
+        "id": 28,
+        "from": "06-J15",
+        "to": "06-J16",
+        "fromId": 74,
+        "toId": 75
+      },
+      {
+        "id": 29,
+        "from": "Tech Lab 06-11",
+        "to": "06-J16",
+        "fromId": 51,
+        "toId": 75
+      },
+      {
+        "id": 30,
+        "from": "06-J16",
+        "to": "06-J17",
+        "fromId": 75,
+        "toId": 76
+      },
+      {
+        "id": 31,
+        "from": "06-J17",
+        "to": "06-J18",
+        "fromId": 76,
+        "toId": 77
+      },
+      {
+        "id": 32,
+        "from": "Tech Lab 06-10",
+        "to": "06-J18",
+        "fromId": 50,
+        "toId": 77
+      },
+      {
+        "id": 33,
+        "from": "06-J17",
+        "to": "06-J19",
+        "fromId": 76,
+        "toId": 78
+      },
+      {
+        "id": 34,
+        "from": "D-06-Stairs",
+        "to": "06-J19",
+        "fromId": 65,
+        "toId": 78
+      },
+      {
+        "id": 35,
+        "from": "06-J19",
+        "to": "06-J20",
+        "fromId": 78,
+        "toId": 79
+      },
+      {
+        "id": 36,
+        "from": "D-06-01",
+        "to": "06-J20",
+        "fromId": 24,
+        "toId": 79
+      },
+      {
+        "id": 37,
+        "from": "06-J20",
+        "to": "06-J21",
+        "fromId": 79,
+        "toId": 80
+      },
+      {
+        "id": 38,
+        "from": "D-06-02",
+        "to": "06-J21",
+        "fromId": 25,
+        "toId": 80
+      },
+      {
+        "id": 39,
+        "from": "D-06-13",
+        "to": "06-J21",
+        "fromId": 36,
+        "toId": 80
+      },
+      {
+        "id": 40,
+        "from": "06-J21",
+        "to": "06-J22",
+        "fromId": 80,
+        "toId": 81
+      },
+      {
+        "id": 41,
+        "from": "D-06-03",
+        "to": "06-J22",
+        "fromId": 26,
+        "toId": 81
+      },
+      {
+        "id": 42,
+        "from": "06-J22",
+        "to": "06-J23",
+        "fromId": 81,
+        "toId": 82
+      },
+      {
+        "id": 43,
+        "from": "D-06-04",
+        "to": "06-J23",
+        "fromId": 27,
+        "toId": 82
+      },
+      {
+        "id": 44,
+        "from": "06-J23",
+        "to": "06-J24",
+        "fromId": 82,
+        "toId": 83
+      },
+      {
+        "id": 45,
+        "from": "D-06-05",
+        "to": "06-J24",
+        "fromId": 28,
+        "toId": 83
+      },
+      {
+        "id": 46,
+        "from": "06-J24",
+        "to": "06-J25",
+        "fromId": 83,
+        "toId": 84
+      },
+      {
+        "id": 47,
+        "from": "D-06-06",
+        "to": "06-J25",
+        "fromId": 29,
+        "toId": 84
+      },
+      {
+        "id": 48,
+        "from": "06-J25",
+        "to": "06-J26",
+        "fromId": 84,
+        "toId": 85
+      },
+      {
+        "id": 49,
+        "from": "D-06-07",
+        "to": "06-J26",
+        "fromId": 30,
+        "toId": 85
+      },
+      {
+        "id": 50,
+        "from": "D-06-12",
+        "to": "06-J26",
+        "fromId": 35,
+        "toId": 85
+      },
+      {
+        "id": 51,
+        "from": "06-J26",
+        "to": "06-J27",
+        "fromId": 85,
+        "toId": 86
+      },
+      {
+        "id": 52,
+        "from": "D-06-08",
+        "to": "06-J27",
+        "fromId": 31,
+        "toId": 86
+      },
+      {
+        "id": 53,
+        "from": "D-06-11",
+        "to": "06-J27",
+        "fromId": 34,
+        "toId": 86
+      },
+      {
+        "id": 54,
+        "from": "06-J27",
+        "to": "06-J28",
+        "fromId": 86,
+        "toId": 87
+      },
+      {
+        "id": 55,
+        "from": "D-06-10",
+        "to": "06-J28",
+        "fromId": 33,
+        "toId": 87
+      },
+      {
+        "id": 56,
+        "from": "06-J28",
+        "to": "06-J29",
+        "fromId": 87,
+        "toId": 88
+      },
+      {
+        "id": 57,
+        "from": "D-06-09",
+        "to": "06-J29",
+        "fromId": 32,
+        "toId": 88
+      },
+      {
+        "id": 58,
+        "from": "06-J59",
+        "to": "06-J60",
+        "fromId": 118,
+        "toId": 119
+      },
+      {
+        "id": 59,
+        "from": "06-J14",
+        "to": "06-J60",
+        "fromId": 73,
+        "toId": 119
+      },
+      {
+        "id": 60,
+        "from": "06-J60",
+        "to": "06-J15",
+        "fromId": 119,
+        "toId": 74
+      },
+      {
+        "id": 61,
+        "from": "06-J18",
+        "to": "06-J46",
+        "fromId": 77,
+        "toId": 105
+      },
+      {
+        "id": 62,
+        "from": "06-J46",
+        "to": "06-J45",
+        "fromId": 105,
+        "toId": 104
+      },
+      {
+        "id": 63,
+        "from": "06-J28",
+        "to": "06-J30",
+        "fromId": 87,
+        "toId": 89
+      },
+      {
+        "id": 64,
+        "from": "06-J30",
+        "to": "06-J31",
+        "fromId": 89,
+        "toId": 90
+      },
+      {
+        "id": 65,
+        "from": "06-J31",
+        "to": "06-J32",
+        "fromId": 90,
+        "toId": 91
+      },
+      {
+        "id": 66,
+        "from": "06-J31",
+        "to": "06-J33",
+        "fromId": 90,
+        "toId": 92
+      },
+      {
+        "id": 67,
+        "from": "06-J33",
+        "to": "06-J34",
+        "fromId": 92,
+        "toId": 93
+      },
+      {
+        "id": 68,
+        "from": "06-J34",
+        "to": "06-J35",
+        "fromId": 93,
+        "toId": 94
+      },
+      {
+        "id": 69,
+        "from": "E-06-03",
+        "to": "06-J31",
+        "fromId": 39,
+        "toId": 90
+      },
+      {
+        "id": 70,
+        "from": "E-06-04",
+        "to": "06-J32",
+        "fromId": 40,
+        "toId": 91
+      },
+      {
+        "id": 71,
+        "from": "E-06-02",
+        "to": "06-J34",
+        "fromId": 38,
+        "toId": 93
+      },
+      {
+        "id": 72,
+        "from": "06-J35",
+        "to": "06-J36",
+        "fromId": 94,
+        "toId": 95
+      },
+      {
+        "id": 73,
+        "from": "06-J36",
+        "to": "06-J37",
+        "fromId": 95,
+        "toId": 96
+      },
+      {
+        "id": 74,
+        "from": "06-J37",
+        "to": "06-J38",
+        "fromId": 96,
+        "toId": 97
+      },
+      {
+        "id": 75,
+        "from": "06-J38",
+        "to": "06-J39",
+        "fromId": 97,
+        "toId": 98
+      },
+      {
+        "id": 76,
+        "from": "06-J40",
+        "to": "06-J39",
+        "fromId": 99,
+        "toId": 98
+      },
+      {
+        "id": 77,
+        "from": "E-06-Lift",
+        "to": "06-J40",
+        "fromId": 66,
+        "toId": 99
+      },
+      {
+        "id": 78,
+        "from": "06-J39",
+        "to": "06-J41",
+        "fromId": 98,
+        "toId": 100
+      },
+      {
+        "id": 79,
+        "from": "06-J41",
+        "to": "06-J42",
+        "fromId": 100,
+        "toId": 101
+      },
+      {
+        "id": 80,
+        "from": "06-J42",
+        "to": "06-J43",
+        "fromId": 101,
+        "toId": 102
+      },
+      {
+        "id": 81,
+        "from": "E-06-Stairs",
+        "to": "06-J41",
+        "fromId": 67,
+        "toId": 100
+      },
+      {
+        "id": 82,
+        "from": "E-06-01",
+        "to": "06-J42",
+        "fromId": 37,
+        "toId": 101
+      },
+      {
+        "id": 83,
+        "from": "06-J43",
+        "to": "06-J44",
+        "fromId": 102,
+        "toId": 103
+      },
+      {
+        "id": 84,
+        "from": "06-J44",
+        "to": "06-J45",
+        "fromId": 103,
+        "toId": 104
+      },
+      {
+        "id": 85,
+        "from": "06-J44",
+        "to": "06-J47",
+        "fromId": 103,
+        "toId": 106
+      },
+      {
+        "id": 86,
+        "from": "06-J45",
+        "to": "06-J47",
+        "fromId": 104,
+        "toId": 106
+      },
+      {
+        "id": 87,
+        "from": "06-J47",
+        "to": "06-J48",
+        "fromId": 106,
+        "toId": 107
+      },
+      {
+        "id": 88,
+        "from": "06-J48",
+        "to": "06-J49",
+        "fromId": 107,
+        "toId": 108
+      },
+      {
+        "id": 89,
+        "from": "06-J49",
+        "to": "06-J50",
+        "fromId": 108,
+        "toId": 109
+      },
+      {
+        "id": 90,
+        "from": "Tech Lab 06-01",
+        "to": "06-J48",
+        "fromId": 41,
+        "toId": 107
+      },
+      {
+        "id": 91,
+        "from": "Tech Lab 06-02",
+        "to": "06-J49",
+        "fromId": 42,
+        "toId": 108
+      },
+      {
+        "id": 92,
+        "from": "Tech Lab 06-03",
+        "to": "06-J50",
+        "fromId": 43,
+        "toId": 109
+      },
+      {
+        "id": 93,
+        "from": "Tech Lab 06-04",
+        "to": "06-J50",
+        "fromId": 44,
+        "toId": 109
+      },
+      {
+        "id": 94,
+        "from": "Tech Lab 06-05",
+        "to": "06-J50",
+        "fromId": 45,
+        "toId": 109
+      },
+      {
+        "id": 95,
+        "from": "Tech Lab 06-06",
+        "to": "06-J50",
+        "fromId": 46,
+        "toId": 109
+      },
+      {
+        "id": 96,
+        "from": "Tech Lab 06-07",
+        "to": "06-J49",
+        "fromId": 47,
+        "toId": 108
+      },
+      {
+        "id": 97,
+        "from": "Tech Lab 06-08",
+        "to": "06-J48",
+        "fromId": 48,
+        "toId": 107
+      },
+      {
+        "id": 98,
+        "from": "06-J47",
+        "to": "06-J75",
+        "fromId": 106,
+        "toId": 134
+      },
+      {
+        "id": 99,
+        "from": "06-J75",
+        "to": "06-J76",
+        "fromId": 134,
+        "toId": 135
+      },
+      {
+        "id": 100,
+        "from": "06-J76",
+        "to": "06-J77",
+        "fromId": 135,
+        "toId": 136
+      },
+      {
+        "id": 101,
+        "from": "06-J77",
+        "to": "06-J78",
+        "fromId": 136,
+        "toId": 137
+      },
+      {
+        "id": 102,
+        "from": "S-06-Stairs-01",
+        "to": "06-J78",
+        "fromId": 68,
+        "toId": 137
+      },
+      {
+        "id": 103,
+        "from": "S-06-02",
+        "to": "06-J76",
+        "fromId": 59,
+        "toId": 135
+      },
+      {
+        "id": 104,
+        "from": "06-J75",
+        "to": "06-J79",
+        "fromId": 134,
+        "toId": 138
+      },
+      {
+        "id": 105,
+        "from": "06-J79",
+        "to": "06-J52",
+        "fromId": 138,
+        "toId": 111
+      },
+      {
+        "id": 106,
+        "from": "06-J52",
+        "to": "06-J51",
+        "fromId": 111,
+        "toId": 110
+      },
+      {
+        "id": 107,
+        "from": "06-J51",
+        "to": "06-J46",
+        "fromId": 110,
+        "toId": 105
+      },
+      {
+        "id": 108,
+        "from": "Tech Lab 06-09",
+        "to": "06-J51",
+        "fromId": 49,
+        "toId": 110
+      },
+      {
+        "id": 109,
+        "from": "Tech Lab 06-15",
+        "to": "06-J52",
+        "fromId": 55,
+        "toId": 111
+      },
+      {
+        "id": 110,
+        "from": "06-J52",
+        "to": "06-J53",
+        "fromId": 111,
+        "toId": 112
+      },
+      {
+        "id": 111,
+        "from": "06-J53",
+        "to": "06-J55",
+        "fromId": 112,
+        "toId": 114
+      },
+      {
+        "id": 112,
+        "from": "06-J55",
+        "to": "S-06-01 Printer Room",
+        "fromId": 114,
+        "toId": 58
+      },
+      {
+        "id": 113,
+        "from": "06-J54",
+        "to": "06-J55",
+        "fromId": 113,
+        "toId": 114
+      },
+      {
+        "id": 114,
+        "from": "06-J54",
+        "to": "06-J53",
+        "fromId": 113,
+        "toId": 112
+      },
+      {
+        "id": 115,
+        "from": "06-J54",
+        "to": "06-J56",
+        "fromId": 113,
+        "toId": 115
+      },
+      {
+        "id": 116,
+        "from": "S-06-Stairs-02",
+        "to": "06-J56",
+        "fromId": 69,
+        "toId": 115
+      },
+      {
+        "id": 117,
+        "from": "06-J53",
+        "to": "06-J57",
+        "fromId": 112,
+        "toId": 116
+      },
+      {
+        "id": 118,
+        "from": "Tech Lab 06-14",
+        "to": "06-J57",
+        "fromId": 54,
+        "toId": 116
+      },
+      {
+        "id": 119,
+        "from": "06-J57",
+        "to": "06-J58",
+        "fromId": 116,
+        "toId": 117
+      },
+      {
+        "id": 120,
+        "from": "06-J58",
+        "to": "06-J59",
+        "fromId": 117,
+        "toId": 118
+      },
+      {
+        "id": 121,
+        "from": "Tech Lab 06-13",
+        "to": "06-J58",
+        "fromId": 53,
+        "toId": 117
+      },
+      {
+        "id": 122,
+        "from": "06-J59",
+        "to": "06-J61",
+        "fromId": 118,
+        "toId": 120
+      },
+      {
+        "id": 125,
+        "from": "06-J63",
+        "to": "06-J64",
+        "fromId": 122,
+        "toId": 123
+      },
+      {
+        "id": 126,
+        "from": "06-J64",
+        "to": "06-J14",
+        "fromId": 123,
+        "toId": 73
+      },
+      {
+        "id": 127,
+        "from": "Auditorium 2",
+        "to": "06-J64",
+        "fromId": 63,
+        "toId": 123
+      },
+      {
+        "id": 128,
+        "from": "06-J63",
+        "to": "06-J80",
+        "fromId": 122,
+        "toId": 140
+      },
+      {
+        "id": 129,
+        "from": "06-J80",
+        "to": "06-J62",
+        "fromId": 140,
+        "toId": 139
+      },
+      {
+        "id": 130,
+        "from": "06-J61",
+        "to": "06-J81",
+        "fromId": 120,
+        "toId": 141
+      },
+      {
+        "id": 131,
+        "from": "06-J82",
+        "to": "06-J81",
+        "fromId": 142,
+        "toId": 141
+      },
+      {
+        "id": 132,
+        "from": "A-06-Lift",
+        "to": "06-J82",
+        "fromId": 70,
+        "toId": 142
+      },
+      {
+        "id": 133,
+        "from": "06-J84",
+        "to": "06-J82",
+        "fromId": 144,
+        "toId": 142
+      },
+      {
+        "id": 134,
+        "from": "06-J62",
+        "to": "06-J83",
+        "fromId": 139,
+        "toId": 143
+      },
+      {
+        "id": 135,
+        "from": "A-06-Stairs",
+        "to": "06-J62",
+        "fromId": 71,
+        "toId": 139
+      },
+      {
+        "id": 136,
+        "from": "06-J85",
+        "to": "06-J83",
+        "fromId": 145,
+        "toId": 143
+      },
+      {
+        "id": 137,
+        "from": "06-J84",
+        "to": "06-J66",
+        "fromId": 144,
+        "toId": 125
+      },
+      {
+        "id": 138,
+        "from": "06-J85",
+        "to": "06-J66",
+        "fromId": 145,
+        "toId": 125
+      },
+      {
+        "id": 139,
+        "from": "06-J74",
+        "to": "06-J83",
+        "fromId": 133,
+        "toId": 143
+      },
+      {
+        "id": 140,
+        "from": "06-J66",
+        "to": "06-J69",
+        "fromId": 125,
+        "toId": 128
+      },
+      {
+        "id": 141,
+        "from": "06-J69",
+        "to": "06-J70",
+        "fromId": 128,
+        "toId": 129
+      },
+      {
+        "id": 142,
+        "from": "06-J70",
+        "to": "06-J71",
+        "fromId": 129,
+        "toId": 130
+      },
+      {
+        "id": 143,
+        "from": "06-J71",
+        "to": "06-J72",
+        "fromId": 130,
+        "toId": 131
+      },
+      {
+        "id": 144,
+        "from": "06-J72",
+        "to": "06-J73",
+        "fromId": 131,
+        "toId": 132
+      },
+      {
+        "id": 145,
+        "from": "06-J73",
+        "to": "06-J74",
+        "fromId": 132,
+        "toId": 133
+      },
+      {
+        "id": 146,
+        "from": "Tech Lab 06-17 Animation Suite",
+        "to": "06-J72",
+        "fromId": 57,
+        "toId": 131
+      },
+      {
+        "id": 147,
+        "from": "Tech Lab 06-16 CGI Suite",
+        "to": "06-J69",
+        "fromId": 56,
+        "toId": 128
+      },
+      {
+        "id": 148,
+        "from": "06-J66",
+        "to": "06-J67",
+        "fromId": 125,
+        "toId": 126
+      },
+      {
+        "id": 149,
+        "from": "06-J67",
+        "to": "06-J68",
+        "fromId": 126,
+        "toId": 127
+      },
+      {
+        "id": 150,
+        "from": "A-06-03",
+        "to": "06-J68",
+        "fromId": 62,
+        "toId": 127
+      },
+      {
+        "id": 151,
+        "from": "A-06-01",
+        "to": "06-J67",
+        "fromId": 60,
+        "toId": 126
+      },
+      {
+        "id": 152,
+        "from": "A-06-04",
+        "to": "06-J67",
+        "fromId": 61,
+        "toId": 126
       }
     ]
   },
   {
     "id": "Floor 7",
-    "points": [],
-    "edges": []
+    "points": [
+      {
+        "id": 1,
+        "type": "point",
+        "name": "B-07-05",
+        "x": 831,
+        "y": 743
+      },
+      {
+        "id": 2,
+        "type": "point",
+        "name": "B-07-06",
+        "x": 806,
+        "y": 757
+      },
+      {
+        "id": 3,
+        "type": "point",
+        "name": "B-07-07",
+        "x": 775,
+        "y": 729
+      },
+      {
+        "id": 4,
+        "type": "point",
+        "name": "B-07-08",
+        "x": 844,
+        "y": 702
+      },
+      {
+        "id": 5,
+        "type": "point",
+        "name": "B-07-04",
+        "x": 864,
+        "y": 702
+      },
+      {
+        "id": 6,
+        "type": "point",
+        "name": "B-07-03",
+        "x": 864,
+        "y": 672
+      },
+      {
+        "id": 7,
+        "type": "point",
+        "name": "B-07-09",
+        "x": 844,
+        "y": 672
+      },
+      {
+        "id": 9,
+        "type": "point",
+        "name": "B-07-02",
+        "x": 843,
+        "y": 596
+      },
+      {
+        "id": 10,
+        "type": "point",
+        "name": "B-07-01",
+        "x": 843,
+        "y": 568
+      },
+      {
+        "id": 11,
+        "type": "point",
+        "name": "B-07-Lift",
+        "x": 780,
+        "y": 547
+      },
+      {
+        "id": 12,
+        "type": "junction",
+        "name": "07-J1",
+        "x": 780,
+        "y": 537
+      },
+      {
+        "id": 13,
+        "type": "junction",
+        "name": "07-J2",
+        "x": 824,
+        "y": 537
+      },
+      {
+        "id": 14,
+        "type": "junction",
+        "name": "07-J3",
+        "x": 824,
+        "y": 568
+      },
+      {
+        "id": 15,
+        "type": "junction",
+        "name": "07-J4",
+        "x": 824,
+        "y": 596
+      },
+      {
+        "id": 16,
+        "type": "junction",
+        "name": "07-J5",
+        "x": 824,
+        "y": 624
+      },
+      {
+        "id": 18,
+        "type": "junction",
+        "name": "07-J7",
+        "x": 854,
+        "y": 651
+      },
+      {
+        "id": 19,
+        "type": "junction",
+        "name": "07-J8",
+        "x": 854,
+        "y": 672
+      },
+      {
+        "id": 20,
+        "type": "junction",
+        "name": "07-J9",
+        "x": 854,
+        "y": 702
+      },
+      {
+        "id": 21,
+        "type": "junction",
+        "name": "07-J10",
+        "x": 854,
+        "y": 734
+      },
+      {
+        "id": 22,
+        "type": "junction",
+        "name": "07-J11",
+        "x": 831,
+        "y": 734
+      },
+      {
+        "id": 23,
+        "type": "junction",
+        "name": "07-J12",
+        "x": 806,
+        "y": 734
+      },
+      {
+        "id": 24,
+        "type": "point",
+        "name": "D-07-01",
+        "x": 599,
+        "y": 546
+      },
+      {
+        "id": 25,
+        "type": "point",
+        "name": "D-07-02",
+        "x": 599,
+        "y": 586
+      },
+      {
+        "id": 26,
+        "type": "point",
+        "name": "D-07-03",
+        "x": 599,
+        "y": 626
+      },
+      {
+        "id": 27,
+        "type": "point",
+        "name": "D-07-04",
+        "x": 599,
+        "y": 659
+      },
+      {
+        "id": 28,
+        "type": "point",
+        "name": "D-07-05",
+        "x": 599,
+        "y": 690
+      },
+      {
+        "id": 29,
+        "type": "point",
+        "name": "D-07-06",
+        "x": 599,
+        "y": 723
+      },
+      {
+        "id": 30,
+        "type": "point",
+        "name": "D-07-07",
+        "x": 599,
+        "y": 768
+      },
+      {
+        "id": 31,
+        "type": "point",
+        "name": "D-07-08",
+        "x": 599,
+        "y": 825
+      },
+      {
+        "id": 32,
+        "type": "point",
+        "name": "D-07-09",
+        "x": 607,
+        "y": 874
+      },
+      {
+        "id": 33,
+        "type": "point",
+        "name": "D-07-10",
+        "x": 589,
+        "y": 874
+      },
+      {
+        "id": 34,
+        "type": "point",
+        "name": "D-07-12",
+        "x": 578,
+        "y": 825
+      },
+      {
+        "id": 35,
+        "type": "point",
+        "name": "D-07-13",
+        "x": 578,
+        "y": 768
+      },
+      {
+        "id": 36,
+        "type": "point",
+        "name": "D-07-17",
+        "x": 572,
+        "y": 571
+      },
+      {
+        "id": 39,
+        "type": "point",
+        "name": "E-07-11",
+        "x": 510,
+        "y": 860
+      },
+      {
+        "id": 40,
+        "type": "point",
+        "name": "E-07-06",
+        "x": 506,
+        "y": 888
+      },
+      {
+        "id": 58,
+        "type": "point",
+        "name": "S-07-01",
+        "x": 520,
+        "y": 223
+      },
+      {
+        "id": 59,
+        "type": "point",
+        "name": "S-07-02",
+        "x": 304,
+        "y": 261
+      },
+      {
+        "id": 64,
+        "type": "point",
+        "name": "B-07-Stairs",
+        "x": 793,
+        "y": 517
+      },
+      {
+        "id": 65,
+        "type": "point",
+        "name": "D-07-Stairs",
+        "x": 599,
+        "y": 518
+      },
+      {
+        "id": 66,
+        "type": "point",
+        "name": "E-07-Lift",
+        "x": 324,
+        "y": 609
+      },
+      {
+        "id": 67,
+        "type": "point",
+        "name": "E-07-Stairs",
+        "x": 340,
+        "y": 571
+      },
+      {
+        "id": 68,
+        "type": "point",
+        "name": "S-07-Stairs-01",
+        "x": 276,
+        "y": 262
+      },
+      {
+        "id": 69,
+        "type": "point",
+        "name": "S-07-Stairs-02",
+        "x": 550,
+        "y": 213
+      },
+      {
+        "id": 70,
+        "type": "point",
+        "name": "A-07-Lift",
+        "x": 993,
+        "y": 325
+      },
+      {
+        "id": 71,
+        "type": "point",
+        "name": "A-07-Stairs",
+        "x": 992,
+        "y": 393
+      },
+      {
+        "id": 72,
+        "type": "junction",
+        "name": "07-J13",
+        "x": 824,
+        "y": 517
+      },
+      {
+        "id": 73,
+        "type": "junction",
+        "name": "07-J14",
+        "x": 824,
+        "y": 460
+      },
+      {
+        "id": 74,
+        "type": "junction",
+        "name": "07-J15",
+        "x": 673,
+        "y": 448
+      },
+      {
+        "id": 75,
+        "type": "junction",
+        "name": "07-J16",
+        "x": 618,
+        "y": 448
+      },
+      {
+        "id": 76,
+        "type": "junction",
+        "name": "07-J17",
+        "x": 589,
+        "y": 448
+      },
+      {
+        "id": 77,
+        "type": "junction",
+        "name": "07-J18",
+        "x": 562,
+        "y": 448
+      },
+      {
+        "id": 78,
+        "type": "junction",
+        "name": "07-J19",
+        "x": 589,
+        "y": 518
+      },
+      {
+        "id": 79,
+        "type": "junction",
+        "name": "07-J20",
+        "x": 589,
+        "y": 546
+      },
+      {
+        "id": 80,
+        "type": "junction",
+        "name": "07-J21",
+        "x": 589,
+        "y": 586
+      },
+      {
+        "id": 81,
+        "type": "junction",
+        "name": "07-J22",
+        "x": 589,
+        "y": 626
+      },
+      {
+        "id": 82,
+        "type": "junction",
+        "name": "07-J23",
+        "x": 589,
+        "y": 659
+      },
+      {
+        "id": 83,
+        "type": "junction",
+        "name": "07-J24",
+        "x": 589,
+        "y": 690
+      },
+      {
+        "id": 84,
+        "type": "junction",
+        "name": "07-J25",
+        "x": 589,
+        "y": 723
+      },
+      {
+        "id": 85,
+        "type": "junction",
+        "name": "07-J26",
+        "x": 589,
+        "y": 768
+      },
+      {
+        "id": 86,
+        "type": "junction",
+        "name": "07-J27",
+        "x": 589,
+        "y": 825
+      },
+      {
+        "id": 87,
+        "type": "junction",
+        "name": "07-J28",
+        "x": 589,
+        "y": 863
+      },
+      {
+        "id": 88,
+        "type": "junction",
+        "name": "07-J29",
+        "x": 607,
+        "y": 863
+      },
+      {
+        "id": 89,
+        "type": "junction",
+        "name": "07-J30",
+        "x": 550,
+        "y": 864
+      },
+      {
+        "id": 90,
+        "type": "junction",
+        "name": "07-J31",
+        "x": 512,
+        "y": 869
+      },
+      {
+        "id": 91,
+        "type": "junction",
+        "name": "07-J32",
+        "x": 515,
+        "y": 885
+      },
+      {
+        "id": 98,
+        "type": "junction",
+        "name": "07-J39",
+        "x": 357,
+        "y": 587
+      },
+      {
+        "id": 99,
+        "type": "junction",
+        "name": "07-J40",
+        "x": 321,
+        "y": 599
+      },
+      {
+        "id": 100,
+        "type": "junction",
+        "name": "07-J41",
+        "x": 350,
+        "y": 568
+      },
+      {
+        "id": 102,
+        "type": "junction",
+        "name": "07-J43",
+        "x": 327,
+        "y": 504
+      },
+      {
+        "id": 103,
+        "type": "junction",
+        "name": "07-J44",
+        "x": 351,
+        "y": 489
+      },
+      {
+        "id": 104,
+        "type": "junction",
+        "name": "07-J45",
+        "x": 415,
+        "y": 461
+      },
+      {
+        "id": 105,
+        "type": "junction",
+        "name": "07-J46",
+        "x": 494,
+        "y": 448
+      },
+      {
+        "id": 106,
+        "type": "junction",
+        "name": "07-J47",
+        "x": 361,
+        "y": 401
+      },
+      {
+        "id": 110,
+        "type": "junction",
+        "name": "07-J51",
+        "x": 494,
+        "y": 353
+      },
+      {
+        "id": 111,
+        "type": "junction",
+        "name": "07-J52",
+        "x": 494,
+        "y": 310
+      },
+      {
+        "id": 112,
+        "type": "junction",
+        "name": "07-J53",
+        "x": 525,
+        "y": 280
+      },
+      {
+        "id": 113,
+        "type": "junction",
+        "name": "07-J54",
+        "x": 539,
+        "y": 237
+      },
+      {
+        "id": 114,
+        "type": "junction",
+        "name": "07-J55",
+        "x": 522,
+        "y": 239
+      },
+      {
+        "id": 115,
+        "type": "junction",
+        "name": "07-J56",
+        "x": 539,
+        "y": 214
+      },
+      {
+        "id": 116,
+        "type": "junction",
+        "name": "07-J57",
+        "x": 619,
+        "y": 280
+      },
+      {
+        "id": 117,
+        "type": "junction",
+        "name": "07-J58",
+        "x": 673,
+        "y": 280
+      },
+      {
+        "id": 118,
+        "type": "junction",
+        "name": "07-J59",
+        "x": 705,
+        "y": 280
+      },
+      {
+        "id": 119,
+        "type": "junction",
+        "name": "07-J60",
+        "x": 705,
+        "y": 448
+      },
+      {
+        "id": 120,
+        "type": "junction",
+        "name": "07-J61",
+        "x": 925,
+        "y": 281
+      },
+      {
+        "id": 122,
+        "type": "junction",
+        "name": "07-J63",
+        "x": 961,
+        "y": 445
+      },
+      {
+        "id": 134,
+        "type": "junction",
+        "name": "07-J75",
+        "x": 359,
+        "y": 317
+      },
+      {
+        "id": 135,
+        "type": "junction",
+        "name": "07-J76",
+        "x": 311,
+        "y": 280
+      },
+      {
+        "id": 136,
+        "type": "junction",
+        "name": "07-J77",
+        "x": 294,
+        "y": 285
+      },
+      {
+        "id": 137,
+        "type": "junction",
+        "name": "07-J78",
+        "x": 284,
+        "y": 259
+      },
+      {
+        "id": 138,
+        "type": "junction",
+        "name": "07-J79",
+        "x": 437,
+        "y": 303
+      },
+      {
+        "id": 139,
+        "type": "junction",
+        "name": "07-J62",
+        "x": 992,
+        "y": 380
+      },
+      {
+        "id": 140,
+        "type": "junction",
+        "name": "07-J80",
+        "x": 961,
+        "y": 381
+      },
+      {
+        "id": 141,
+        "type": "junction",
+        "name": "07-J81",
+        "x": 960,
+        "y": 336
+      },
+      {
+        "id": 142,
+        "type": "junction",
+        "name": "07-J82",
+        "x": 993,
+        "y": 337
+      },
+      {
+        "id": 143,
+        "type": "junction",
+        "name": "07-J83",
+        "x": 836,
+        "y": 275
+      },
+      {
+        "id": 144,
+        "type": "junction",
+        "name": "07-J84",
+        "x": 466,
+        "y": 886
+      },
+      {
+        "id": 145,
+        "type": "junction",
+        "name": "07-J85",
+        "x": 450,
+        "y": 848
+      },
+      {
+        "id": 146,
+        "type": "junction",
+        "name": "07-J86",
+        "x": 435,
+        "y": 804
+      },
+      {
+        "id": 147,
+        "type": "junction",
+        "name": "07-J87",
+        "x": 423,
+        "y": 769
+      },
+      {
+        "id": 148,
+        "type": "junction",
+        "name": "07-J88",
+        "x": 402,
+        "y": 712
+      },
+      {
+        "id": 149,
+        "type": "point",
+        "name": "E-07-05",
+        "x": 443,
+        "y": 851
+      },
+      {
+        "id": 150,
+        "type": "point",
+        "name": "E-07-07",
+        "x": 458,
+        "y": 845
+      },
+      {
+        "id": 151,
+        "type": "point",
+        "name": "E-07-04",
+        "x": 427,
+        "y": 807
+      },
+      {
+        "id": 152,
+        "type": "point",
+        "name": "E-07-08",
+        "x": 443,
+        "y": 801
+      },
+      {
+        "id": 153,
+        "type": "point",
+        "name": "E-07-03",
+        "x": 414,
+        "y": 771
+      },
+      {
+        "id": 154,
+        "type": "point",
+        "name": "E-07-O1 Office",
+        "x": 431,
+        "y": 766
+      },
+      {
+        "id": 155,
+        "type": "point",
+        "name": "E-07-02",
+        "x": 394,
+        "y": 714
+      },
+      {
+        "id": 156,
+        "type": "point",
+        "name": "E-07-01",
+        "x": 376,
+        "y": 665
+      },
+      {
+        "id": 157,
+        "type": "point",
+        "name": "International Student Service",
+        "x": 381,
+        "y": 619
+      },
+      {
+        "id": 158,
+        "type": "junction",
+        "name": "07-J89",
+        "x": 385,
+        "y": 662
+      },
+      {
+        "id": 159,
+        "type": "junction",
+        "name": "07-J90",
+        "x": 371,
+        "y": 622
+      },
+      {
+        "id": 160,
+        "type": "junction",
+        "name": "07-J91",
+        "x": 236,
+        "y": 526
+      },
+      {
+        "id": 161,
+        "type": "point",
+        "name": "07-Auditorium 1",
+        "x": 187,
+        "y": 526
+      },
+      {
+        "id": 162,
+        "type": "junction",
+        "name": "07-J92",
+        "x": 589,
+        "y": 604
+      },
+      {
+        "id": 163,
+        "type": "point",
+        "name": "D-07-16",
+        "x": 577,
+        "y": 604
+      },
+      {
+        "id": 164,
+        "type": "point",
+        "name": "D-07-15",
+        "x": 577,
+        "y": 659
+      },
+      {
+        "id": 165,
+        "type": "point",
+        "name": "D-07-14",
+        "x": 577,
+        "y": 690
+      }
+    ],
+    "edges": [
+      {
+        "id": 1,
+        "from": "B-07-05",
+        "to": "07-J11",
+        "fromId": 1,
+        "toId": 22
+      },
+      {
+        "id": 2,
+        "from": "B-07-06",
+        "to": "07-J12",
+        "fromId": 2,
+        "toId": 23
+      },
+      {
+        "id": 3,
+        "from": "B-07-07",
+        "to": "07-J12",
+        "fromId": 3,
+        "toId": 23
+      },
+      {
+        "id": 4,
+        "from": "B-07-08",
+        "to": "07-J9",
+        "fromId": 4,
+        "toId": 20
+      },
+      {
+        "id": 5,
+        "from": "B-07-04",
+        "to": "07-J9",
+        "fromId": 5,
+        "toId": 20
+      },
+      {
+        "id": 6,
+        "from": "B-07-09",
+        "to": "07-J8",
+        "fromId": 7,
+        "toId": 19
+      },
+      {
+        "id": 7,
+        "from": "B-07-03",
+        "to": "07-J8",
+        "fromId": 6,
+        "toId": 19
+      },
+      {
+        "id": 9,
+        "from": "B-07-02",
+        "to": "07-J4",
+        "fromId": 9,
+        "toId": 15
+      },
+      {
+        "id": 10,
+        "from": "B-07-01",
+        "to": "07-J3",
+        "fromId": 10,
+        "toId": 14
+      },
+      {
+        "id": 11,
+        "from": "B-07-Lift",
+        "to": "07-J1",
+        "fromId": 11,
+        "toId": 12
+      },
+      {
+        "id": 12,
+        "from": "07-J1",
+        "to": "07-J2",
+        "fromId": 12,
+        "toId": 13
+      },
+      {
+        "id": 13,
+        "from": "07-J2",
+        "to": "07-J3",
+        "fromId": 13,
+        "toId": 14
+      },
+      {
+        "id": 14,
+        "from": "07-J3",
+        "to": "07-J4",
+        "fromId": 14,
+        "toId": 15
+      },
+      {
+        "id": 15,
+        "from": "07-J4",
+        "to": "07-J5",
+        "fromId": 15,
+        "toId": 16
+      },
+      {
+        "id": 17,
+        "from": "07-J5",
+        "to": "07-J7",
+        "fromId": 16,
+        "toId": 18
+      },
+      {
+        "id": 18,
+        "from": "07-J7",
+        "to": "07-J8",
+        "fromId": 18,
+        "toId": 19
+      },
+      {
+        "id": 19,
+        "from": "07-J8",
+        "to": "07-J9",
+        "fromId": 19,
+        "toId": 20
+      },
+      {
+        "id": 20,
+        "from": "07-J9",
+        "to": "07-J10",
+        "fromId": 20,
+        "toId": 21
+      },
+      {
+        "id": 21,
+        "from": "07-J10",
+        "to": "07-J11",
+        "fromId": 21,
+        "toId": 22
+      },
+      {
+        "id": 22,
+        "from": "07-J11",
+        "to": "07-J12",
+        "fromId": 22,
+        "toId": 23
+      },
+      {
+        "id": 23,
+        "from": "07-J2",
+        "to": "07-J13",
+        "fromId": 13,
+        "toId": 72
+      },
+      {
+        "id": 24,
+        "from": "B-07-Stairs",
+        "to": "07-J13",
+        "fromId": 64,
+        "toId": 72
+      },
+      {
+        "id": 25,
+        "from": "07-J13",
+        "to": "07-J14",
+        "fromId": 72,
+        "toId": 73
+      },
+      {
+        "id": 28,
+        "from": "07-J15",
+        "to": "07-J16",
+        "fromId": 74,
+        "toId": 75
+      },
+      {
+        "id": 30,
+        "from": "07-J16",
+        "to": "07-J17",
+        "fromId": 75,
+        "toId": 76
+      },
+      {
+        "id": 31,
+        "from": "07-J17",
+        "to": "07-J18",
+        "fromId": 76,
+        "toId": 77
+      },
+      {
+        "id": 33,
+        "from": "07-J17",
+        "to": "07-J19",
+        "fromId": 76,
+        "toId": 78
+      },
+      {
+        "id": 34,
+        "from": "D-07-Stairs",
+        "to": "07-J19",
+        "fromId": 65,
+        "toId": 78
+      },
+      {
+        "id": 35,
+        "from": "07-J19",
+        "to": "07-J20",
+        "fromId": 78,
+        "toId": 79
+      },
+      {
+        "id": 36,
+        "from": "D-07-01",
+        "to": "07-J20",
+        "fromId": 24,
+        "toId": 79
+      },
+      {
+        "id": 37,
+        "from": "07-J20",
+        "to": "07-J21",
+        "fromId": 79,
+        "toId": 80
+      },
+      {
+        "id": 38,
+        "from": "D-07-02",
+        "to": "07-J21",
+        "fromId": 25,
+        "toId": 80
+      },
+      {
+        "id": 39,
+        "from": "D-07-17",
+        "to": "07-J21",
+        "fromId": 36,
+        "toId": 80
+      },
+      {
+        "id": 41,
+        "from": "D-07-03",
+        "to": "07-J22",
+        "fromId": 26,
+        "toId": 81
+      },
+      {
+        "id": 42,
+        "from": "07-J22",
+        "to": "07-J23",
+        "fromId": 81,
+        "toId": 82
+      },
+      {
+        "id": 43,
+        "from": "D-07-04",
+        "to": "07-J23",
+        "fromId": 27,
+        "toId": 82
+      },
+      {
+        "id": 44,
+        "from": "07-J23",
+        "to": "07-J24",
+        "fromId": 82,
+        "toId": 83
+      },
+      {
+        "id": 45,
+        "from": "D-07-05",
+        "to": "07-J24",
+        "fromId": 28,
+        "toId": 83
+      },
+      {
+        "id": 46,
+        "from": "07-J24",
+        "to": "07-J25",
+        "fromId": 83,
+        "toId": 84
+      },
+      {
+        "id": 47,
+        "from": "D-07-06",
+        "to": "07-J25",
+        "fromId": 29,
+        "toId": 84
+      },
+      {
+        "id": 48,
+        "from": "07-J25",
+        "to": "07-J26",
+        "fromId": 84,
+        "toId": 85
+      },
+      {
+        "id": 49,
+        "from": "D-07-07",
+        "to": "07-J26",
+        "fromId": 30,
+        "toId": 85
+      },
+      {
+        "id": 50,
+        "from": "D-07-13",
+        "to": "07-J26",
+        "fromId": 35,
+        "toId": 85
+      },
+      {
+        "id": 51,
+        "from": "07-J26",
+        "to": "07-J27",
+        "fromId": 85,
+        "toId": 86
+      },
+      {
+        "id": 52,
+        "from": "D-07-08",
+        "to": "07-J27",
+        "fromId": 31,
+        "toId": 86
+      },
+      {
+        "id": 53,
+        "from": "D-07-12",
+        "to": "07-J27",
+        "fromId": 34,
+        "toId": 86
+      },
+      {
+        "id": 54,
+        "from": "07-J27",
+        "to": "07-J28",
+        "fromId": 86,
+        "toId": 87
+      },
+      {
+        "id": 55,
+        "from": "D-07-10",
+        "to": "07-J28",
+        "fromId": 33,
+        "toId": 87
+      },
+      {
+        "id": 56,
+        "from": "07-J28",
+        "to": "07-J29",
+        "fromId": 87,
+        "toId": 88
+      },
+      {
+        "id": 57,
+        "from": "D-07-09",
+        "to": "07-J29",
+        "fromId": 32,
+        "toId": 88
+      },
+      {
+        "id": 58,
+        "from": "07-J59",
+        "to": "07-J60",
+        "fromId": 118,
+        "toId": 119
+      },
+      {
+        "id": 59,
+        "from": "07-J14",
+        "to": "07-J60",
+        "fromId": 73,
+        "toId": 119
+      },
+      {
+        "id": 60,
+        "from": "07-J60",
+        "to": "07-J15",
+        "fromId": 119,
+        "toId": 74
+      },
+      {
+        "id": 61,
+        "from": "07-J18",
+        "to": "07-J46",
+        "fromId": 77,
+        "toId": 105
+      },
+      {
+        "id": 62,
+        "from": "07-J46",
+        "to": "07-J45",
+        "fromId": 105,
+        "toId": 104
+      },
+      {
+        "id": 63,
+        "from": "07-J28",
+        "to": "07-J30",
+        "fromId": 87,
+        "toId": 89
+      },
+      {
+        "id": 64,
+        "from": "07-J30",
+        "to": "07-J31",
+        "fromId": 89,
+        "toId": 90
+      },
+      {
+        "id": 65,
+        "from": "07-J31",
+        "to": "07-J32",
+        "fromId": 90,
+        "toId": 91
+      },
+      {
+        "id": 69,
+        "from": "E-07-11",
+        "to": "07-J31",
+        "fromId": 39,
+        "toId": 90
+      },
+      {
+        "id": 70,
+        "from": "E-07-06",
+        "to": "07-J32",
+        "fromId": 40,
+        "toId": 91
+      },
+      {
+        "id": 76,
+        "from": "07-J40",
+        "to": "07-J39",
+        "fromId": 99,
+        "toId": 98
+      },
+      {
+        "id": 77,
+        "from": "E-07-Lift",
+        "to": "07-J40",
+        "fromId": 66,
+        "toId": 99
+      },
+      {
+        "id": 78,
+        "from": "07-J39",
+        "to": "07-J41",
+        "fromId": 98,
+        "toId": 100
+      },
+      {
+        "id": 81,
+        "from": "E-07-Stairs",
+        "to": "07-J41",
+        "fromId": 67,
+        "toId": 100
+      },
+      {
+        "id": 83,
+        "from": "07-J43",
+        "to": "07-J44",
+        "fromId": 102,
+        "toId": 103
+      },
+      {
+        "id": 84,
+        "from": "07-J44",
+        "to": "07-J45",
+        "fromId": 103,
+        "toId": 104
+      },
+      {
+        "id": 85,
+        "from": "07-J44",
+        "to": "07-J47",
+        "fromId": 103,
+        "toId": 106
+      },
+      {
+        "id": 86,
+        "from": "07-J45",
+        "to": "07-J47",
+        "fromId": 104,
+        "toId": 106
+      },
+      {
+        "id": 98,
+        "from": "07-J47",
+        "to": "07-J75",
+        "fromId": 106,
+        "toId": 134
+      },
+      {
+        "id": 99,
+        "from": "07-J75",
+        "to": "07-J76",
+        "fromId": 134,
+        "toId": 135
+      },
+      {
+        "id": 100,
+        "from": "07-J76",
+        "to": "07-J77",
+        "fromId": 135,
+        "toId": 136
+      },
+      {
+        "id": 101,
+        "from": "07-J77",
+        "to": "07-J78",
+        "fromId": 136,
+        "toId": 137
+      },
+      {
+        "id": 102,
+        "from": "S-07-Stairs-01",
+        "to": "07-J78",
+        "fromId": 68,
+        "toId": 137
+      },
+      {
+        "id": 103,
+        "from": "S-07-02",
+        "to": "07-J76",
+        "fromId": 59,
+        "toId": 135
+      },
+      {
+        "id": 104,
+        "from": "07-J75",
+        "to": "07-J79",
+        "fromId": 134,
+        "toId": 138
+      },
+      {
+        "id": 105,
+        "from": "07-J79",
+        "to": "07-J52",
+        "fromId": 138,
+        "toId": 111
+      },
+      {
+        "id": 106,
+        "from": "07-J52",
+        "to": "07-J51",
+        "fromId": 111,
+        "toId": 110
+      },
+      {
+        "id": 107,
+        "from": "07-J51",
+        "to": "07-J46",
+        "fromId": 110,
+        "toId": 105
+      },
+      {
+        "id": 110,
+        "from": "07-J52",
+        "to": "07-J53",
+        "fromId": 111,
+        "toId": 112
+      },
+      {
+        "id": 111,
+        "from": "07-J53",
+        "to": "07-J55",
+        "fromId": 112,
+        "toId": 114
+      },
+      {
+        "id": 112,
+        "from": "07-J55",
+        "to": "S-07-01",
+        "fromId": 114,
+        "toId": 58
+      },
+      {
+        "id": 113,
+        "from": "07-J54",
+        "to": "07-J55",
+        "fromId": 113,
+        "toId": 114
+      },
+      {
+        "id": 114,
+        "from": "07-J54",
+        "to": "07-J53",
+        "fromId": 113,
+        "toId": 112
+      },
+      {
+        "id": 115,
+        "from": "07-J54",
+        "to": "07-J56",
+        "fromId": 113,
+        "toId": 115
+      },
+      {
+        "id": 116,
+        "from": "S-07-Stairs-02",
+        "to": "07-J56",
+        "fromId": 69,
+        "toId": 115
+      },
+      {
+        "id": 117,
+        "from": "07-J53",
+        "to": "07-J57",
+        "fromId": 112,
+        "toId": 116
+      },
+      {
+        "id": 119,
+        "from": "07-J57",
+        "to": "07-J58",
+        "fromId": 116,
+        "toId": 117
+      },
+      {
+        "id": 120,
+        "from": "07-J58",
+        "to": "07-J59",
+        "fromId": 117,
+        "toId": 118
+      },
+      {
+        "id": 128,
+        "from": "07-J63",
+        "to": "07-J80",
+        "fromId": 122,
+        "toId": 140
+      },
+      {
+        "id": 129,
+        "from": "07-J80",
+        "to": "07-J62",
+        "fromId": 140,
+        "toId": 139
+      },
+      {
+        "id": 130,
+        "from": "07-J61",
+        "to": "07-J81",
+        "fromId": 120,
+        "toId": 141
+      },
+      {
+        "id": 131,
+        "from": "07-J82",
+        "to": "07-J81",
+        "fromId": 142,
+        "toId": 141
+      },
+      {
+        "id": 132,
+        "from": "A-07-Lift",
+        "to": "07-J82",
+        "fromId": 70,
+        "toId": 142
+      },
+      {
+        "id": 135,
+        "from": "A-07-Stairs",
+        "to": "07-J62",
+        "fromId": 71,
+        "toId": 139
+      },
+      {
+        "id": 136,
+        "from": "07-J63",
+        "to": "07-J14",
+        "fromId": 122,
+        "toId": 73
+      },
+      {
+        "id": 137,
+        "from": "07-J12",
+        "to": "B-07-06",
+        "fromId": 23,
+        "toId": 2
+      },
+      {
+        "id": 138,
+        "from": "07-J59",
+        "to": "07-J83",
+        "fromId": 118,
+        "toId": 143
+      },
+      {
+        "id": 139,
+        "from": "07-J83",
+        "to": "07-J61",
+        "fromId": 143,
+        "toId": 120
+      },
+      {
+        "id": 140,
+        "from": "07-J41",
+        "to": "07-J43",
+        "fromId": 100,
+        "toId": 102
+      },
+      {
+        "id": 141,
+        "from": "07-J39",
+        "to": "07-J90",
+        "fromId": 98,
+        "toId": 159
+      },
+      {
+        "id": 142,
+        "from": "International Student Service",
+        "to": "07-J90",
+        "fromId": 157,
+        "toId": 159
+      },
+      {
+        "id": 143,
+        "from": "07-J90",
+        "to": "07-J89",
+        "fromId": 159,
+        "toId": 158
+      },
+      {
+        "id": 144,
+        "from": "E-07-01",
+        "to": "07-J89",
+        "fromId": 156,
+        "toId": 158
+      },
+      {
+        "id": 145,
+        "from": "E-07-02",
+        "to": "07-J88",
+        "fromId": 155,
+        "toId": 148
+      },
+      {
+        "id": 146,
+        "from": "07-J89",
+        "to": "07-J88",
+        "fromId": 158,
+        "toId": 148
+      },
+      {
+        "id": 147,
+        "from": "07-J88",
+        "to": "07-J87",
+        "fromId": 148,
+        "toId": 147
+      },
+      {
+        "id": 148,
+        "from": "E-07-03",
+        "to": "07-J87",
+        "fromId": 153,
+        "toId": 147
+      },
+      {
+        "id": 149,
+        "from": "E-07-O1 Office",
+        "to": "07-J87",
+        "fromId": 154,
+        "toId": 147
+      },
+      {
+        "id": 150,
+        "from": "07-J87",
+        "to": "07-J86",
+        "fromId": 147,
+        "toId": 146
+      },
+      {
+        "id": 151,
+        "from": "E-07-04",
+        "to": "07-J86",
+        "fromId": 151,
+        "toId": 146
+      },
+      {
+        "id": 152,
+        "from": "E-07-08",
+        "to": "07-J86",
+        "fromId": 152,
+        "toId": 146
+      },
+      {
+        "id": 153,
+        "from": "07-J86",
+        "to": "07-J85",
+        "fromId": 146,
+        "toId": 145
+      },
+      {
+        "id": 154,
+        "from": "07-J85",
+        "to": "07-J84",
+        "fromId": 145,
+        "toId": 144
+      },
+      {
+        "id": 155,
+        "from": "07-J84",
+        "to": "07-J31",
+        "fromId": 144,
+        "toId": 90
+      },
+      {
+        "id": 156,
+        "from": "E-07-07",
+        "to": "07-J85",
+        "fromId": 150,
+        "toId": 145
+      },
+      {
+        "id": 157,
+        "from": "E-07-05",
+        "to": "07-J85",
+        "fromId": 149,
+        "toId": 145
+      },
+      {
+        "id": 158,
+        "from": "07-J43",
+        "to": "07-J91",
+        "fromId": 102,
+        "toId": 160
+      },
+      {
+        "id": 159,
+        "from": "07-J91",
+        "to": "07-Auditorium 1",
+        "fromId": 160,
+        "toId": 161
+      },
+      {
+        "id": 160,
+        "from": "07-J21",
+        "to": "07-J92",
+        "fromId": 80,
+        "toId": 162
+      },
+      {
+        "id": 161,
+        "from": "07-J92",
+        "to": "07-J22",
+        "fromId": 162,
+        "toId": 81
+      },
+      {
+        "id": 162,
+        "from": "D-07-16",
+        "to": "07-J92",
+        "fromId": 163,
+        "toId": 162
+      },
+      {
+        "id": 163,
+        "from": "D-07-15",
+        "to": "07-J23",
+        "fromId": 164,
+        "toId": 82
+      },
+      {
+        "id": 164,
+        "from": "D-07-14",
+        "to": "07-J24",
+        "fromId": 165,
+        "toId": 83
+      }
+    ]
   },
   {
     "id": "Floor 8",

@@ -54,12 +54,14 @@ const UserActions = ({ allPoints, floors }: Props) => {
 
   useEffect(() => {
     // console.log("PASS edit", edit, id, points, edges);
-    if (!edit && id !== "default") {
+    if (id !== "default") {
       // console.log("PASS update");
       updateData({ id, points, edges });
+    }
+    if (!edit && points.length > 0) {
       reset();
     }
-  }, [edit]);
+  }, [edit, points, edges]);
 
   const handleChangeValue = (newValue: string, id: string) => {
     switch (id) {

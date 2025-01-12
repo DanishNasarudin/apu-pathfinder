@@ -1,7 +1,13 @@
 "use client";
 import { useFloorStore } from "@/lib/zus-store";
 import { Point } from "@/services/localCrud";
-import { ChevronDownIcon, ChevronUpIcon, MinusIcon } from "lucide-react";
+import {
+  ChevronDownIcon,
+  ChevronLeftIcon,
+  ChevronRightIcon,
+  ChevronUpIcon,
+  MinusIcon,
+} from "lucide-react";
 import { ChangeEvent, memo } from "react";
 import { useShallow } from "zustand/shallow";
 import DropdownSearch from "../DropdownSearch";
@@ -40,7 +46,7 @@ const EditRow = ({
     const newValue = e.currentTarget.value;
     const id = e.currentTarget.id;
 
-    console.log(newValue, id, "CHECK");
+    // console.log(newValue, id, "CHECK");
 
     if (id === "name") {
       updatePoint({ ...data, name: newValue });
@@ -89,16 +95,16 @@ const EditRow = ({
         <Button
           size={"icon"}
           variant={"outline"}
-          onClick={() => updatePoint({ ...data, x: data.x + 1 })}
+          onClick={() => updatePoint({ ...data, x: data.x - 1 })}
         >
-          <ChevronUpIcon />
+          <ChevronLeftIcon />
         </Button>
         <Button
           size={"icon"}
           variant={"outline"}
-          onClick={() => updatePoint({ ...data, x: data.x - 1 })}
+          onClick={() => updatePoint({ ...data, x: data.x + 1 })}
         >
-          <ChevronDownIcon />
+          <ChevronRightIcon />
         </Button>
       </td>
       <td className="grid grid-flow-col items-center">
@@ -114,14 +120,14 @@ const EditRow = ({
           variant={"outline"}
           onClick={() => updatePoint({ ...data, y: data.y + 1 })}
         >
-          <ChevronUpIcon />
+          <ChevronDownIcon />
         </Button>
         <Button
           size={"icon"}
           variant={"outline"}
           onClick={() => updatePoint({ ...data, y: data.y - 1 })}
         >
-          <ChevronDownIcon />
+          <ChevronUpIcon />
         </Button>
       </td>
       <td>

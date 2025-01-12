@@ -26,7 +26,7 @@ const FloorCoordinates = ({
     y: number;
   } | null>(null);
 
-  const { initData, points, pendingAdd, junctionAdd } = useFloorStore();
+  const { initData, id, points, pendingAdd, junctionAdd } = useFloorStore();
 
   const addPoints = useFloorStore(useShallow((state) => state.addPoint));
 
@@ -68,18 +68,21 @@ const FloorCoordinates = ({
 
     setCoordinates({ x: unscaledSvgX, y: unscaledSvgY });
 
-    // console.log(
-    //   `Unscaled SVG Coordinates: x - ${unscaledSvgX}, y - ${unscaledSvgY}`
-    // );
-
-    // console.log(points);
+    const floorNum = id.split(" ")[1];
 
     if (pendingAdd)
       if (junctionAdd) {
+        const juncNum = points
+          .filter((item) => item.type === "junction")
+          .at(-1)
+          ?.name.match(/J(\d+)/);
+
+        const numberAfterJ = juncNum ? parseInt(juncNum[1], 10) + 1 : null;
+
         addPoints({
           id: -1,
           type: "junction",
-          name: "0-J",
+          name: `0${floorNum}-J${numberAfterJ}`,
           x: unscaledSvgX,
           y: unscaledSvgY,
         });
