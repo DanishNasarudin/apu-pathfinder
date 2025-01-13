@@ -5,6 +5,7 @@ import FloorRendererEdit from "@/components/FloorRendering/FloorRendererEdit";
 import PathRenderer from "@/components/FloorRendering/PathRenderer";
 import TransformWrapper from "@/components/FloorRendering/TransformWrapper";
 import UserActions from "@/components/UserActions";
+import VersionActions from "@/components/VersionActions";
 import { findShortestPathDijkstraDynamic } from "@/lib/algorithms";
 import { floorsSvg } from "@/lib/floorData";
 import { Edge, getData, Point } from "@/services/localCrud";
@@ -238,6 +239,7 @@ export default async function Home({ searchParams }: Props) {
           .map((item) => item.name)}
         floors={floors.map((item) => item.id)}
       />
+      <VersionActions />
       <section className="h-[200px]" />
     </div>
   );

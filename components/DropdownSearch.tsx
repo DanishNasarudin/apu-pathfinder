@@ -64,6 +64,8 @@ const DropdownSearch = ({
       </PopoverTrigger>
       <PopoverContent
         className={cn(width === "none" ? "w-[200px]" : width, "p-0")}
+        side="bottom"
+        avoidCollisions={false}
       >
         <Command>
           <CommandInput placeholder="Search list..." />

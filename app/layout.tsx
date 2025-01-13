@@ -19,7 +19,14 @@ export const metadata: Metadata = {
   title: "APU Pathfinder",
   description:
     "Find your classroom through interactive map. Developed by Danish Nasarudin",
-  appleWebApp: true,
+  appleWebApp: {
+    capable: true,
+    title: "APU Pathfinder",
+    statusBarStyle: "black",
+    startupImage: {
+      url: icon.src,
+    },
+  },
   icons: {
     icon: "/icon.webp",
   },
@@ -46,7 +53,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased overflow-hidden`}
+        className={`${geistSans.variable} ${geistMono.variable} antialiased `}
       >
         <Providers>{children}</Providers>
       </body>
