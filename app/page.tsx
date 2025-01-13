@@ -37,6 +37,22 @@ export default async function Home({ searchParams }: Props) {
       fromId: 69,
       toId: 69,
     },
+    { id: 99, from: "E-07-Stairs", to: "E-08-Stairs", fromId: 67, toId: 34 },
+    { id: 99, from: "D-07-Stairs", to: "D-08-Stairs", fromId: 67, toId: 33 },
+    {
+      id: 99,
+      from: "S-07-Stairs-01",
+      to: "S-08-Stairs-01",
+      fromId: 68,
+      toId: 36,
+    },
+    {
+      id: 99,
+      from: "S-07-Stairs-02",
+      to: "S-08-Stairs-02",
+      fromId: 69,
+      toId: 37,
+    },
   ];
 
   const resultParams = await searchParams;
@@ -54,8 +70,8 @@ export default async function Home({ searchParams }: Props) {
     ? resultParams.edit[0]
     : resultParams.edit;
 
-  const startId = searchStart || "B-05-01";
-  const endId = searchEnd || "B-05-01";
+  const startId = searchStart || "B-06-01";
+  const endId = searchEnd || "B-06-01";
 
   const floorId = searchFloor || "Floor 1";
 
@@ -165,7 +181,10 @@ export default async function Home({ searchParams }: Props) {
 
   const FloorComponent = () => {
     return (
-      <div style={{ position: "relative", width: 700, height: 500 }}>
+      <div
+        style={{ position: "relative", width: "100%" }}
+        className="aspect-[1400/1000]"
+      >
         {floors.map(
           (floor) =>
             floor.id === floorId && (
@@ -191,12 +210,6 @@ export default async function Home({ searchParams }: Props) {
                     svg={svg}
                   />
                 )}
-                {/* <FloorCoordinates
-                  svg={floor.svg}
-                  width={width}
-                  height={height}
-                  floorId={floor.id}
-                /> */}
               </React.Fragment>
             )
         )}
@@ -209,22 +222,19 @@ export default async function Home({ searchParams }: Props) {
 
   return (
     <div className="relative flex flex-col gap-2 w-full items-center">
-      {/* {!isEditing ? (
+      {isEditing && <EditPanel />}
+      <div className="relative w-full flex justify-center">
         <TransformWrapper>
           <FloorComponent />
         </TransformWrapper>
-      ) : (
-        <FloorComponent />
-      )} */}
-
-      {isEditing && <EditPanel />}
-      <TransformWrapper>
-        <FloorComponent />
-      </TransformWrapper>
-
+      </div>
       <UserActions
         allPoints={allPoints
-          .filter((item) => item.type === "point")
+          .filter(
+            (item) =>
+              item.type === "point" &&
+              !(item.name.includes("Stairs") || item.name.includes("Lift"))
+          )
           .map((item) => item.name)}
         floors={floors.map((item) => item.id)}
       />

@@ -79,6 +79,13 @@ const UserActions = ({ allPoints, floors }: Props) => {
     }
   };
 
+  const startFloor = start.match(/^[A-Z]-0?(\d)-\d{2}$/);
+  const startFloorNum = startFloor ? parseInt(startFloor[1], 10) : null;
+  const endFloor = end.match(/^[A-Z]-0?(\d)-\d{2}$/);
+  const endFloorNum = endFloor ? parseInt(endFloor[1], 10) : null;
+
+  const isProduction = process.env.NODE_ENV === "production";
+
   return (
     <div className="flex gap-2 w-full md:flex-row flex-col justify-center items-center">
       <DropdownSearch
@@ -95,10 +102,14 @@ const UserActions = ({ allPoints, floors }: Props) => {
         id="floor"
         lists={floors}
         onValueChange={handleChangeValue}
+        isStart={startFloorNum ? `Floor ${startFloorNum}` : ""}
+        isEnd={endFloorNum ? `Floor ${endFloorNum}` : ""}
       />
-      <Button onClick={() => setEdit(!edit)}>
-        {edit ? "Exit Editing Mode" : "Edit"}
-      </Button>
+      {!isProduction && (
+        <Button onClick={() => setEdit(!edit)}>
+          {edit ? "Exit Editing Mode" : "Edit"}
+        </Button>
+      )}
     </div>
   );
 };

@@ -2,6 +2,7 @@
 import { cn } from "@/lib/utils";
 import { Check, ChevronsUpDown } from "lucide-react";
 import { useEffect, useState } from "react";
+import { Badge } from "./ui/badge";
 import { Button } from "./ui/button";
 import {
   Command,
@@ -18,6 +19,8 @@ type Props = {
   lists?: string[];
   onValueChange?: (newValue: string, id: string) => void;
   width?: string;
+  isStart?: string;
+  isEnd?: string;
 };
 
 const DropdownSearch = ({
@@ -25,6 +28,8 @@ const DropdownSearch = ({
   lists = ["A1", "B2"],
   onValueChange = () => {},
   width = "none",
+  isStart = "",
+  isEnd = "",
 }: Props) => {
   const [open, setOpen] = useState(false);
   const [value, setValue] = useState(lists[0] || "");
@@ -48,6 +53,12 @@ const DropdownSearch = ({
           )}
         >
           {value ? lists.find((list) => list === value) : "Select list..."}
+          {isStart !== "" && isStart === value && isStart !== isEnd && (
+            <Badge>Start</Badge>
+          )}
+          {isEnd !== "" && isEnd === value && isStart !== isEnd && (
+            <Badge variant={"destructive"}>Destination</Badge>
+          )}
           <ChevronsUpDown className="ml-2 h-4 w-4 shrink-0 opacity-50" />
         </Button>
       </PopoverTrigger>
@@ -75,6 +86,12 @@ const DropdownSearch = ({
                     )}
                   />
                   {list}
+                  {isStart !== "" && isStart === list && isStart !== isEnd && (
+                    <Badge>Start</Badge>
+                  )}
+                  {isEnd !== "" && isEnd === list && isStart !== isEnd && (
+                    <Badge variant={"destructive"}>Destination</Badge>
+                  )}
                 </CommandItem>
               ))}
             </CommandGroup>

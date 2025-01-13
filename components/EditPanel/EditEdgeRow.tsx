@@ -64,8 +64,6 @@ const EditEdgeRow = ({
     }
   };
 
-  // console.log("PASS", data.id);
-
   return (
     <tr className="[&>td]:px-1 [&>td:first-child]:pl-0 [&>td:last-child]:pr-0">
       <td>

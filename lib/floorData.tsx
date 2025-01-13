@@ -2612,6 +2612,18 @@ export const floorsSvg: FloorType[] = [
           fill="#39b54a"
           stroke="#231f20"
           strokeMiterlimit={10}
+          d="M244.47 286.26L280.17 273.5 298.95 325.2 262.87 338.12 244.47 286.26z"
+        />
+        <path
+          fill="#8dc63f"
+          stroke="#231f20"
+          strokeMiterlimit={10}
+          d="M546.23 462.02L547.01 509.79 569.46 509.79 578.84 502.54 578.84 461.99 546.23 462.02z"
+        />
+        <path
+          fill="#39b54a"
+          stroke="#231f20"
+          strokeMiterlimit={10}
           d="M379.66 544.8L361.35 552.28 350.44 550.54 337.15 515.75 340.29 503.19 361.74 496.02 379.66 544.8z"
         />
         <path
@@ -2832,7 +2844,7 @@ export const floorsSvg: FloorType[] = [
           <tspan x={0} y={0} letterSpacing="-.07em">
             {"T"}
           </tspan>
-          <tspan x={3.64} y={0}>
+          <tspan x={3.64} y={0} letterSpacing={0}>
             {"oilet"}
           </tspan>
         </text>
@@ -3321,7 +3333,7 @@ export const floorsSvg: FloorType[] = [
           <tspan x={16.95} y={0} letterSpacing="-.06em">
             {"1"}
           </tspan>
-          <tspan x={20.34} y={0} letterSpacing={0}>
+          <tspan x={20.34} y={0}>
             {"1"}
           </tspan>
         </text>
@@ -3400,12 +3412,6 @@ export const floorsSvg: FloorType[] = [
           </tspan>
         </text>
         <path
-          fill="#39b54a"
-          stroke="#231f20"
-          strokeMiterlimit={10}
-          d="M244.47 286.26L280.17 273.5 298.95 325.2 262.87 338.12 244.47 286.26z"
-        />
-        <path
           fill="#fff200"
           stroke="#231f20"
           strokeMiterlimit={10}
@@ -3422,12 +3428,6 @@ export const floorsSvg: FloorType[] = [
           stroke="#231f20"
           strokeMiterlimit={10}
           d="M593.42 437.79L597.1 451.08 655.52 451.08 655.52 459.57"
-        />
-        <path
-          fill="#8dc63f"
-          stroke="#231f20"
-          strokeMiterlimit={10}
-          d="M546.23 462.02L547.01 509.79 569.46 509.79 578.84 502.54 578.84 461.99 546.23 462.02z"
         />
       </>
     ),

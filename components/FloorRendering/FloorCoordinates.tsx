@@ -2,29 +2,22 @@
 import { round } from "@/lib/utils";
 import { useFloorStore } from "@/lib/zus-store";
 import { getData } from "@/services/localCrud";
-import React, { useEffect, useState } from "react";
+import React, { useEffect } from "react";
 import { useTransformContext } from "react-zoom-pan-pinch";
 import { useShallow } from "zustand/shallow";
 
 type Props = {
-  // svg: JSX.Element;
   width?: number;
   height?: number;
   floorId?: string;
 };
 
 const FloorCoordinates = ({
-  // svg,
   width = 500,
   height = 500,
   floorId = "default",
 }: Props) => {
   const transformState = useTransformContext();
-
-  const [coordinates, setCoordinates] = useState<{
-    x: number;
-    y: number;
-  } | null>(null);
 
   const { initData, id, points, pendingAdd, junctionAdd } = useFloorStore();
 
@@ -66,8 +59,6 @@ const FloorCoordinates = ({
     const unscaledSvgX = round(svgCoords.x / scale, 0);
     const unscaledSvgY = round(svgCoords.y / scale, 0);
 
-    setCoordinates({ x: unscaledSvgX, y: unscaledSvgY });
-
     const floorNum = id.split(" ")[1];
 
     if (pendingAdd)
@@ -77,7 +68,7 @@ const FloorCoordinates = ({
           .at(-1)
           ?.name.match(/J(\d+)/);
 
-        const numberAfterJ = juncNum ? parseInt(juncNum[1], 10) + 1 : null;
+        const numberAfterJ = juncNum ? parseInt(juncNum[1], 10) + 1 : 1;
 
         addPoints({
           id: -1,
@@ -108,9 +99,7 @@ const FloorCoordinates = ({
         zIndex: pendingAdd ? 5 : 1,
       }}
       onClick={handleClick}
-    >
-      {/* {svg} */}
-    </svg>
+    ></svg>
   );
 };
 

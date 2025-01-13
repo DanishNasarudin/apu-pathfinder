@@ -25,10 +25,10 @@ const PathRenderer = ({ path, width = 500, height = 500 }: PathProps) => {
     const length = Math.sqrt(vector.x ** 2 + vector.y ** 2);
     const unitVector = { x: vector.x / length, y: vector.y / length };
 
-    const triangleSize = 5; // Triangle size
+    const triangleSize = 5;
     const perpendicular = {
-      x: -unitVector.y, // Perpendicular vector x
-      y: unitVector.x, // Perpendicular vector y
+      x: -unitVector.y,
+      y: unitVector.x,
     };
 
     triangle = [
@@ -46,8 +46,6 @@ const PathRenderer = ({ path, width = 500, height = 500 }: PathProps) => {
       }, // Bottom-right
     ];
   }
-
-  // console.log(pathD, "check");
 
   return (
     <svg

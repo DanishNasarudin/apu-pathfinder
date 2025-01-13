@@ -10,11 +10,7 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from "../ui/tabs";
 import EditEdgeRow from "./EditEdgeRow";
 import EditRow from "./EditRow";
 
-type Props = {};
-
-const EditPanel = (props: Props) => {
-  // const { id, points, edges } = useFloorStore();
-
+const EditPanel = () => {
   const points = useFloorStore(useShallow((state) => state.points));
   const edges = useFloorStore(useShallow((state) => state.edges));
   const triggerAddPoint = useFloorStore(
@@ -27,12 +23,7 @@ const EditPanel = (props: Props) => {
   const pendingAdd = useFloorStore(useShallow((state) => state.pendingAdd));
   const junctionAdd = useFloorStore(useShallow((state) => state.junctionAdd));
 
-  // console.log(edges);
-
-  // if (id === "default") return <></>;
-
   const [search, setSearch] = useState("");
-  // console.log("05-J20".includes("J20"));
 
   return (
     <div className="absolute top-2 left-2 py-2 bg-zinc-800/50 z-[10] rounded-md backdrop-blur-[5px]">

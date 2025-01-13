@@ -29,8 +29,6 @@ const EditRow = ({
     }
   }
 
-  // const { updatePoint } = useFloorStore();
-
   const updatePoint = useFloorStore(useShallow((state) => state.updatePoint));
   const deletePoint = useFloorStore(useShallow((state) => state.deletePoint));
   const edges = useFloorStore(useShallow((state) => state.edges));
@@ -45,8 +43,6 @@ const EditRow = ({
   const handleInputChange = (e: ChangeEvent<HTMLInputElement>) => {
     const newValue = e.currentTarget.value;
     const id = e.currentTarget.id;
-
-    // console.log(newValue, id, "CHECK");
 
     if (id === "name") {
       updatePoint({ ...data, name: newValue });
@@ -65,7 +61,6 @@ const EditRow = ({
     }
   };
 
-  // console.log("PASS Points");
   return (
     <tr className="[&>td]:px-1 [&>td:first-child]:pl-0 [&>td:last-child]:pr-0 text-sm">
       <td>
