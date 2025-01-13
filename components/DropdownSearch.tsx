@@ -18,6 +18,7 @@ type Props = {
   id?: string;
   lists?: string[];
   onValueChange?: (newValue: string, id: string) => void;
+  valueInput?: string;
   width?: string;
   isStart?: string;
   isEnd?: string;
@@ -28,6 +29,7 @@ const DropdownSearch = ({
   id = "default",
   lists = ["A1", "B2"],
   onValueChange = () => {},
+  valueInput = "",
   width = "none",
   isStart = "",
   isEnd = "",
@@ -41,6 +43,11 @@ const DropdownSearch = ({
 
     onValueChange(value, id);
   }, [value]);
+
+  useEffect(() => {
+    if (valueInput === "") return;
+    setValue(valueInput);
+  }, [valueInput]);
 
   return (
     <Popover open={open} onOpenChange={setOpen}>

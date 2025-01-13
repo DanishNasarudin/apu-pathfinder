@@ -120,6 +120,7 @@ const UserActions = ({ allPoints, floors }: Props) => {
                 onScan={(result) => {
                   const regex = /^[A-Z]-\d{2}-\d{2}$/;
                   const check = regex.test(result[0].rawValue);
+                  // IF THEY SCAN SOMETHING NOT IN THE DB, NEED TO HANDLE
                   if (check) {
                     setStart(result[0].rawValue);
                     setQrDialog(false);
@@ -150,6 +151,7 @@ const UserActions = ({ allPoints, floors }: Props) => {
           id="start"
           lists={allPoints}
           onValueChange={handleChangeValue}
+          valueInput={start}
         />
       </div>
       <DropdownSearch

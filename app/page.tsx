@@ -71,7 +71,7 @@ export default async function Home({ searchParams }: Props) {
     ? resultParams.edit[0]
     : resultParams.edit;
 
-  const startId = searchStart || "B-06-01";
+  const startId = searchStart || "B-05-01";
   const endId = searchEnd || "B-06-01";
 
   const floorId = searchFloor || "Floor 1";
@@ -88,6 +88,9 @@ export default async function Home({ searchParams }: Props) {
     ...floors.flatMap((floor) => floor.edges),
     ...interFloorEdges,
   ];
+
+  const checkStart = allPoints.find((item) => item.name === startId);
+  const checkEnd = allPoints.find((item) => item.name === endId);
 
   // console.log(allEdges, "te");
 
@@ -239,6 +242,12 @@ export default async function Home({ searchParams }: Props) {
           .map((item) => item.name)}
         floors={floors.map((item) => item.id)}
       />
+      {checkStart === undefined && (
+        <span className="text-red-500">Starting room does not exist!</span>
+      )}
+      {checkEnd === undefined && (
+        <span className="text-red-500">Destination room does not exist!</span>
+      )}
       <VersionActions />
       <section className="h-[200px]" />
     </div>
