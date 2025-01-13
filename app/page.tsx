@@ -184,7 +184,7 @@ export default async function Home({ searchParams }: Props) {
     return (
       <div
         style={{ position: "relative", width: "100%" }}
-        className="aspect-[1400/1000]"
+        className="aspect-square md:aspect-[1400/1000]"
       >
         {floors.map(
           (floor) =>
@@ -223,6 +223,7 @@ export default async function Home({ searchParams }: Props) {
 
   return (
     <div className="relative flex flex-col gap-2 w-full items-center">
+      <section className="h-[64px]" />
       {isEditing && <EditPanel />}
       <div className="relative w-full flex justify-center">
         <TransformWrapper>
