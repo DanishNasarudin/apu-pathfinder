@@ -223,7 +223,7 @@ export default async function Home({ searchParams }: Props) {
 
   return (
     <div className="relative flex flex-col gap-2 w-full items-center">
-      <section className="h-[64px] md:h-auto" />
+      <section className="md:h-[64px] h-auto" />
       {isEditing && <EditPanel />}
       <div className="relative w-full flex justify-center">
         <TransformWrapper>
