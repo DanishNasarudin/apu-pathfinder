@@ -5,7 +5,7 @@ import { useFloorStore } from "@/lib/zus-store";
 import { updateData } from "@/services/localCrud";
 import { DialogDescription } from "@radix-ui/react-dialog";
 import { Scanner } from "@yudiel/react-qr-scanner";
-import { QrCodeIcon } from "lucide-react";
+import { QrCodeIcon, X } from "lucide-react";
 import { usePathname, useRouter, useSearchParams } from "next/navigation";
 import { useEffect, useState } from "react";
 import DropdownSearch from "./DropdownSearch";
@@ -135,6 +135,15 @@ const UserActions = ({ allPoints, floors }: Props) => {
                 QR Code is not valid!
               </DialogDescription>
             )}
+            <Button
+              className="absolute right-4 top-4 rounded-sm opacity-70 ring-offset-background transition-opacity hover:opacity-100 focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 disabled:pointer-events-none data-[state=open]:bg-accent data-[state=open]:text-muted-foreground"
+              onClick={() => setQrDialog(false)}
+              size={"icon"}
+              variant={"ghost"}
+            >
+              <X className="" />
+              <span className="sr-only">Close</span>
+            </Button>
           </DialogContent>
         </Dialog>
         <DropdownSearch
