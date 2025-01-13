@@ -3,10 +3,20 @@
 import { createURL } from "@/lib/utils";
 import { useFloorStore } from "@/lib/zus-store";
 import { updateData } from "@/services/localCrud";
+import { DialogDescription } from "@radix-ui/react-dialog";
+import { Scanner } from "@yudiel/react-qr-scanner";
+import { QrCodeIcon } from "lucide-react";
 import { usePathname, useRouter, useSearchParams } from "next/navigation";
 import { useEffect, useState } from "react";
 import DropdownSearch from "./DropdownSearch";
 import { Button } from "./ui/button";
+import {
+  Dialog,
+  DialogContent,
+  DialogHeader,
+  DialogTitle,
+  DialogTrigger,
+} from "./ui/dialog";
 
 type Props = {
   allPoints: string[];
@@ -86,13 +96,53 @@ const UserActions = ({ allPoints, floors }: Props) => {
 
   const isProduction = process.env.NODE_ENV === "production";
 
+  const [qrDialog, setQrDialog] = useState(false);
+  const [qrError, setQrError] = useState(false);
+
   return (
     <div className="flex gap-2 w-full md:flex-row flex-col justify-center items-center">
-      <DropdownSearch
-        id="start"
-        lists={allPoints}
-        onValueChange={handleChangeValue}
-      />
+      <div className="flex gap-2 max-w-[200px] flex-row-reverse md:flex-row">
+        <Dialog open={qrDialog}>
+          <DialogTrigger asChild>
+            <Button
+              size={"icon"}
+              variant={"outline"}
+              className="p-2"
+              onClick={() => setQrDialog(true)}
+            >
+              <QrCodeIcon />
+            </Button>
+          </DialogTrigger>
+          <DialogContent>
+            <DialogHeader>
+              <DialogTitle>Scan QR</DialogTitle>
+              <Scanner
+                onScan={(result) => {
+                  const regex = /^[A-Z]-\d{2}-\d{2}$/;
+                  const check = regex.test(result[0].rawValue);
+                  if (check) {
+                    setStart(result[0].rawValue);
+                    setQrDialog(false);
+                    setQrError(false);
+                  } else {
+                    setQrError(true);
+                  }
+                }}
+              />
+            </DialogHeader>
+            {qrError && (
+              <DialogDescription className="text-red-500">
+                QR Code is not valid!
+              </DialogDescription>
+            )}
+          </DialogContent>
+        </Dialog>
+        <DropdownSearch
+          id="start"
+          lists={allPoints}
+          onValueChange={handleChangeValue}
+        />
+      </div>
       <DropdownSearch
         id="end"
         lists={allPoints}

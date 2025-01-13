@@ -21,6 +21,7 @@ type Props = {
   width?: string;
   isStart?: string;
   isEnd?: string;
+  placeholder?: string;
 };
 
 const DropdownSearch = ({
@@ -30,6 +31,7 @@ const DropdownSearch = ({
   width = "none",
   isStart = "",
   isEnd = "",
+  placeholder = "default",
 }: Props) => {
   const [open, setOpen] = useState(false);
   const [value, setValue] = useState(lists[0] || "");
@@ -52,7 +54,7 @@ const DropdownSearch = ({
             "justify-between text-ellipsis overflow-hidden"
           )}
         >
-          {value ? lists.find((list) => list === value) : "Select list..."}
+          {value ? lists.find((list) => list === value) : placeholder}
           {isStart !== "" && isStart === value && isStart !== isEnd && (
             <Badge>Start</Badge>
           )}
