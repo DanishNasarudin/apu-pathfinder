@@ -1,5 +1,5 @@
 import { Providers } from "@/lib/providers";
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import localFont from "next/font/local";
 import "./globals.css";
 import icon from "./icon.webp";
@@ -15,10 +15,16 @@ const geistMono = localFont({
   weight: "100 900",
 });
 
+const baseUrl = process.env.NEXT_PUBLIC_BASE_URL!;
+
 export const metadata: Metadata = {
+  metadataBase: new URL(baseUrl),
+  alternates: {
+    canonical: "/",
+  },
   title: "APU Pathfinder",
   description:
-    "Find your classroom through interactive map. Developed by Danish Nasarudin",
+    "Find your Asia Pacific University (APU) classroom through interactive map. Developed by Danish Nasarudin",
   appleWebApp: {
     capable: true,
     title: "APU Pathfinder",
@@ -28,13 +34,14 @@ export const metadata: Metadata = {
     },
   },
   icons: {
-    icon: "/icon.webp",
-    apple: "/apple-icon.webp",
+    icon: new URL("/icon.webp", baseUrl),
+    apple: new URL("/apple-icon.webp", baseUrl),
   },
   openGraph: {
+    siteName: "APU Pathfinder",
     title: "APU Pathfinder",
     description:
-      "Find your classroom through interactive map. Developed by Danish Nasarudin",
+      "Find your Asia Pacific University (APU) classroom through interactive map. Developed by Danish Nasarudin",
     images: [
       {
         url: icon.src,
@@ -46,6 +53,13 @@ export const metadata: Metadata = {
   },
 };
 
+export const viewport: Viewport = {
+  themeColor: [
+    { media: "(prefers-color-scheme: light)", color: "white" },
+    { media: "(prefers-color-scheme: dark)", color: "black" },
+  ],
+};
+
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -53,13 +67,6 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <link
-        rel="apple-touch-icon"
-        href="/apple-icon?<generated>"
-        type="image/<generated>"
-        sizes="<generated>"
-      />
-      <meta name="theme-color" content="#000000"></meta>
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased `}
       >

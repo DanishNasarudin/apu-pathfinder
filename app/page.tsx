@@ -9,6 +9,7 @@ import { floorsSvg } from "@/lib/floorData";
 import { Edge, getData, Point } from "@/services/localCrud";
 import { Loader2 } from "lucide-react";
 import dynamic from "next/dynamic";
+import Link from "next/link";
 import React from "react";
 
 const TestingMap = dynamic(() => import("@/components/testing-map"), {
@@ -75,10 +76,10 @@ export default async function Home({ searchParams }: Props) {
     ? resultParams.edit[0]
     : resultParams.edit;
 
-  const startId = searchStart || "B-05-01";
+  const startId = searchStart || "B-06-01";
   const endId = searchEnd || "B-06-01";
 
-  const floorId = searchFloor || "Floor 1";
+  const floorId = searchFloor || "Floor 6";
 
   const width = 1400; // 700
   const height = 1000; // 500
@@ -229,7 +230,7 @@ export default async function Home({ searchParams }: Props) {
   };
 
   return (
-    <div className="relative flex flex-col gap-2 w-full items-center">
+    <div className="relative flex flex-col gap-2 w-full items-center min-h-screen">
       {isEditing && <EditPanel />}
       <div className="relative w-full flex justify-center h-[60vh]">
         <TestingMap
@@ -241,24 +242,37 @@ export default async function Home({ searchParams }: Props) {
           <Loader2 className="animate-spin" />
         </div>
       </div>
-      <UserActions
-        allPoints={allPoints
-          .filter(
-            (item) =>
-              item.type === "point" &&
-              !(item.name.includes("Stairs") || item.name.includes("Lift"))
-          )
-          .map((item) => item.name)}
-        floors={floors.map((item) => item.id)}
-      />
-      {checkStart === undefined && (
-        <span className="text-red-500">Starting room does not exist!</span>
-      )}
-      {checkEnd === undefined && (
-        <span className="text-red-500">Destination room does not exist!</span>
-      )}
+      <div className="flex flex-col gap-2">
+        <UserActions
+          allPoints={allPoints
+            .filter(
+              (item) =>
+                item.type === "point" &&
+                !(item.name.includes("Stairs") || item.name.includes("Lift"))
+            )
+            .map((item) => item.name)}
+          floors={floors.map((item) => item.id)}
+        />
+        {checkStart === undefined && (
+          <span className="text-red-500">Starting room does not exist!</span>
+        )}
+        {checkEnd === undefined && (
+          <span className="text-red-500">Destination room does not exist!</span>
+        )}
+      </div>
       {/* <VersionActions /> */}
-      <section className="h-[200px]" />
+      <section className="flex-1" />
+      <footer className="text-xs text-foreground/60 p-4 py-8 text-center">
+        Developed by APU Student,{" "}
+        <Link
+          href={"https://danishnasarudin.com"}
+          target="_blank"
+          className="hover:text-primary transition-all underline"
+        >
+          Danish Nasarudin
+        </Link>
+        .<br /> Map Designer required, do contact!
+      </footer>
     </div>
   );
 }
