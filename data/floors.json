@@ -2847,7 +2847,7 @@
       {
         "id": 161,
         "type": "point",
-        "name": "07-Auditorium 1",
+        "name": "S-07-Auditorium 1",
         "x": 187,
         "y": 526
       },
@@ -3703,7 +3703,7 @@
       {
         "id": 159,
         "from": "07-J91",
-        "to": "07-Auditorium 1",
+        "to": "S-07-Auditorium 1",
         "fromId": 160,
         "toId": 161
       },
@@ -3741,6 +3741,13 @@
         "to": "07-J24",
         "fromId": 165,
         "toId": 83
+      },
+      {
+        "id": 165,
+        "from": "07-J63",
+        "to": "07-J63",
+        "fromId": 122,
+        "toId": 122
       }
     ]
   },
@@ -3967,7 +3974,7 @@
       {
         "id": 32,
         "type": "point",
-        "name": "08-Auditorium 1",
+        "name": "S-08-Auditorium 1",
         "x": 321,
         "y": 416
       },
@@ -4689,7 +4696,7 @@
       },
       {
         "id": 54,
-        "from": "08-Auditorium 1",
+        "from": "S-08-Auditorium 1",
         "to": "08-J27",
         "fromId": 32,
         "toId": 64

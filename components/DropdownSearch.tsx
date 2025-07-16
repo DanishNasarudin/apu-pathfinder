@@ -58,15 +58,17 @@ const DropdownSearch = ({
           aria-expanded={open}
           className={cn(
             width === "none" ? "w-[200px]" : width,
-            "justify-between text-ellipsis overflow-hidden"
+            "justify-between text-ellipsis overflow-hidden text-xs"
           )}
         >
           {value ? lists.find((list) => list === value) : placeholder}
           {isStart !== "" && isStart === value && isStart !== isEnd && (
-            <Badge>Start</Badge>
+            <Badge className="text-xs">Start</Badge>
           )}
           {isEnd !== "" && isEnd === value && isStart !== isEnd && (
-            <Badge variant={"destructive"}>Destination</Badge>
+            <Badge className="text-xs" variant={"destructive"}>
+              Destination
+            </Badge>
           )}
           <ChevronsUpDown className="ml-2 h-4 w-4 shrink-0 opacity-50" />
         </Button>
@@ -74,10 +76,9 @@ const DropdownSearch = ({
       <PopoverContent
         className={cn(width === "none" ? "w-[200px]" : width, "p-0")}
         side="bottom"
-        avoidCollisions={false}
       >
         <Command>
-          <CommandInput placeholder="Search list..." />
+          <CommandInput placeholder="Search list..." className="text-base" />
           <CommandList>
             <CommandEmpty>No list found.</CommandEmpty>
             <CommandGroup>

@@ -1,25 +1,13 @@
-import EditPanel from "@/components/EditPanel/EditPanel";
-import FloorCoordinates from "@/components/FloorRendering/FloorCoordinates";
-import FloorRenderer from "@/components/FloorRendering/FloorRenderer";
-import FloorRendererEdit from "@/components/FloorRendering/FloorRendererEdit";
-import PathRenderer from "@/components/FloorRendering/PathRenderer";
-import UserActions from "@/components/UserActions";
 import { findShortestPathDijkstraDynamic } from "@/lib/algorithms";
 import { floorsSvg } from "@/lib/floorData";
 import { Edge, getData, Point } from "@/services/localCrud";
-import { Loader2 } from "lucide-react";
 import dynamic from "next/dynamic";
-import React from "react";
 
 const TestingMap = dynamic(() => import("@/components/testing-map"), {
   ssr: false,
 });
 
-type Props = {
-  searchParams: Promise<{ [key: string]: string | string[] | undefined }>;
-};
-
-export default async function Home({ searchParams }: Props) {
+export default async function Page() {
   const interFloorEdges: Edge[] = [
     { id: 99, from: "E-06-Lift", to: "E-07-Lift", fromId: 66, toId: 66 },
     { id: 99, from: "B-06-Lift", to: "B-07-Lift", fromId: 11, toId: 11 },
@@ -60,30 +48,15 @@ export default async function Home({ searchParams }: Props) {
     },
   ];
 
-  const resultParams = await searchParams;
+  const startId = "B-06-01";
+  const endId = "B-06-05";
 
-  const searchStart = Array.isArray(resultParams.start)
-    ? resultParams.start[0]
-    : resultParams.start;
-  const searchEnd = Array.isArray(resultParams.end)
-    ? resultParams.end[0]
-    : resultParams.end;
-  const searchFloor = Array.isArray(resultParams.floor)
-    ? resultParams.floor[0]
-    : resultParams.floor;
-  const searchEdit = Array.isArray(resultParams.edit)
-    ? resultParams.edit[0]
-    : resultParams.edit;
-
-  const startId = searchStart || "B-05-01";
-  const endId = searchEnd || "B-06-01";
-
-  const floorId = searchFloor || "Floor 1";
+  const floorId = "Floor 6";
 
   const width = 1400; // 700
   const height = 1000; // 500
 
-  const isEditing = Boolean(searchEdit) || false;
+  const isEditing = false;
 
   const floors = await getData();
 
@@ -183,82 +156,7 @@ export default async function Home({ searchParams }: Props) {
     renderPoints.some((p) => p.name === point.name)
   );
 
-  // createData(floors[1]);
-
-  // console.log(pointPath, "tes");
-
-  const FloorComponent = () => {
-    return (
-      <div
-        style={{ position: "relative", width: "100%" }}
-        className="aspect-square md:aspect-[1400/1000]"
-      >
-        {floors.map(
-          (floor) =>
-            floor.id === floorId && (
-              <React.Fragment key={floor.id}>
-                {isEditing ? (
-                  <>
-                    <FloorRendererEdit
-                      width={width}
-                      height={height}
-                      svg={svg}
-                    />
-                    <FloorCoordinates
-                      width={width}
-                      height={height}
-                      floorId={floor.id}
-                    />
-                  </>
-                ) : (
-                  <FloorRenderer
-                    floor={floor}
-                    width={width}
-                    height={height}
-                    svg={svg}
-                  />
-                )}
-              </React.Fragment>
-            )
-        )}
-        {renderFullPaths.length > 0 && (
-          <PathRenderer path={renderFullPaths} width={width} height={height} />
-        )}
-      </div>
-    );
-  };
-
   return (
-    <div className="relative flex flex-col gap-2 w-full items-center">
-      {isEditing && <EditPanel />}
-      <div className="relative w-full flex justify-center h-[60vh]">
-        <TestingMap
-          path={renderFullPaths}
-          floor={floorId}
-          isEditing={isEditing}
-        />
-        <div className="w-full h-[60vh] animate-pulse bg-foreground/10 absolute top-0 right-0 flex justify-center items-center">
-          <Loader2 className="animate-spin" />
-        </div>
-      </div>
-      <UserActions
-        allPoints={allPoints
-          .filter(
-            (item) =>
-              item.type === "point" &&
-              !(item.name.includes("Stairs") || item.name.includes("Lift"))
-          )
-          .map((item) => item.name)}
-        floors={floors.map((item) => item.id)}
-      />
-      {checkStart === undefined && (
-        <span className="text-red-500">Starting room does not exist!</span>
-      )}
-      {checkEnd === undefined && (
-        <span className="text-red-500">Destination room does not exist!</span>
-      )}
-      {/* <VersionActions /> */}
-      <section className="h-[200px]" />
-    </div>
+    <TestingMap path={renderFullPaths} floor={floorId} isEditing={false} />
   );
 }

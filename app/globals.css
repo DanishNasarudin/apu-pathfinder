@@ -75,17 +75,13 @@ body {
   }
 }
 
-.react-transform-component {
-  width: 100% !important;
-  height: 100% !important;
+.flowing-path {
+  stroke-dasharray: 8 16;
+  animation: dash 1.5s linear infinite;
 }
 
-.react-transform-element {
-  width: 100% !important;
-  height: 100% !important;
-}
-
-.react-transform-wrapper {
-  width: 100% !important;
-  height: 100% !important;
+@keyframes dash {
+  to {
+    stroke-dashoffset: -24;
+  }
 }
