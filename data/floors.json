@@ -285,119 +285,119 @@
       {
         "id": 41,
         "type": "point",
-        "name": "Tech Lab 06-01",
+        "name": "Tech Lab-06-01",
         "x": 304,
         "y": 403
       },
       {
         "id": 42,
         "type": "point",
-        "name": "Tech Lab 06-02",
+        "name": "Tech Lab-06-02",
         "x": 252,
         "y": 423
       },
       {
         "id": 43,
         "type": "point",
-        "name": "Tech Lab 06-03",
+        "name": "Tech Lab-06-03",
         "x": 200,
         "y": 443
       },
       {
         "id": 44,
         "type": "point",
-        "name": "Tech Lab 06-04",
+        "name": "Tech Lab-06-04",
         "x": 180,
         "y": 462
       },
       {
         "id": 45,
         "type": "point",
-        "name": "Tech Lab 06-05",
+        "name": "Tech Lab-06-05",
         "x": 185,
         "y": 476
       },
       {
         "id": 46,
         "type": "point",
-        "name": "Tech Lab 06-06",
+        "name": "Tech Lab-06-06",
         "x": 212,
         "y": 475
       },
       {
         "id": 47,
         "type": "point",
-        "name": "Tech Lab 06-07",
+        "name": "Tech Lab-06-07",
         "x": 265,
         "y": 455
       },
       {
         "id": 48,
         "type": "point",
-        "name": "Tech Lab 06-08",
+        "name": "Tech Lab-06-08",
         "x": 316,
         "y": 434
       },
       {
         "id": 49,
         "type": "point",
-        "name": "Tech Lab 06-09",
+        "name": "Tech Lab-06-09",
         "x": 527,
         "y": 352
       },
       {
         "id": 50,
         "type": "point",
-        "name": "Tech Lab 06-10",
+        "name": "Tech Lab-06-10",
         "x": 562,
         "y": 421
       },
       {
         "id": 51,
         "type": "point",
-        "name": "Tech Lab 06-11",
+        "name": "Tech Lab-06-11",
         "x": 618,
         "y": 421
       },
       {
         "id": 52,
         "type": "point",
-        "name": "Tech Lab 06-12",
+        "name": "Tech Lab-06-12",
         "x": 673,
         "y": 421
       },
       {
         "id": 53,
         "type": "point",
-        "name": "Tech Lab 06-13",
+        "name": "Tech Lab-06-13",
         "x": 674,
         "y": 287
       },
       {
         "id": 54,
         "type": "point",
-        "name": "Tech Lab 06-14",
+        "name": "Tech Lab-06-14",
         "x": 619,
         "y": 287
       },
       {
         "id": 55,
         "type": "point",
-        "name": "Tech Lab 06-15",
+        "name": "Tech Lab-06-15",
         "x": 527,
         "y": 310
       },
       {
         "id": 56,
         "type": "point",
-        "name": "Tech Lab 06-16 CGI Suite",
+        "name": "Tech Lab-06-16 CGI Suite",
         "x": 1113,
         "y": 289
       },
       {
         "id": 57,
         "type": "point",
-        "name": "Tech Lab 06-17 Animation Suite",
+        "name": "Tech Lab-06-17 Animation Suite",
         "x": 1152,
         "y": 397
       },
@@ -439,7 +439,7 @@
       {
         "id": 63,
         "type": "point",
-        "name": "Auditorium 2",
+        "name": "S-06-Auditorium 2",
         "x": 888,
         "y": 407
       },
@@ -1182,7 +1182,7 @@
       },
       {
         "id": 27,
-        "from": "Tech Lab 06-12",
+        "from": "Tech Lab-06-12",
         "to": "06-J15",
         "fromId": 52,
         "toId": 74
@@ -1196,7 +1196,7 @@
       },
       {
         "id": 29,
-        "from": "Tech Lab 06-11",
+        "from": "Tech Lab-06-11",
         "to": "06-J16",
         "fromId": 51,
         "toId": 75
@@ -1217,7 +1217,7 @@
       },
       {
         "id": 32,
-        "from": "Tech Lab 06-10",
+        "from": "Tech Lab-06-10",
         "to": "06-J18",
         "fromId": 50,
         "toId": 77
@@ -1623,56 +1623,56 @@
       },
       {
         "id": 90,
-        "from": "Tech Lab 06-01",
+        "from": "Tech Lab-06-01",
         "to": "06-J48",
         "fromId": 41,
         "toId": 107
       },
       {
         "id": 91,
-        "from": "Tech Lab 06-02",
+        "from": "Tech Lab-06-02",
         "to": "06-J49",
         "fromId": 42,
         "toId": 108
       },
       {
         "id": 92,
-        "from": "Tech Lab 06-03",
+        "from": "Tech Lab-06-03",
         "to": "06-J50",
         "fromId": 43,
         "toId": 109
       },
       {
         "id": 93,
-        "from": "Tech Lab 06-04",
+        "from": "Tech Lab-06-04",
         "to": "06-J50",
         "fromId": 44,
         "toId": 109
       },
       {
         "id": 94,
-        "from": "Tech Lab 06-05",
+        "from": "Tech Lab-06-05",
         "to": "06-J50",
         "fromId": 45,
         "toId": 109
       },
       {
         "id": 95,
-        "from": "Tech Lab 06-06",
+        "from": "Tech Lab-06-06",
         "to": "06-J50",
         "fromId": 46,
         "toId": 109
       },
       {
         "id": 96,
-        "from": "Tech Lab 06-07",
+        "from": "Tech Lab-06-07",
         "to": "06-J49",
         "fromId": 47,
         "toId": 108
       },
       {
         "id": 97,
-        "from": "Tech Lab 06-08",
+        "from": "Tech Lab-06-08",
         "to": "06-J48",
         "fromId": 48,
         "toId": 107
@@ -1749,14 +1749,14 @@
       },
       {
         "id": 108,
-        "from": "Tech Lab 06-09",
+        "from": "Tech Lab-06-09",
         "to": "06-J51",
         "fromId": 49,
         "toId": 110
       },
       {
         "id": 109,
-        "from": "Tech Lab 06-15",
+        "from": "Tech Lab-06-15",
         "to": "06-J52",
         "fromId": 55,
         "toId": 111
@@ -1819,7 +1819,7 @@
       },
       {
         "id": 118,
-        "from": "Tech Lab 06-14",
+        "from": "Tech Lab-06-14",
         "to": "06-J57",
         "fromId": 54,
         "toId": 116
@@ -1840,7 +1840,7 @@
       },
       {
         "id": 121,
-        "from": "Tech Lab 06-13",
+        "from": "Tech Lab-06-13",
         "to": "06-J58",
         "fromId": 53,
         "toId": 117
@@ -1868,7 +1868,7 @@
       },
       {
         "id": 127,
-        "from": "Auditorium 2",
+        "from": "S-06-Auditorium 2",
         "to": "06-J64",
         "fromId": 63,
         "toId": 123
@@ -2001,14 +2001,14 @@
       },
       {
         "id": 146,
-        "from": "Tech Lab 06-17 Animation Suite",
+        "from": "Tech Lab-06-17 Animation Suite",
         "to": "06-J72",
         "fromId": 57,
         "toId": 131
       },
       {
         "id": 147,
-        "from": "Tech Lab 06-16 CGI Suite",
+        "from": "Tech Lab-06-16 CGI Suite",
         "to": "06-J69",
         "fromId": 56,
         "toId": 128
@@ -2819,7 +2819,7 @@
       {
         "id": 157,
         "type": "point",
-        "name": "International Student Service",
+        "name": "E-07-International Student Service",
         "x": 381,
         "y": 619
       },
@@ -3583,7 +3583,7 @@
       },
       {
         "id": 142,
-        "from": "International Student Service",
+        "from": "E-07-International Student Service",
         "to": "07-J90",
         "fromId": 157,
         "toId": 159

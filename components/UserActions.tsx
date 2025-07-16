@@ -77,19 +77,19 @@ const UserActions = ({ allPoints, floors }: Props) => {
     switch (id) {
       case "start": {
         setStart(newValue);
-        const startFloor = newValue.match(/^[A-Z]-0?(\d)-\d{2}$/);
+        const startFloor = newValue.match(/(?<=-)\d+(?=-)/);
 
         if (startFloor) {
-          setFloor(`Floor ${parseInt(startFloor[1], 10)}`);
+          setFloor(`Floor ${parseInt(startFloor[0], 10)}`);
         }
         break;
       }
       case "end": {
         setEnd(newValue);
-        const startFloor = start.match(/^[A-Z]-0?(\d)-\d{2}$/);
+        const startFloor = start.match(/(?<=-)\d+(?=-)/);
 
         if (startFloor) {
-          setFloor(`Floor ${parseInt(startFloor[1], 10)}`);
+          setFloor(`Floor ${parseInt(startFloor[0], 10)}`);
         }
         break;
       }
@@ -102,14 +102,14 @@ const UserActions = ({ allPoints, floors }: Props) => {
   };
 
   const startFloorNum = useMemo(() => {
-    const startFloor = start.match(/^[A-Z]-0?(\d)-\d{2}$/);
+    const startFloor = start.match(/(?<=-)\d+(?=-)/);
 
-    return startFloor ? parseInt(startFloor[1], 10) : null;
+    return startFloor ? parseInt(startFloor[0], 10) : null;
   }, [start]);
 
   const endFloorNum = useMemo(() => {
-    const endFloor = end.match(/^[A-Z]-0?(\d)-\d{2}$/);
-    return endFloor ? parseInt(endFloor[1], 10) : null;
+    const endFloor = end.match(/(?<=-)\d+(?=-)/);
+    return endFloor ? parseInt(endFloor[0], 10) : null;
   }, [end]);
 
   const isProduction = process.env.NODE_ENV === "production";

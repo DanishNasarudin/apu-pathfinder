@@ -61,7 +61,9 @@ const DropdownSearch = ({
             "justify-between text-ellipsis overflow-hidden text-xs"
           )}
         >
-          {value ? lists.find((list) => list === value) : placeholder}
+          <p className="truncate">
+            {value ? lists.find((list) => list === value) : placeholder}
+          </p>
           {isStart !== "" && isStart === value && isStart !== isEnd && (
             <Badge className="text-xs">Start</Badge>
           )}
