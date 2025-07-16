@@ -139,6 +139,6 @@ export const findShortestPathDijkstraDynamic = (
       });
   }
 
-  console.error("Path not found.");
+  // console.error("Path not found.");
   return null; // No path found
 };
