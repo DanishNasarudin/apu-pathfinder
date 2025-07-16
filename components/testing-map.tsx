@@ -15,13 +15,11 @@ import {
   useMapEvents,
   ZoomControl,
 } from "react-leaflet";
-import Control from "react-leaflet-custom-control";
 import { useMediaQuery } from "usehooks-ts";
 import { useShallow } from "zustand/shallow";
 import AnimatedPath from "./animated-path";
 import FitBounds from "./fit-bounds";
 import PointCircle from "./FloorRendering/PointCircle";
-import { Button } from "./ui/button";
 
 export default function TestingMap({
   path = [],
@@ -239,7 +237,7 @@ export default function TestingMap({
 
     const setURL = createURL(`${pathname}/`, setSearchParams);
     router.push(setURL);
-  }, [pathname, searchParams, selectFloor]);
+  }, [pathname, searchParams, selectFloor, setSearchParams]);
 
   if (isPending) {
     return (
@@ -266,7 +264,7 @@ export default function TestingMap({
         </svg>
       </SVGOverlay>
       <ZoomControl position="bottomright" />
-      <Control prepend position="bottomright">
+      {/* <Control prepend position="bottomright">
         <div className="flex flex-col-reverse gap-2">
           {floors.map((floor, idx) => (
             <Button
@@ -280,7 +278,7 @@ export default function TestingMap({
             </Button>
           ))}
         </div>
-      </Control>
+      </Control> */}
     </MapContainer>
   );
 }
