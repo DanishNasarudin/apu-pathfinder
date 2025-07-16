@@ -33,6 +33,8 @@ const UserActions = ({ allPoints, floors }: Props) => {
   const [floor, setFloor] = useState("");
   const [edit, setEdit] = useState(false);
 
+  const isProduction = process.env.NODE_ENV === "production";
+
   const router = useRouter();
   const pathname = usePathname();
   const searchParams = useSearchParams();
@@ -89,7 +91,7 @@ const UserActions = ({ allPoints, floors }: Props) => {
     // console.log("PASS edit", edit, id, points, edges);
     if (id !== "default") {
       // console.log("PASS update");
-      updateData({ id, points, edges });
+      !isProduction && updateData({ id, points, edges });
     }
     if (!edit && points.length > 0) {
       reset();
@@ -134,8 +136,6 @@ const UserActions = ({ allPoints, floors }: Props) => {
     const endFloor = end.match(/(?<=-)\d+(?=-)/);
     return endFloor ? parseInt(endFloor[0], 10) : null;
   }, [end]);
-
-  const isProduction = process.env.NODE_ENV === "production";
 
   const [qrDialog, setQrDialog] = useState(false);
   const [qrError, setQrError] = useState(false);
