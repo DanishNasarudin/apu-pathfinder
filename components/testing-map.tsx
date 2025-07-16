@@ -211,7 +211,7 @@ export default function TestingMap({
           setPaths(newShapes);
         });
     });
-  }, [floor]);
+  }, [floor, floors]);
 
   useEffect(() => {
     const initializeData = async () => {
