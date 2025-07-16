@@ -1,5 +1,5 @@
 "use client";
-import { floorSvg } from "@/lib/floorSvg";
+import { FloorSvgType } from "@/lib/floorSvg";
 import { createURL, round } from "@/lib/utils";
 import { useFloorStore } from "@/lib/zus-store";
 import { FloorType, getData, Point } from "@/services/localCrud";
@@ -26,10 +26,12 @@ import { Button } from "./ui/button";
 export default function TestingMap({
   path = [],
   floor = "Floor 6",
+  floors,
   isEditing = false,
 }: {
   path: Point[];
   floor: string;
+  floors: FloorSvgType[];
   isEditing: boolean;
 }) {
   const isMobile = useMediaQuery("(max-width: 768px)");
@@ -94,7 +96,7 @@ export default function TestingMap({
   const [selectFloor, setSelectFloor] = useState("");
 
   useEffect(() => {
-    const src = floorSvg.find((item) => item.id === floor)?.src;
+    const src = floors.find((item) => item.id === floor)?.src;
     if (!src) return;
 
     startTransition(() => {
@@ -266,7 +268,7 @@ export default function TestingMap({
       <ZoomControl position="bottomright" />
       <Control prepend position="bottomright">
         <div className="flex flex-col-reverse gap-2">
-          {floorSvg.map((floor, idx) => (
+          {floors.map((floor, idx) => (
             <Button
               key={idx}
               variant={"outline"}

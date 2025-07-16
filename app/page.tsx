@@ -6,6 +6,7 @@ import PathRenderer from "@/components/FloorRendering/PathRenderer";
 import UserActions from "@/components/UserActions";
 import { findShortestPathDijkstraDynamic } from "@/lib/algorithms";
 import { floorsSvg } from "@/lib/floorData";
+import { floorSvg } from "@/lib/floorSvg";
 import { Edge, getData, Point } from "@/services/localCrud";
 import { Loader2 } from "lucide-react";
 import dynamic from "next/dynamic";
@@ -236,6 +237,7 @@ export default async function Home({ searchParams }: Props) {
         <TestingMap
           path={renderFullPaths}
           floor={floorId}
+          floors={floorSvg}
           isEditing={isEditing}
         />
         <div className="w-full h-[60vh] animate-pulse bg-foreground/10 absolute top-0 right-0 flex justify-center items-center">
