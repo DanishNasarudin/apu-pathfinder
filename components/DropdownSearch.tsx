@@ -58,7 +58,7 @@ const DropdownSearch = ({
           aria-expanded={open}
           className={cn(
             width === "none" ? "w-[200px]" : width,
-            "justify-between text-ellipsis overflow-hidden text-xs"
+            "justify-between text-ellipsis overflow-hidden text-xs w-full"
           )}
         >
           <p className="truncate">

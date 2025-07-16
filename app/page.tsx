@@ -230,7 +230,7 @@ export default async function Home({ searchParams }: Props) {
   };
 
   return (
-    <div className="relative flex flex-col gap-2 w-full items-center min-h-screen">
+    <div className="relative flex flex-col gap-4 w-full items-center min-h-screen">
       {isEditing && <EditPanel />}
       <div className="relative w-full flex justify-center h-[60vh]">
         <TestingMap

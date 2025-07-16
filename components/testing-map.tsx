@@ -125,8 +125,8 @@ export default function TestingMap({
                   {
                     key: id,
                     ...(dynamicProps as React.SVGProps<SVGElement>),
-                    onClick: (e: React.MouseEvent<SVGElement>) =>
-                      console.log("Clicked:", id),
+                    // onClick: (e: React.MouseEvent<SVGElement>) =>
+                    //   console.log("Clicked:", id),
                     onMouseEnter: (e: React.MouseEvent<SVGElement>) => {
                       const fill = dynamicProps.style.fill as
                         | string
@@ -286,7 +286,7 @@ const ClickHandler: React.FC = () => {
       const x = e.latlng.lng;
       const y = e.latlng.lat;
       handleClick(x, y);
-      console.log("Clicked at overlay coords:", { x, y });
+      // console.log("Clicked at overlay coords:", { x, y });
     },
   });
   return null;

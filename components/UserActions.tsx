@@ -5,13 +5,17 @@ import { useFloorStore } from "@/lib/zus-store";
 import { updateData } from "@/services/localCrud";
 import { DialogDescription } from "@radix-ui/react-dialog";
 import { Scanner } from "@yudiel/react-qr-scanner";
-import { QrCodeIcon, X } from "lucide-react";
+import { QrCode, QrCodeIcon, Share, X } from "lucide-react";
 import { usePathname, useRouter, useSearchParams } from "next/navigation";
 import { useEffect, useMemo, useState } from "react";
+import { toast } from "sonner";
+import { useCopyToClipboard } from "usehooks-ts";
 import DropdownSearch from "./DropdownSearch";
+import QRGenerator from "./qr-generator";
 import { Button } from "./ui/button";
 import {
   Dialog,
+  DialogClose,
   DialogContent,
   DialogHeader,
   DialogTitle,
@@ -33,6 +37,13 @@ const UserActions = ({ allPoints, floors }: Props) => {
   const pathname = usePathname();
   const searchParams = useSearchParams();
   const setSearchParams = new URLSearchParams(searchParams);
+  const [_, copy] = useCopyToClipboard();
+
+  let fullUrl = "";
+
+  if (typeof window !== "undefined") {
+    fullUrl = `${window.location.protocol}//${window.location.host}`;
+  }
 
   useEffect(() => {
     if (start) {
@@ -125,7 +136,7 @@ const UserActions = ({ allPoints, floors }: Props) => {
         <div></div>
       </div>
       <div className="flex-1 flex flex-col gap-2">
-        <div className="flex gap-2 max-w-[200px] flex-row-reverse">
+        <div className="flex gap-2 w-full flex-row-reverse">
           <Dialog open={qrDialog}>
             <DialogTrigger asChild>
               <Button
@@ -140,21 +151,23 @@ const UserActions = ({ allPoints, floors }: Props) => {
             <DialogContent>
               <DialogHeader>
                 <DialogTitle>Scan QR near the Classroom</DialogTitle>
-                <Scanner
-                  onScan={(result) => {
-                    const regex = /^[A-Z]-\d{2}-\d{2}$/;
-                    const check = regex.test(result[0].rawValue);
-                    // IF THEY SCAN SOMETHING NOT IN THE DB, NEED TO HANDLE
-                    if (check) {
-                      setStart(result[0].rawValue);
-                      setQrDialog(false);
-                      setQrError(false);
-                    } else {
-                      setQrError(true);
-                    }
-                  }}
-                />
+                <DialogDescription>
+                  Navigate faster with APU Pathfinder
+                </DialogDescription>
               </DialogHeader>
+              <Scanner
+                onScan={(result) => {
+                  const regex = /^[A-Z]-\d{2}-\d{2}$/;
+                  const check = regex.test(result[0].rawValue);
+                  if (check) {
+                    setStart(result[0].rawValue);
+                    setQrDialog(false);
+                    setQrError(false);
+                  } else {
+                    setQrError(true);
+                  }
+                }}
+              />
               {qrError && (
                 <DialogDescription className="text-red-500">
                   QR Code is not valid!
@@ -192,6 +205,47 @@ const UserActions = ({ allPoints, floors }: Props) => {
           isStart={startFloorNum ? `Floor ${startFloorNum}` : ""}
           isEnd={endFloorNum ? `Floor ${endFloorNum}` : ""}
         />
+        <div className="flex gap-2">
+          <Button
+            disabled={start === end}
+            onClick={() => {
+              copy(createURL(`${fullUrl}${pathname}`, setSearchParams));
+              toast.success("Copied link!");
+            }}
+          >
+            Share <Share />
+          </Button>
+          <Dialog>
+            <DialogTrigger asChild>
+              <Button disabled={start === end}>
+                Share QR <QrCode />
+              </Button>
+            </DialogTrigger>
+            <DialogContent className="items-center justify-center">
+              <DialogHeader className="justify-center">
+                <DialogTitle className="text-center">
+                  Scan this QR for Directions!
+                </DialogTitle>
+                <DialogDescription className="text-center">
+                  Navigate faster with APU Pathfinder
+                </DialogDescription>
+              </DialogHeader>
+              <QRGenerator
+                value={createURL(`${fullUrl}${pathname}`, setSearchParams)}
+              />
+              <DialogClose>
+                <Button
+                  className="absolute right-4 top-4 rounded-sm opacity-70 ring-offset-background transition-opacity hover:opacity-100 focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 disabled:pointer-events-none data-[state=open]:bg-accent data-[state=open]:text-muted-foreground"
+                  size={"icon"}
+                  variant={"ghost"}
+                >
+                  <X className="" />
+                  <span className="sr-only">Close</span>
+                </Button>
+              </DialogClose>
+            </DialogContent>
+          </Dialog>
+        </div>
       </div>
       {!isProduction ? (
         <Button onClick={() => setEdit(!edit)}>
