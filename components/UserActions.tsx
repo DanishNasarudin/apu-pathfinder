@@ -71,6 +71,18 @@ const UserActions = ({ allPoints, floors }: Props) => {
     router.push(setURL);
   }, [pathname, searchParams, start, end, floor, edit]);
 
+  useEffect(() => {
+    const paramStart = setSearchParams.get("start");
+    const paramEnd = setSearchParams.get("end");
+    const paramFloor = setSearchParams.get("floor");
+
+    if (!paramStart || !paramEnd || !paramFloor) return;
+
+    setStart(paramStart);
+    setEnd(paramEnd);
+    setFloor(paramFloor);
+  }, [setSearchParams]);
+
   const { id, points, edges, reset } = useFloorStore();
 
   useEffect(() => {
@@ -193,20 +205,20 @@ const UserActions = ({ allPoints, floors }: Props) => {
             id="start"
             lists={allPoints}
             onValueChange={handleChangeValue}
-            valueInput={start}
+            valueInput={start || "B-06-05"}
           />
         </div>
         <DropdownSearch
           id="end"
           lists={allPoints}
           onValueChange={handleChangeValue}
-          valueInput={end}
+          valueInput={end || "B-06-05"}
         />
         <DropdownSearch
           id="floor"
           lists={floors}
           onValueChange={handleChangeValue}
-          valueInput={floor}
+          valueInput={floor || "Floor 6"}
           isStart={startFloorNum ? `Floor ${startFloorNum}` : ""}
           isEnd={endFloorNum ? `Floor ${endFloorNum}` : ""}
         />

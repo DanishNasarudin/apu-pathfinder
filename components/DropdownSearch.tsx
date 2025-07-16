@@ -36,7 +36,7 @@ const DropdownSearch = ({
   placeholder = "default",
 }: Props) => {
   const [open, setOpen] = useState(false);
-  const [value, setValue] = useState(lists[0] || "");
+  const [value, setValue] = useState(valueInput || "");
 
   useEffect(() => {
     if (value === "") return;
