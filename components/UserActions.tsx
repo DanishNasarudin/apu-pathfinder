@@ -128,6 +128,11 @@ const UserActions = ({ allPoints, floors }: Props) => {
   const [qrDialog, setQrDialog] = useState(false);
   const [qrError, setQrError] = useState(false);
 
+  const urlToCopy = useMemo(
+    () => createURL(`${fullUrl}${pathname}`, setSearchParams),
+    [fullUrl, pathname, setSearchParams]
+  );
+
   return (
     <div className="flex gap-2">
       <div className="flex-1/2 flex flex-col gap-2 text-xs text-foreground/80">
@@ -209,7 +214,7 @@ const UserActions = ({ allPoints, floors }: Props) => {
           <Button
             disabled={start === end}
             onClick={() => {
-              copy(createURL(`${fullUrl}${pathname}`, setSearchParams));
+              copy(urlToCopy);
               toast.success("Copied link!");
             }}
           >
@@ -230,9 +235,7 @@ const UserActions = ({ allPoints, floors }: Props) => {
                   Navigate faster with APU Pathfinder
                 </DialogDescription>
               </DialogHeader>
-              <QRGenerator
-                value={createURL(`${fullUrl}${pathname}`, setSearchParams)}
-              />
+              <QRGenerator value={urlToCopy} />
               <DialogClose>
                 <Button
                   className="absolute right-4 top-4 rounded-sm opacity-70 ring-offset-background transition-opacity hover:opacity-100 focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 disabled:pointer-events-none data-[state=open]:bg-accent data-[state=open]:text-muted-foreground"
