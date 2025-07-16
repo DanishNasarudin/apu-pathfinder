@@ -76,12 +76,25 @@ body {
 }
 
 .flowing-path {
-  stroke-dasharray: 8 16;
+  stroke-dasharray: 8 16 !important;
+  stroke-dashoffset: 0 !important;
   animation: dash 1.5s linear infinite;
+  -webkit-animation: dash 1.5s linear infinite;
 }
 
 @keyframes dash {
-  to {
+  0% {
+    stroke-dashoffset: 0;
+  }
+  100% {
+    stroke-dashoffset: -24;
+  }
+}
+@-webkit-keyframes dash {
+  0% {
+    stroke-dashoffset: 0;
+  }
+  100% {
     stroke-dashoffset: -24;
   }
 }
