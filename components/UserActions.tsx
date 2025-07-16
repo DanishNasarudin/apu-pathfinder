@@ -221,6 +221,7 @@ const UserActions = ({ allPoints, floors }: Props) => {
           valueInput={floor || "Floor 6"}
           isStart={startFloorNum ? `Floor ${startFloorNum}` : ""}
           isEnd={endFloorNum ? `Floor ${endFloorNum}` : ""}
+          noSearch
         />
         <div className="flex gap-2">
           <Button

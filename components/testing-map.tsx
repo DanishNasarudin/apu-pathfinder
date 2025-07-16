@@ -1,12 +1,13 @@
 "use client";
 import { floorSvg } from "@/lib/floorSvg";
-import { round } from "@/lib/utils";
+import { createURL, round } from "@/lib/utils";
 import { useFloorStore } from "@/lib/zus-store";
 import { FloorType, getData, Point } from "@/services/localCrud";
 import L, { LeafletMouseEvent } from "leaflet";
 import "leaflet-defaulticon-compatibility";
 import "leaflet-defaulticon-compatibility/dist/leaflet-defaulticon-compatibility.webpack.css";
 import "leaflet/dist/leaflet.css";
+import { usePathname, useRouter, useSearchParams } from "next/navigation";
 import React, { useEffect, useMemo, useState, useTransition } from "react";
 import {
   MapContainer,
@@ -14,11 +15,13 @@ import {
   useMapEvents,
   ZoomControl,
 } from "react-leaflet";
+import Control from "react-leaflet-custom-control";
 import { useMediaQuery } from "usehooks-ts";
 import { useShallow } from "zustand/shallow";
 import AnimatedPath from "./animated-path";
 import FitBounds from "./fit-bounds";
 import PointCircle from "./FloorRendering/PointCircle";
+import { Button } from "./ui/button";
 
 export default function TestingMap({
   path = [],
@@ -32,6 +35,63 @@ export default function TestingMap({
   const isMobile = useMediaQuery("(max-width: 768px)");
   const [paths, setPaths] = useState<React.ReactNode[]>([]);
   const [isPending, startTransition] = useTransition();
+
+  const bounds: [[number, number], [number, number]] = [
+    [0, 0],
+    [1000, 1400],
+  ];
+
+  const positions: [number, number][] = useMemo(
+    () => path.map((p) => [1000 - p.y, p.x]),
+    [path]
+  );
+
+  const { id, points, edges, initData } = useFloorStore();
+
+  const floorObject: FloorType = { id, points, edges };
+
+  const edgePaths = useMemo(
+    () =>
+      edges.map((edge, index) => {
+        const fromPoint = points.find((p) => p.name === edge.from)!;
+        const toPoint = points.find((p) => p.name === edge.to)!;
+        return (
+          <line
+            key={index}
+            x1={fromPoint.x}
+            y1={fromPoint.y}
+            x2={toPoint.x}
+            y2={toPoint.y}
+            stroke="gray"
+            strokeWidth={1}
+          />
+        );
+      }),
+    [edges, points]
+  );
+
+  const pointCircleEdit = useMemo(
+    () =>
+      floorObject.points.map((point) => (
+        <React.Fragment key={`point-${point.id}`}>
+          <PointCircle x={point.x} y={point.y} name={point.name} />
+        </React.Fragment>
+      )),
+    [floorObject]
+  );
+
+  const totalPath: React.ReactNode[] = useMemo(
+    () =>
+      isEditing ? [...paths, ...edgePaths, ...pointCircleEdit] : [...paths],
+    [isEditing, edgePaths, pointCircleEdit, paths]
+  );
+
+  const router = useRouter();
+  const pathname = usePathname();
+  const searchParams = useSearchParams();
+  const setSearchParams = new URLSearchParams(searchParams);
+
+  const [selectFloor, setSelectFloor] = useState("");
 
   useEffect(() => {
     const src = floorSvg.find((item) => item.id === floor)?.src;
@@ -151,20 +211,6 @@ export default function TestingMap({
     });
   }, [floor]);
 
-  const bounds: [[number, number], [number, number]] = [
-    [0, 0],
-    [1000, 1400],
-  ];
-
-  const positions: [number, number][] = useMemo(
-    () => path.map((p) => [1000 - p.y, p.x]),
-    [path]
-  );
-
-  const { id, points, edges, initData } = useFloorStore();
-
-  const floorObject: FloorType = { id, points, edges };
-
   useEffect(() => {
     const initializeData = async () => {
       if (floor !== "default") {
@@ -182,41 +228,16 @@ export default function TestingMap({
     initializeData().catch((e) => console.error(e));
   }, [floor, isEditing]);
 
-  const edgePaths = useMemo(
-    () =>
-      edges.map((edge, index) => {
-        const fromPoint = points.find((p) => p.name === edge.from)!;
-        const toPoint = points.find((p) => p.name === edge.to)!;
-        return (
-          <line
-            key={index}
-            x1={fromPoint.x}
-            y1={fromPoint.y}
-            x2={toPoint.x}
-            y2={toPoint.y}
-            stroke="gray"
-            strokeWidth={1}
-          />
-        );
-      }),
-    [edges, points]
-  );
+  useEffect(() => {
+    if (selectFloor) {
+      setSearchParams.set("floor", selectFloor);
+    } else {
+      setSearchParams.delete("floor");
+    }
 
-  const pointCircleEdit = useMemo(
-    () =>
-      floorObject.points.map((point) => (
-        <React.Fragment key={`point-${point.id}`}>
-          <PointCircle x={point.x} y={point.y} name={point.name} />
-        </React.Fragment>
-      )),
-    [floorObject]
-  );
-
-  const totalPath: React.ReactNode[] = useMemo(
-    () =>
-      isEditing ? [...paths, ...edgePaths, ...pointCircleEdit] : [...paths],
-    [isEditing, edgePaths, pointCircleEdit, paths]
-  );
+    const setURL = createURL(`${pathname}/`, setSearchParams);
+    router.push(setURL);
+  }, [pathname, searchParams, selectFloor]);
 
   if (isPending) {
     return (
@@ -243,6 +264,21 @@ export default function TestingMap({
         </svg>
       </SVGOverlay>
       <ZoomControl position="bottomright" />
+      <Control prepend position="bottomright">
+        <div className="flex flex-col-reverse gap-2">
+          {floorSvg.map((floor, idx) => (
+            <Button
+              key={idx}
+              variant={"outline"}
+              size={"icon"}
+              className="h-8 w-8"
+              onClick={() => setSelectFloor(floor.id)}
+            >
+              F{floor.id.split(" ")[1]}
+            </Button>
+          ))}
+        </div>
+      </Control>
     </MapContainer>
   );
 }

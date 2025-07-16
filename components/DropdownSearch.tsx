@@ -23,6 +23,7 @@ type Props = {
   isStart?: string;
   isEnd?: string;
   placeholder?: string;
+  noSearch?: boolean;
 };
 
 const DropdownSearch = ({
@@ -34,6 +35,7 @@ const DropdownSearch = ({
   isStart = "",
   isEnd = "",
   placeholder = "default",
+  noSearch = false,
 }: Props) => {
   const [open, setOpen] = useState(false);
   const [value, setValue] = useState(valueInput || "");
@@ -80,7 +82,9 @@ const DropdownSearch = ({
         side="bottom"
       >
         <Command>
-          <CommandInput placeholder="Search list..." className="text-base" />
+          {!noSearch && (
+            <CommandInput placeholder="Search list..." className="text-base" />
+          )}
           <CommandList>
             <CommandEmpty>No list found.</CommandEmpty>
             <CommandGroup>
