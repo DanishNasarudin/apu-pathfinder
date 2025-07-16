@@ -10,7 +10,8 @@ export default function AnimatedPath({
   return (
     <Polyline
       positions={points}
-      pathOptions={{ color: "blue", weight: 4, className: "flowing-path" }}
+      pathOptions={{ color: "blue", weight: 4 }}
+      className="flowing-path"
     />
   );
 }
