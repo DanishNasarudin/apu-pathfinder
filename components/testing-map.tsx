@@ -1,6 +1,6 @@
 "use client";
 import { FloorSvgType } from "@/lib/floorSvg";
-import { createURL, round } from "@/lib/utils";
+import { round } from "@/lib/utils";
 import { useFloorStore } from "@/lib/zus-store";
 import { FloorType, getData, Point } from "@/services/localCrud";
 import L, { LeafletMouseEvent } from "leaflet";
@@ -228,16 +228,16 @@ export default function TestingMap({
     initializeData().catch((e) => console.error(e));
   }, [floor, isEditing]);
 
-  useEffect(() => {
-    if (selectFloor) {
-      setSearchParams.set("floor", selectFloor);
-    } else {
-      setSearchParams.delete("floor");
-    }
+  // useEffect(() => {
+  //   if (selectFloor) {
+  //     setSearchParams.set("floor", selectFloor);
+  //   } else {
+  //     setSearchParams.delete("floor");
+  //   }
 
-    const setURL = createURL(`${pathname}/`, setSearchParams);
-    router.push(setURL);
-  }, [pathname, searchParams, selectFloor, setSearchParams]);
+  //   const setURL = createURL(`${pathname}/`, setSearchParams);
+  //   router.push(setURL);
+  // }, [pathname, searchParams, selectFloor, setSearchParams]);
 
   if (isPending) {
     return (
