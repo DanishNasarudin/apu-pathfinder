@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1400 1000">
+  <g id="Layer_1">
+    <polygon id="Level_3_Outer" points="437.78 1023.87 363.15 818.58 231.49 871.13 252.44 927.47 206.93 945.53 193.92 916.64 154.91 931.81 -35.08 382.78 245.56 286.5 225.9 233.8 325.07 196.27 344.68 248.78 403.74 227.7 488.55 226.65 488.55 161.43 595.76 161.43 595.76 223.97 747.63 222.18 745.44 43.06 1124.67 43.06 1130.03 219.05 1089.74 218.4 1094.77 505.16 923.41 505.83 928.1 802.43 656.26 802.43 657.71 979.57 542.12 982.78 437.78 1023.87" style="fill: none; stroke: #231f20; stroke-miterlimit: 10;"/>
+  </g>
+  <g id="Level_3">
+    <polygon points="325.07 196.27 273.91 215.63 294.14 267.21 344.68 248.78 325.07 196.27" style="fill: none; stroke: #231f20; stroke-miterlimit: 10;"/>
+    <polygon points="597.1 506.95 597.1 529.22 655.52 529.22 655.39 508.96 597.1 506.95" style="fill: #f9ed32; stroke: #231f20; stroke-miterlimit: 10;"/>
+    <polygon points="808.05 567.97 808.05 544.75 753.91 544.75 754.35 568.87 808.05 567.97" style="fill: #fbb040; stroke: #231f20; stroke-miterlimit: 10;"/>
+    <polygon points="753.63 528.83 794.26 528.83 794.26 505.16 753.22 506.28 753.63 528.83" style="fill: #f9ed32; stroke: #231f20; stroke-miterlimit: 10;"/>
+    <polygon points="293.35 617.87 348.91 597.82 355.33 614.2 298.89 633.81 293.35 617.87" style="fill: #fbb040; stroke: #231f20; stroke-miterlimit: 10;"/>
+    <polygon points="355.33 614.2 376.16 671.39 320.08 694.02 299.22 633.81 355.33 614.2" style="fill: none; stroke: #231f20; stroke-miterlimit: 10;"/>
+    <polygon points="453.41 518.08 413.6 533.47 444.74 609.57 505.74 598.98 505.74 514.22 453.41 518.08" style="fill: none; stroke: #231f20; stroke-miterlimit: 10;"/>
+    <polygon points="280.17 579.98 337.35 560.32 346.34 582.49 288.33 603.44 280.17 579.98" style="fill: #f9ed32; stroke: #231f20; stroke-miterlimit: 10;"/>
+    <text transform="translate(327.68 655.6)" style="fill: #231f20; font-family: Arial-BoldMT, Arial; font-size: 6.78px; font-weight: 700;"><tspan x="0" y="0" style="letter-spacing: -.07em;">T</tspan><tspan x="3.64" y="0">oilet</tspan></text>
+    <polygon points="488.55 226.65 531.24 224.69 531.24 161.43 488.55 161.43 488.55 226.65" style="fill: #27aae1; stroke: #231f20; stroke-miterlimit: 10;"/>
+    <polygon points="972.39 302.04 1015.65 301.69 1015.65 326.56 970.65 326.56 972.39 302.04" style="fill: #fbb040; stroke: #231f20; stroke-miterlimit: 10;"/>
+    <polygon points="976.11 391.42 976.11 422.4 1009.94 422.4 1009.94 390.68 976.11 391.42" style="fill: #fff200; stroke: #231f20; stroke-miterlimit: 10;"/>
+    <polygon points="1048.19 219.31 1047.55 118.89 1005.39 118.89 1007.64 219.95 1048.19 219.31" style="fill: none; stroke: #231f20; stroke-miterlimit: 10;"/>
+    <polygon points="1075.28 218.16 1130.03 219.05 1127.64 140.62 1075.28 140.62 1075.28 218.16" style="fill: none; stroke: #231f20; stroke-miterlimit: 10;"/>
+    <polygon points="1075.28 43.38 1075.28 119.12 1005.59 118.8 1004.06 43.06 1075.28 43.38" style="fill: #8dc63f; stroke: #231f20; stroke-miterlimit: 10;"/>
+    <rect x="1075.28" y="43.06" width="40.08" height="29.27" style="fill: none; stroke: #231f20; stroke-miterlimit: 10;"/>
+    <text transform="translate(1018.78 82.69)" style="fill: #231f20; font-family: Arial-BoldMT, Arial; font-size: 6.78px; font-weight: 700;"><tspan x="0" y="0">Auditorium 3</tspan></text>
+    <polygon points="282.18 272.21 273.72 250.47 236.78 264.54 245.56 286.5 282.18 272.21" style="fill: #fff200; stroke: #231f20; stroke-miterlimit: 10;"/>
+    <polygon points="548.41 224.86 548.41 200.69 595.76 200.69 595.76 223.97 548.41 224.86" style="fill: #fff200; stroke: #231f20; stroke-miterlimit: 10;"/>
+    <polygon points="657.22 919.02 654.55 569.16 588.21 570 591.57 919.02 657.22 919.02" style="fill: none; stroke: #231f20; stroke-miterlimit: 10;"/>
+    <polygon points="478.62 951.42 376.16 671.39 320.08 694.02 419.86 974.58 478.62 951.42" style="fill: none; stroke: #231f20; stroke-miterlimit: 10;"/>
+    <polygon points="496.37 788.85 518.53 784.76 513.71 752.97 489.63 758.03 496.37 788.85" style="fill: #fff200; stroke: #231f20; stroke-miterlimit: 10;"/>
+    <polygon points="659.29 463.97 901.06 460.6 953.55 419.66 950.67 293 821.6 267.47 659.29 270.85 676.63 345.01 676.15 397.99 659.29 463.97" style="fill: none; stroke: #231f20; stroke-miterlimit: 10;"/>
+    <polygon points="840.32 461.44 837.35 270.59 950.67 293 953.55 419.66 901.06 460.6 840.32 461.44" style="fill: #009444; stroke: #231f20; stroke-miterlimit: 10;"/>
+    <polygon points="840.32 461.44 838.86 367.81 726.08 369.41 726.08 416.29 671.17 417.5 659.29 463.97 840.32 461.44" style="fill: #8dc63f; stroke: #231f20; stroke-miterlimit: 10;"/>
+    <polygon points="726.08 416.29 726.08 317.48 670.57 319.08 676.63 345.01 676.15 397.99 671.17 417.5 726.08 416.29" style="fill: #39b54a; stroke: #231f20; stroke-miterlimit: 10;"/>
+    <polygon points="670.57 319.08 726.08 317.48 726.08 369.41 838.86 367.81 837.35 270.59 821.6 267.47 659.29 270.85 670.57 319.08" style="fill: none; stroke: #231f20; stroke-miterlimit: 10;"/>
+    <path d="M545.49,301.65l-12.58,45.1c-1.06,3.81-.81,7.87.73,11.52l24.95,59.36c2.02,4.8,6.06,8.45,11.04,9.98l26.25,8.04c3.7,1.13,7.68,1.01,11.3-.35l14.66-5.5c5.05-1.89,8.95-6,10.57-11.14l21.34-67.48c1.15-3.64,1.08-7.55-.19-11.14l-14.18-40.09c-1.59-4.49-4.93-8.14-9.27-10.12l-32.42-14.78c-5.03-2.29-10.85-2.08-15.71.58l-28.03,15.34c-4.15,2.27-7.21,6.12-8.48,10.68Z" style="fill: #009444; stroke: #231f20; stroke-miterlimit: 10;"/>
+    <path d="M205.29,383.44l4.65,46.59c.39,3.94,2.1,7.63,4.86,10.47l44.79,46.25c3.62,3.74,8.72,5.68,13.91,5.29l27.38-2.03c3.86-.29,7.52-1.84,10.41-4.43l11.67-10.45c4.02-3.6,6.16-8.84,5.81-14.22l-4.61-70.63c-.25-3.81-1.73-7.43-4.22-10.32l-27.76-32.21c-3.11-3.61-7.55-5.8-12.31-6.06l-35.57-2c-5.52-.31-10.87,2-14.43,6.24l-20.55,24.47c-3.04,3.62-4.49,8.32-4.02,13.03Z" style="fill: #009444; stroke: #231f20; stroke-miterlimit: 10;"/>
+    <polygon points="236.65 869.07 126.24 575.94 43.4 609.57 154.91 931.81 193.92 916.64 206.93 945.53 252.44 927.47 231.49 871.13 236.65 869.07" style="fill: none; stroke: #231f20; stroke-miterlimit: 10;"/>
+    <polygon points="89.85 743.78 177 710.72 126.24 575.94 43.4 609.57 89.85 743.78" style="fill: #27aae1; stroke: #231f20; stroke-miterlimit: 10;"/>
+    <polygon points="337.88 744.09 394.98 722.83 426.38 808.64 368.31 829.64 337.88 744.09" style="fill: #27aae1; stroke: #231f20; stroke-miterlimit: 10;"/>
+    <polygon points="426.38 808.64 455.3 887.67 397.15 910.74 368.31 829.64 426.38 808.64" style="fill: #27aae1; stroke: #231f20; stroke-miterlimit: 10;"/>
+    <polygon points="478.62 951.42 498.39 1000 437.78 1023.87 419.86 974.58 478.62 951.42" style="fill: #27aae1; stroke: #231f20; stroke-miterlimit: 10;"/>
+    <polygon points="591.95 927.99 657.22 927.99 657.71 979.57 591.95 981.39 591.95 927.99" style="fill: #27aae1; stroke: #231f20; stroke-miterlimit: 10;"/>
+    <text transform="translate(86.53 657.83)" style="fill: #231f20; font-family: Arial-BoldMT, Arial; font-size: 6.78px; font-weight: 700;"><tspan x="0" y="0">BilaBila Mart</tspan></text>
+    <polygon points="591 859.69 622.71 859.69 622.71 919.02 591.57 919.02 591 859.69" style="fill: #27aae1; stroke: #231f20; stroke-miterlimit: 10;"/>
+    <polygon points="591 846.12 638.67 846.12 638.67 803.74 590.46 803.74 591 846.12" style="fill: #27aae1; stroke: #231f20; stroke-miterlimit: 10;"/>
+    <polygon points="590.17 773.88 638.67 773.88 638.67 803.74 590.46 803.74 590.17 773.88" style="fill: #27aae1; stroke: #231f20; stroke-miterlimit: 10;"/>
+    <polygon points="589.88 744.09 638.67 744.09 638.67 773.88 590.17 773.88 589.88 744.09" style="fill: #27aae1; stroke: #231f20; stroke-miterlimit: 10;"/>
+    <polygon points="589.88 744.09 589.61 715.61 638.67 714.32 638.67 744.09 589.88 744.09" style="fill: #27aae1; stroke: #231f20; stroke-miterlimit: 10;"/>
+    <polygon points="589.61 715.61 655.66 714.32 655.96 645.29 588.99 645.29 589.61 715.61" style="fill: #2bb673; stroke: #231f20; stroke-miterlimit: 10;"/>
+    <polygon points="588.85 645.29 588.21 570 654.55 569.16 655.82 645.29 588.85 645.29" style="fill: #00a79d; stroke: #231f20; stroke-miterlimit: 10;"/>
+    <polygon points="419.86 901.73 435.11 949.27 413.6 957.36 397.15 910.74 419.86 901.73" style="fill: #f9ed32; stroke: #231f20; stroke-miterlimit: 10;"/>
+    <polygon points="633.05 859.69 655.82 859.69 657.22 919.02 633.05 919.02 633.05 859.69" style="fill: #f9ed32; stroke: #231f20; stroke-miterlimit: 10;"/>
+    <polygon points="195.89 921.01 242.87 901.73 252.44 927.47 206.93 945.53 195.89 921.01" style="fill: #f9ed32; stroke: #231f20; stroke-miterlimit: 10;"/>
+    <polygon points="747.4 203.26 806.42 203.26 806.42 221.8 747.63 222.18 747.4 203.26" style="fill: #f9ed32; stroke: #231f20; stroke-miterlimit: 10;"/>
+    <polygon points="754.35 568.87 757.54 802.43 834.6 802.43 830.1 582.44 808.05 567.97 754.35 568.87" style="fill: none; stroke: #231f20; stroke-miterlimit: 10;"/>
+    <polygon points="847.44 582.44 850.97 802.43 928.1 802.43 924.62 582.44 847.44 582.44" style="fill: none; stroke: #231f20; stroke-miterlimit: 10;"/>
+    <text transform="translate(600.92 609.34)" style="fill: #231f20; font-family: Arial-BoldMT, Arial; font-size: 6.78px; font-weight: 700;"><tspan x="0" y="0">Prayer Room</tspan><tspan x="6.66" y="8.13">(</tspan><tspan x="8.92" y="8.13" style="letter-spacing: -.02em;">W</tspan><tspan x="15.19" y="8.13">omen)</tspan></text>
+    <text transform="translate(747.17 431.26)" style="fill: #231f20; font-family: Arial-BoldMT, Arial; font-size: 6.78px; font-weight: 700;"><tspan x="0" y="0">International</tspan><tspan x="-3.58" y="8.13">Relation Office</tspan></text>
+    <text transform="translate(877.19 365.72)" style="fill: #231f20; font-family: Arial-BoldMT, Arial; font-size: 6.78px; font-weight: 700;"><tspan x="0" y="0">Main Office</tspan></text>
+    <text transform="translate(688.2 366.41)" style="fill: #231f20; font-family: Arial-BoldMT, Arial; font-size: 6.78px; font-weight: 700;"><tspan x="0" y="0">Finance</tspan><tspan x="3.2" y="8.13">Office</tspan></text>
+    <text transform="translate(600.92 677.32)" style="fill: #231f20; font-family: Arial-BoldMT, Arial; font-size: 6.78px; font-weight: 700;"><tspan x="0" y="0">Prayer Room</tspan><tspan x="12.06" y="8.13">(Men)</tspan></text>
+    <polygon points="755.15 627.72 830.99 625.78 830.1 582.44 808.05 567.97 754.35 568.87 755.15 627.72" style="fill: none; stroke: #231f20; stroke-miterlimit: 10;"/>
+    <polygon points="755.15 627.72 755.96 686.47 832.2 685.2 830.99 625.78 755.15 627.72" style="fill: none; stroke: #231f20; stroke-miterlimit: 10;"/>
+    <polygon points="755.96 686.47 755.96 742.66 833.38 742.66 832.2 685.2 755.96 686.47" style="fill: none; stroke: #231f20; stroke-miterlimit: 10;"/>
+    <polygon points="779.05 742.66 779.05 802.43 834.6 802.43 833.38 742.66 779.05 742.66" style="fill: none; stroke: #231f20; stroke-miterlimit: 10;"/>
+    <polygon points="850.97 802.43 850.01 742.66 927.15 742.66 928.1 802.43 850.97 802.43" style="fill: none; stroke: #231f20; stroke-miterlimit: 10;"/>
+    <polygon points="850.01 742.66 849.09 685.2 926.22 683.89 927.15 742.66 850.01 742.66" style="fill: none; stroke: #231f20; stroke-miterlimit: 10;"/>
+    <polygon points="849.09 685.2 848.14 625.78 925.3 625.78 926.22 683.89 849.09 685.2" style="fill: none; stroke: #231f20; stroke-miterlimit: 10;"/>
+    <polygon points="848.14 625.78 847.44 582.44 924.62 582.44 925.3 625.78 848.14 625.78" style="fill: none; stroke: #231f20; stroke-miterlimit: 10;"/>
+    <polygon points="755.96 742.66 757.54 802.43 779.05 802.43 779.05 742.66 755.96 742.66" style="fill: #f9ed32; stroke: #231f20; stroke-miterlimit: 10;"/>
+    <polyline points="478.62 951.42 533.17 929.54 591.95 927.99" style="fill: none; stroke: #231f20; stroke-miterlimit: 10;"/>
+    <polygon points="346.34 311.26 413.6 286.5 481.32 286.5 481.32 343.53 424.97 348.34 370.07 366.41 346.34 311.26" style="fill: #a7a9ac; stroke: #231f20; stroke-miterlimit: 10;"/>
+    <text transform="translate(408 323.48)" style="fill: #231f20; font-family: Arial-BoldMT, Arial; font-size: 6.78px; font-weight: 700;"><tspan x="0" y="0">Stage</tspan></text>
+    <polygon points="532.26 332.45 543.93 294.24 525.95 288.46 515.67 326.46 532.26 332.45" style="fill: #27aae1; stroke: #231f20; stroke-miterlimit: 10;"/>
+    <rect x="671.07" y="746.87" width="66.46" height="50.41" style="fill: none; stroke: #231f20; stroke-miterlimit: 10;"/>
+  </g>
+</svg>

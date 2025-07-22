@@ -67,6 +67,7 @@ const EditRow = ({
         <DropdownSearch
           id="type"
           lists={initType}
+          valueInput={data.type}
           onValueChange={handleTypeChange}
           width="w-[150px]"
         />
